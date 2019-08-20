@@ -1,0 +1,8 @@
+@include('layouts.header')
+@include('layouts.nav')
+@include('layouts.banner')
+@include('layouts.cause')
+@include('layouts.news')
+@include('layouts.event')
+@include('layouts.story')
+@include('layouts.footer')

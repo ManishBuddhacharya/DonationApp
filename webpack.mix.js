@@ -13,3 +13,48 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
+
+mix.styles([
+    'resources/css/font-awesome.css',
+    'resources/css/bootstrap.min.css',
+    'resources/css/owl-carousel.css',
+    'resources/css/mediaelementplayer.min.css',
+    'resources/css/layerslider.css',
+    'resources/css/revolution.css',
+    'resources/css/settings.css',
+    'resources/css/animate.min.css',
+    'resources/css/style.css',
+    'resources/css/responsive.css',
+    'resources/css/red.css',
+    'resources/css/wedgewood.css',
+    'resources/css/blue.css',
+    'resources/css/green.css',
+    'resources/css/darkgreen.css',
+    'resources/css/donation.css',
+], 'public/css/all.css');
+
+mix.scripts([
+    'resources/js/jquery.1.10.2.js',
+    'resources/js/modernizr.custom.17475.js',
+    'resources/js/jquery.downCount.js',
+    'resources/js/bootstrap.min.js',
+    'resources/js/jquery.poptrox.min.js',
+    'resources/js/enscroll-0.5.2.min.js',
+    'resources/js/owl.carousel.min.js',
+    'resources/js/mediaelement-and-player.min.js',
+    'resources/js/script.js',
+    'resources/js/ajax.contact-form.js',
+    'resources/js/jquery.knob.js',
+    'resources/js/knob-script.js',
+    'resources/js/styleswitcher.js',
+    'resources/js/jquery.minimalect.min.js',
+    'resources/js/greensock.js',
+    'resources/js/layerslider.transitions.js',
+    'resources/js/layerslider.kreaturamedia.jquery.js',
+    'resources/js/jquery.isotope.min.js',
+    'resources/js/revolution/jquery.themepunch.tools.min.js',
+    'resources/js/revolution/jquery.themepunch.revolution.min.js',
+    'resources/js/revolution/extensions/revolution.extension.slideanims.min.js',
+    'resources/js/revolution/extensions/revolution.extension.layeranimation.min.js',
+    'resources/js/revolution/extensions/revolution.extension.navigation.min.js',
+], 'public/js/all.js');
