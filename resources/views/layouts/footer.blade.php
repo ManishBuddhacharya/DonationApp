@@ -130,35 +130,40 @@
 
 </footer>
 
-<script>
-	$(window).load(function(){
-		$(function(){
-			var $portfolio = $('.masonary-blog');
-			$portfolio.isotope({
-			masonry: {
-			  columnWidth: 1
-			}
-			});
-		});
-	});
-</script>
-<script>
-	$(document).ready(function() {
-		$(".fullwidth-carousel").owlCarousel({
-			autoPlay: false,
+<div class="bottom-footer">
+
+	<div class="container">
+
+		<p>©2014 <a href="#" title="">Deeds</a> Wordpress All rights reserved. Design by <a href="#" title="">Webinane</a></p>
+
+
+
+	</div>
+
+</div><!-- BOTTOM FOOTER STRIP -->
+
+</div>
+<script src="{{ asset('js/all.js')}}" type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function() {		
+		$(".featured-caro").owlCarousel({
+			autoPlay: true,
 			rewindSpeed : 3000,
 			slideSpeed:2000,
-			items : 4,
-			itemsDesktop : [1199,3],
+			loop: true,
+			items : 1,
+			animateOut: 'fadeOut',
+    		animateIn: 'fadein',
+			itemsDesktop : [1199,2],
 			itemsDesktopSmall : [979,2],
-			itemsTablet : [768,1],
+			itemsTablet : [768,2],
 			itemsMobile : [479,1],
-			navigation : false,
-		}); /*** PRODUCTS CAROUSEL ***/
-	});
+			navigation : true
+		}); 
+		
+	});	
 
 	$('audio,video').mediaelementplayer();
 </script>
-
 </body>
 </html>
