@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="{{ asset('assets/images/logo.png')}}">
     <title>{{ config('app.name') }}</title>
     <link rel="stylesheet" id="projectCSS" type="text/css" href="{{ asset('css/all.css')}}"/>
-
+<script src="{{ asset('js/all.js')}}" type="text/javascript"></script>
   </head>
 <body>
 <div class="theme-layout">

@@ -31,6 +31,8 @@ mix.styles([
     'resources/css/green.css',
     'resources/css/darkgreen.css',
     'resources/css/donation.css',
+    'node_modules/magnific-popup/dist/magnific-popup.css',
+    'node_modules/dropzone/dist/dropzone.css',
 ], 'public/css/all.css');
 
 mix.scripts([
@@ -57,4 +59,7 @@ mix.scripts([
     'resources/js/revolution/extensions/revolution.extension.slideanims.min.js',
     'resources/js/revolution/extensions/revolution.extension.layeranimation.min.js',
     'resources/js/revolution/extensions/revolution.extension.navigation.min.js',
+    'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
+    'node_modules/dropzone/dist/dropzone.js',
+    'resources/js/custom.js',
 ], 'public/js/all.js');

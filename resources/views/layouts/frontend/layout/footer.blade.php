@@ -143,7 +143,7 @@
 </div><!-- BOTTOM FOOTER STRIP -->
 
 </div>
-<script src="{{ asset('js/all.js')}}" type="text/javascript"></script>
+
 <script type="text/javascript">
 	$(document).ready(function() {		
 		$(".featured-caro").owlCarousel({
@@ -160,7 +160,7 @@
 			itemsMobile : [479,1],
 			navigation : true
 		}); 
-		
+		$('.image-link').magnificPopup({type:'image'});
 	});	
 
 	$('audio,video').mediaelementplayer();

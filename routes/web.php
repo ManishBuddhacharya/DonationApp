@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/story', function () {
+    return view('layouts.frontend.pages.profile.profile');
+});

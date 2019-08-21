@@ -1,4 +1,4 @@
-<header class="">
+<header class="header2">
 	<div class="topbar">
 		<div class="container">
 			<div class="header-timer">
