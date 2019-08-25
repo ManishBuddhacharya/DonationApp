@@ -15,7 +15,7 @@
 
 </style>
 <section>
-	<div class="block" style="padding-bottom: 0;">
+	<div class="block pt-0 pb-0">
 		<div class="">
 			<div class="row">
 				<div class="col-sm-12">
@@ -40,3 +40,4 @@
 		</div>
 	</div>
 </section>
+

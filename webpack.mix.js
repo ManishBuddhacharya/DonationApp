@@ -61,5 +61,6 @@ mix.scripts([
     'resources/js/revolution/extensions/revolution.extension.navigation.min.js',
     'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
     'node_modules/dropzone/dist/dropzone.js',
+    'resources/js/OrgChart.js',
     'resources/js/custom.js',
 ], 'public/js/all.js');

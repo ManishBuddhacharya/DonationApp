@@ -1,7 +1,4 @@
-@include('layouts.frontend.layout.header')
-@include('layouts.frontend.layout.nav')
 @include('layouts.frontend.pages.causes.inc.header')
-
 <section>
 
 	<div class="block">
@@ -18,5 +15,3 @@
 	</div>
 
 </section>
-
-@include('layouts.frontend.layout.footer')
