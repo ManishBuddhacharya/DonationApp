@@ -1,7 +1,7 @@
 @include('layouts.frontend.layout.header')
 @include('layouts.frontend.layout.nav')
-@include('layouts.frontend.pages.events.inc.header')
 
+@include('layouts.frontend.pages.events.inc.header')
 <section>
 
 	<div class="block">
