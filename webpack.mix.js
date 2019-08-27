@@ -64,3 +64,21 @@ mix.scripts([
     'resources/js/OrgChart.js',
     'resources/js/custom.js',
 ], 'public/js/all.js');
+
+
+/*--------------
+    Backend
+ ---------------*/
+
+mix.styles([
+    'resources/assets/lib/perfect-scrollbar/css/perfect-scrollbar.min.css',
+    'resources/assets/lib/material-design-icons/css/material-design-iconic-font.min.css',
+    'resources/assets/css/style.css',
+    ],'public/css/app.css'); 
+ 
+mix.scripts([
+    'resources/assests/lib/jquery/jquery.min.js',
+    'resources/assests/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js',
+    'resources/assests/js/main.js',
+    'resources/assests/lib/bootstrap/dist/js/bootstrap.min.js',
+    ],'public/css/app.js');
