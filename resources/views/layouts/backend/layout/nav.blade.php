@@ -66,7 +66,7 @@
                     <div class="col-xs-4"><a href="#" class="connection-item"><img src="{{asset('img/slack.png')}}" alt="Slack"><span>Slack</span></a></div>
                   </div>
                   <div class="row">
-                    <div class="col-xs-4"><a href="#" class="connection-item"><img src="{{asset('img/dribble.png')}}" alt="Dribbble"><span>Dribbble</span></a></div>
+                    <div class="col-xs-4"><a href="#" class="connection-item"><img src="{{asset('img/dribbble.png')}}" alt="Dribbble"><span>Dribbble</span></a></div>
                     <div class="col-xs-4"><a href="#" class="connection-item"><img src="{{asset('img/mail_chimp.png')}}" alt="Mail Chimp"><span>Mail Chimp</span></a></div>
                     <div class="col-xs-4"><a href="#" class="connection-item"><img src="{{asset('img/dropbox.png')}}" alt="Dropbox"><span>Dropbox</span></a></div>
                   </div>
