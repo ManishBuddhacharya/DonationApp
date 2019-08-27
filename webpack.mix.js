@@ -77,8 +77,8 @@ mix.styles([
     ],'public/css/app.css'); 
  
 mix.scripts([
-    'resources/assests/lib/jquery/jquery.min.js',
-    'resources/assests/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js',
+    
     'resources/assests/js/main.js',
     'resources/assests/lib/bootstrap/dist/js/bootstrap.min.js',
+    
     ],'public/css/app.js');
