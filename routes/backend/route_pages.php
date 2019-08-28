@@ -1,3 +1,3 @@
 <?php
 
-Route::get('/backend/dashboard', 'PagesController@index');
+Route::get('/backend/dashboard', 'PagesController@index')->middleware('verified');

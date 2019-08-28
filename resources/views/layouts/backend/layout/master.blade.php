@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="{{ asset('assets/images/logo.png')}}">
     <title>{{ config('app.name') }}</title>
 
-    <link rel="stylesheet" href="{{asset('css/app.css')}}" type="text/css"/>
+    <link rel="stylesheet" href="{{asset('css/backend.css')}}" type="text/css"/>
   </head>
   <body>
       @yield('body')

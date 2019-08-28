@@ -14,7 +14,13 @@
             </li>
             <li><a href="#"><span class="icon mdi mdi-face"></span> Account</a></li>
             <li><a href="#"><span class="icon mdi mdi-settings"></span> Settings</a></li>
-            <li><a href="#"><span class="icon mdi mdi-power"></span> Logout</a></li>
+            <li><a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"><span class="icon mdi mdi-power"></span>{{ __('Logout') }}</a></li>
+                                                     
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
           </ul>
         </li>
       </ul>
