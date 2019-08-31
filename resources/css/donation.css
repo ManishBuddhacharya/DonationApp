@@ -10,8 +10,24 @@
     padding: 0 !important;
 }
 
+.no-right-pad {
+    padding-right: 0 !important;
+}
+
+.no-left-pad {
+    padding-left: 0 !important;
+}
+
 .no-margin {
     margin: 0 !important;
+}
+
+.no-right-mar {
+    margin-right: 0 !important;
+}
+
+.no-left-mar {
+    margin-left: 0 !important;
 }
 
 .pd-10 {
@@ -27,7 +43,7 @@
     margin: 5px !important;
 }
 
-.m1-0 {
+.m-10 {
     margin: 10px;
 }
 
@@ -111,6 +127,10 @@
     margin-top: 5px !important;
 }
 
+.mt-0 {
+    margin-top: 0px !important;
+}
+
 .mt-10 {
     margin-top: 10px;
 }
@@ -129,6 +149,10 @@
 
 .mt-30 {
     margin-top: 30px !important;
+}
+
+.ml-0 {
+    margin-left: 0px !important;
 }
 
 .ml-5 {
@@ -160,6 +184,10 @@
 }
 
 
+.mr-0 {
+    margin-right: 0px;
+}
+
 .mr-5 {
     margin-right: 5px;
 }
@@ -188,6 +216,10 @@
     margin-right: 35px !important;
 }
 
+
+.mb-0 {
+    margin-bottom: 0px;
+}
 
 .mb-5 {
     margin-bottom: 5px;
@@ -309,6 +341,10 @@
     padding-top: 5px !important;
 }
 
+.pt-0 {
+    padding-top: 0px !important;
+}
+
 .pt-10 {
     padding-top: 10px;
 }
@@ -331,6 +367,10 @@
 
 .pt-35 {
     padding-top: 35px !important;
+}
+
+.pl-0 {
+    padding-left: 0px !important;
 }
 
 .pl-5 {
@@ -362,6 +402,10 @@
 }
 
 
+.pr-0 {
+    padding-right: 0px;
+}
+
 .pr-5 {
     padding-right: 5px;
 }
@@ -388,6 +432,10 @@
 
 .pr-35 {
     padding-right: 35px !important;
+}
+
+.pb-0 {
+    padding-bottom: 0px;
 }
 
 .pb-5 {
@@ -517,4 +565,46 @@
 
 .border-bottom{
     border-bottom: 1px solid #ccc;
+}
+
+.border-none{
+    border: none;
+}
+
+/*Custom Float Lable*/
+.field{
+    position: relative;
+}
+
+.field label{
+    position: absolute;
+    top: 5px;
+}
+
+.fieldTransform{
+    transition: all 0.45s;
+    touch-action: manipulation;
+    transform-origin: left bottom;
+    transform: translate(0, -1.35rem);
+    background: rgba(255,255,255,0.5);
+    padding: 1px 5px;
+}
+
+.fieldTransformBack{
+    transition: all 0.45s;
+    touch-action: manipulation;
+    transform-origin: left bottom;
+    transform: translate(0, 0);
+    background: transparent;
+    padding: 0;
+}
+
+/*heading background custom*/
+.login-block h5 {
+    background: none repeat scroll 0 0 #595958;
+    color: #FFFFFF;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 15px 20px 15px 60px;
+    position: relative;
 }
