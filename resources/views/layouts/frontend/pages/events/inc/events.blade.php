@@ -16,15 +16,15 @@
 
 							<ul>
 
-								<li class="date"><a href="event-single.html" title=""><i class="fa fa-calendar-o"></i> 28, April 2008</a></li>
+								<li class="date"><a class="pointer load_page" data-url = "/frontend/event/detail"  title=""><i class="fa fa-calendar-o"></i> 28, April 2008</a></li>
 
-								<li class="time"><a href="event-single.html" title=""><i class="fa fa-clock-o"></i> 8:00 PM</a></li>
+								<li class="time"><a class="pointer load_page" data-url = "/frontend/event/detail"  title=""><i class="fa fa-clock-o"></i> 8:00 PM</a></li>
 
 							</ul>
 
 						</div>
 
-						<h3><a href="event-single.html" title="">chool of the Prophets</a></h3>
+						<h3><a class="pointer load_page" data-url = "/frontend/event/detail"  title="">chool of the Prophets</a></h3>
 
 						<span><i class="fa fa-map-marker"></i> 654 Kingsland Rd, Big House</span>
 
@@ -48,15 +48,15 @@
 
 							<ul>
 
-								<li class="date"><a href="event-single.html" title=""><i class="fa fa-calendar-o"></i> 28, April 2008</a></li>
+								<li class="date"><a class="pointer load_page" data-url = "/frontend/event/detail"  title=""><i class="fa fa-calendar-o"></i> 28, April 2008</a></li>
 
-								<li class="time"><a href="event-single.html" title=""><i class="fa fa-clock-o"></i> 8:00 PM</a></li>
+								<li class="time"><a class="pointer load_page" data-url = "/frontend/event/detail"  title=""><i class="fa fa-clock-o"></i> 8:00 PM</a></li>
 
 							</ul>
 
 						</div>
 
-						<h3><a href="event-single.html" title="">Firelife: School of Revival</a></h3>
+						<h3><a class="pointer load_page" data-url = "/frontend/event/detail"  title="">Firelife: School of Revival</a></h3>
 
 						<span><i class="fa fa-map-marker"></i> 654 Kingsland Rd, Big House</span>
 
@@ -80,15 +80,15 @@
 
 							<ul>
 
-								<li class="date"><a href="event-single.html" title=""><i class="fa fa-calendar-o"></i> 28, April 2008</a></li>
+								<li class="date"><a class="pointer load_page" data-url = "/frontend/event/detail"  title=""><i class="fa fa-calendar-o"></i> 28, April 2008</a></li>
 
-								<li class="time"><a href="event-single.html" title=""><i class="fa fa-clock-o"></i> 8:00 PM</a></li>
+								<li class="time"><a class="pointer load_page" data-url = "/frontend/event/detail"  title=""><i class="fa fa-clock-o"></i> 8:00 PM</a></li>
 
 							</ul>
 
 						</div>
 
-						<h3><a href="event-single.html" title="">chool of the Prophets</a></h3>
+						<h3><a class="pointer load_page" data-url = "/frontend/event/detail"  title="">chool of the Prophets</a></h3>
 
 						<span><i class="fa fa-map-marker"></i> 654 Kingsland Rd, Big House</span>
 
@@ -112,15 +112,15 @@
 
 							<ul>
 
-								<li class="date"><a href="event-single.html" title=""><i class="fa fa-calendar-o"></i> 28, April 2008</a></li>
+								<li class="date"><a class="pointer load_page" data-url = "/frontend/event/detail"  title=""><i class="fa fa-calendar-o"></i> 28, April 2008</a></li>
 
-								<li class="time"><a href="event-single.html" title=""><i class="fa fa-clock-o"></i> 8:00 PM</a></li>
+								<li class="time"><a class="pointer load_page" data-url = "/frontend/event/detail"  title=""><i class="fa fa-clock-o"></i> 8:00 PM</a></li>
 
 							</ul>
 
 						</div>
 
-						<h3><a href="event-single.html" title="">INSPIRE</a></h3>
+						<h3><a class="pointer load_page" data-url = "/frontend/event/detail"  title="">INSPIRE</a></h3>
 
 						<span><i class="fa fa-map-marker"></i> 654 Kingsland Rd, Big House</span>
 
@@ -142,15 +142,15 @@
 
 							<ul>
 
-								<li class="date"><a href="event-single.html" title=""><i class="fa fa-calendar-o"></i> 28, April 2008</a></li>
+								<li class="date"><a class="pointer load_page" data-url = "/frontend/event/detail"  title=""><i class="fa fa-calendar-o"></i> 28, April 2008</a></li>
 
-								<li class="time"><a href="event-single.html" title=""><i class="fa fa-clock-o"></i> 8:00 PM</a></li>
+								<li class="time"><a class="pointer load_page" data-url = "/frontend/event/detail"  title=""><i class="fa fa-clock-o"></i> 8:00 PM</a></li>
 
 							</ul>
 
 						</div>
 
-						<h3><a href="event-single.html" title="">A Holisitic Approac Nurtu</a></h3>
+						<h3><a class="pointer load_page" data-url = "/frontend/event/detail"  title="">A Holisitic Approac Nurtu</a></h3>
 
 						<span><i class="fa fa-map-marker"></i> 654 Kingsland Rd, Big House</span>
 
@@ -174,15 +174,15 @@
 
 							<ul>
 
-								<li class="date"><a href="event-single.html" title=""><i class="fa fa-calendar-o"></i> 28, April 2008</a></li>
+								<li class="date"><a class="pointer load_page" data-url = "/frontend/event/detail"  title=""><i class="fa fa-calendar-o"></i> 28, April 2008</a></li>
 
-								<li class="time"><a href="event-single.html" title=""><i class="fa fa-clock-o"></i> 8:00 PM</a></li>
+								<li class="time"><a class="pointer load_page" data-url = "/frontend/event/detail"  title=""><i class="fa fa-clock-o"></i> 8:00 PM</a></li>
 
 							</ul>
 
 						</div>
 
-						<h3><a href="event-single.html" title="">A Holisitic Approac Nurtu</a></h3>
+						<h3><a class="pointer load_page" data-url = "/frontend/event/detail"  title="">A Holisitic Approac Nurtu</a></h3>
 
 						<span><i class="fa fa-map-marker"></i> 654 Kingsland Rd, Big House</span>
 
@@ -204,15 +204,15 @@
 
 							<ul>
 
-								<li class="date"><a href="event-single.html" title=""><i class="fa fa-calendar-o"></i> 28, April 2008</a></li>
+								<li class="date"><a class="pointer load_page" data-url = "/frontend/event/detail"  title=""><i class="fa fa-calendar-o"></i> 28, April 2008</a></li>
 
-								<li class="time"><a href="event-single.html" title=""><i class="fa fa-clock-o"></i> 8:00 PM</a></li>
+								<li class="time"><a class="pointer load_page" data-url = "/frontend/event/detail"  title=""><i class="fa fa-clock-o"></i> 8:00 PM</a></li>
 
 							</ul>
 
 						</div>
 
-						<h3><a href="event-single.html" title="">Bethel School of Worship</a></h3>
+						<h3><a class="pointer load_page" data-url = "/frontend/event/detail"  title="">Bethel School of Worship</a></h3>
 
 						<span><i class="fa fa-map-marker"></i> 654 Kingsland Rd, Big House</span>
 
@@ -236,15 +236,15 @@
 
 							<ul>
 
-								<li class="date"><a href="event-single.html" title=""><i class="fa fa-calendar-o"></i> 28, April 2008</a></li>
+								<li class="date"><a class="pointer load_page" data-url = "/frontend/event/detail"  title=""><i class="fa fa-calendar-o"></i> 28, April 2008</a></li>
 
-								<li class="time"><a href="event-single.html" title=""><i class="fa fa-clock-o"></i> 8:00 PM</a></li>
+								<li class="time"><a class="pointer load_page" data-url = "/frontend/event/detail"  title=""><i class="fa fa-clock-o"></i> 8:00 PM</a></li>
 
 							</ul>
 
 						</div>
 
-						<h3><a href="event-single.html" title="">Firelife: School of Revival</a></h3>
+						<h3><a class="pointer load_page" data-url = "/frontend/event/detail"  title="">Firelife: School of Revival</a></h3>
 
 						<span><i class="fa fa-map-marker"></i> 654 Kingsland Rd, Big House</span>
 
@@ -268,15 +268,15 @@
 
 							<ul>
 
-								<li class="date"><a href="event-single.html" title=""><i class="fa fa-calendar-o"></i> 28, April 2008</a></li>
+								<li class="date"><a class="pointer load_page" data-url = "/frontend/event/detail"  title=""><i class="fa fa-calendar-o"></i> 28, April 2008</a></li>
 
-								<li class="time"><a href="event-single.html" title=""><i class="fa fa-clock-o"></i> 8:00 PM</a></li>
+								<li class="time"><a class="pointer load_page" data-url = "/frontend/event/detail"  title=""><i class="fa fa-clock-o"></i> 8:00 PM</a></li>
 
 							</ul>
 
 						</div>
 
-						<h3><a href="event-single.html" title="">chool of the Prophets</a></h3>
+						<h3><a class="pointer load_page" data-url = "/frontend/event/detail"  title="">chool of the Prophets</a></h3>
 
 						<span><i class="fa fa-map-marker"></i> 654 Kingsland Rd, Big House</span>
 
@@ -300,15 +300,15 @@
 
 							<ul>
 
-								<li class="date"><a href="event-single.html" title=""><i class="fa fa-calendar-o"></i> 28, April 2008</a></li>
+								<li class="date"><a class="pointer load_page" data-url = "/frontend/event/detail"  title=""><i class="fa fa-calendar-o"></i> 28, April 2008</a></li>
 
-								<li class="time"><a href="event-single.html" title=""><i class="fa fa-clock-o"></i> 8:00 PM</a></li>
+								<li class="time"><a class="pointer load_page" data-url = "/frontend/event/detail"  title=""><i class="fa fa-clock-o"></i> 8:00 PM</a></li>
 
 							</ul>
 
 						</div>
 
-						<h3><a href="event-single.html" title="">INSPIRE</a></h3>
+						<h3><a class="pointer load_page" data-url = "/frontend/event/detail"  title="">INSPIRE</a></h3>
 
 						<span><i class="fa fa-map-marker"></i> 654 Kingsland Rd, Big House</span>
 
@@ -330,15 +330,15 @@
 
 							<ul>
 
-								<li class="date"><a href="event-single.html" title=""><i class="fa fa-calendar-o"></i> 28, April 2008</a></li>
+								<li class="date"><a class="pointer load_page" data-url = "/frontend/event/detail"  title=""><i class="fa fa-calendar-o"></i> 28, April 2008</a></li>
 
-								<li class="time"><a href="event-single.html" title=""><i class="fa fa-clock-o"></i> 8:00 PM</a></li>
+								<li class="time"><a class="pointer load_page" data-url = "/frontend/event/detail"  title=""><i class="fa fa-clock-o"></i> 8:00 PM</a></li>
 
 							</ul>
 
 						</div>
 
-						<h3><a href="event-single.html" title="">A Holisitic Approac Nurtu</a></h3>
+						<h3><a class="pointer load_page" data-url = "/frontend/event/detail"  title="">A Holisitic Approac Nurtu</a></h3>
 
 						<span><i class="fa fa-map-marker"></i> 654 Kingsland Rd, Big House</span>
 
@@ -362,15 +362,15 @@
 
 							<ul>
 
-								<li class="date"><a href="event-single.html" title=""><i class="fa fa-calendar-o"></i> 28, April 2008</a></li>
+								<li class="date"><a class="pointer load_page" data-url = "/frontend/event/detail"  title=""><i class="fa fa-calendar-o"></i> 28, April 2008</a></li>
 
-								<li class="time"><a href="event-single.html" title=""><i class="fa fa-clock-o"></i> 8:00 PM</a></li>
+								<li class="time"><a class="pointer load_page" data-url = "/frontend/event/detail"  title=""><i class="fa fa-clock-o"></i> 8:00 PM</a></li>
 
 							</ul>
 
 						</div>
 
-						<h3><a href="event-single.html" title="">A Holisitic Approac Nurtu</a></h3>
+						<h3><a class="pointer load_page" data-url = "/frontend/event/detail"  title="">A Holisitic Approac Nurtu</a></h3>
 
 						<span><i class="fa fa-map-marker"></i> 654 Kingsland Rd, Big House</span>
 
@@ -412,3 +412,20 @@
 
 	</div><!-- PAGINATION -->
 </div>
+<script>
+	$('.load_page').off('click').on('click', function(e){
+		let url = $(this).attr('data-url');
+		$.ajax({
+		    method:'get',
+		    url:url,
+		    success:function(data)
+		    {
+		      	$('#section-wrapper').html(data);
+		    },
+		    error:function(e)
+		    {
+		      	alert('dsadad');
+		    }
+	   });
+	});
+</script>

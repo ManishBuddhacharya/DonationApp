@@ -4,13 +4,13 @@
 
 	<div class="container"> 
 
-		<h1>Organization Structure <span>PAGE</span></h1>
+		<h1>Event <span>Detail</span></h1>
 
 		<ul>
 
 			<li><a href="index.html" title="">Home</a></li>
 
-			<li><a href="blog.html" title="">Organization Structure</a></li>
+			<li><a href="sermons.html" title="">Event</a></li>
 
 		</ul>
 
