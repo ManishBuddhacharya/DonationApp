@@ -17,19 +17,54 @@ class LoginTest extends TestCase
      *
      * @return void
      */
-    public function testLoginTest(){
-    	$hashed = Hash::make('test', [
-					    'rounds' => 12
-					]);
-    	// $response = $this->call('POST', '/login'[
-    	// 	'email' => 'test@test.com',
-    	// 	'password' => $hashed
-    	// ]);
-    	// $this->assertTrue(true);
-    	$response = $this->call('POST', '')
-    	$this->assertEquals(200, $response->getStatusCode());
-    	// $this->assertEquals('auth.login', $response->original->name());
+
+    /**
+     * The login form can be displayed.
+     *
+     * @return void
+     */
+
+    public function testLoginFormDisplayed()
+    {
+        $response = $this->get('/login');
+
+        $response->assertStatus(200);
     }
+
+    /**
+     * A valid user can be logged in.
+     *
+     * @return void
+     */
+
+    public function testLoginAValidUser()
+    {
+        $user = factory(User::class)->create();
+
+        $response = $this->post('/login', [
+            'email' => $user->email,
+            'password' => 'password'
+        ]);
+
+        $response->assertStatus(302);
+
+        $this->assertAuthenticatedAs($user);
+    }
+
+
+
+    // public function testLoginTest(){
+    // 	$hashed = Hash::make('test', [
+				// 	    'rounds' => 12
+				// 	]);
+    // 	$response = $this->call('POST', '/login'[
+    // 		'email' => 'test@test.com',
+    // 		'password' => $hashed
+    // 	]);
+    // 	// $this->assertTrue(true);
+    // 	$this->assertEquals(200, $response->getStatusCode());
+    // 	// $this->assertEquals('auth.login', $response->original->name());
+    // }
 
     // public function testRegisterTest()
     // {
