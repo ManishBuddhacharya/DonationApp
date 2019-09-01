@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('index');
 });
+
+
+Route::get('/frontend/story', function () {
+    return view('layouts.frontend.pages.organization.organization');
+});
+
+Auth::routes(['verify' => true]);
+
+Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+

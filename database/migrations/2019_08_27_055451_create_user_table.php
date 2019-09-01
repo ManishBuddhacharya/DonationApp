@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreateUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -20,6 +20,19 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            
+            // $table->integer('type_id')->unsigned()->nullable();
+
+            // $table->foreign('type_id')
+            //       ->references('id')
+            //       ->on('user_type');
+
+            $table->boolean('is_active')->default(0);
+            $table->boolean('is_deleted')->default(0);
+            $table->integer('useru_id')->nullable();
+            $table->integer('userd_id')->nullable();
+            $table->timestamp('deleted_at')->nullable();
+
             $table->timestamps();
         });
     }
@@ -31,6 +44,8 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('users');
+        Schema::enableForeignKeyConstraints();
     }
 }
