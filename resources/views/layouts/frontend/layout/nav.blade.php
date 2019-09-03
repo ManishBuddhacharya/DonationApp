@@ -2,7 +2,7 @@
 	<div class="topbar">
 		<div class="container">
 			<div class="header-timer">
-				<p>Upcoming Prayers:</p>
+				<p>Upcoming Event:</p>
 				<ul class="headercounter">
 					<li> <span class="days">00</span>
 					<p class="days_ref">DAYS</p>
@@ -21,11 +21,10 @@
 
 			<p><i class="fa fa-mobile"></i> 24/7 Support: 123-456-7890</p><!--- CONTACT -->
 			<p><i class="fa fa-envelope"></i>  Youremail@yourdomain.com</p><!--- EMAIL -->
-			<ul class="social-media">
-				<li><a title="" href="#"><i class="fa fa-linkedin"></i></a></li>
-				<li><a title="" href="#"><i class="fa fa-google-plus"></i></a></li>
-				<li><a title="" href="#"><i class="fa fa-twitter"></i></a></li>
-				<li><a title="" href="#"><i class="fa fa-facebook"></i></a></li>
+
+			<p class="mr-10 pointer load_page" data-url = "/frontend/login"><i class="fa fa-user pl-15" style="border-left: 2px solid #ccc; "></i> <span style="border-right: 2px solid #ccc;" class="pr-10">Login</span></p><!--- Login -->
+			<p class="mr-10 pointer load_page" data-url = "/frontend/signup" ><i class="fa fa-plus"></i>  Sign up</p><!--- Signup -->
+			
 			</ul>
 		</div>
 	</div><!--- TOP BAR -->
@@ -38,15 +37,15 @@
 
 			<ul>
 
-				<li><a class="pointer load_page" data-url="/" title="">Home</a></li>
+				<li><a href="/" title="">Home</a></li>
 				<li><a class="pointer load_page" data-url="/frontend/organization" title="">Organization Structure</a></li>
-				<li><a class="pointer load_page" data-url="/frontend/story" title="">Causes</a></li>
+				<li><a class="pointer load_page" data-url="/frontend/cause" title="">Causes</a></li>
 				<li><a class="pointer load_page" data-url="/frontend/event" title="">Events</a></li>
-				<li><a class="pointer load_page" data-url="/frontend/stories" title="">Stories</a></li>
+				<li><a class="pointer load_page" data-url="/frontend/story" title="">Stories</a></li>
 				<li class="menu-item-has-children"><a href="#" title="">Media</a>
 					<ul>
 						<li><a class="pointer load_page" data-url="/frontend/news" title="">News</a></li>
-						<li><a class="pointer load_page" data-url="/frontend/gallary" title="">Gallary</a></li>
+						<li><a class="pointer load_page" data-url="/frontend/gallery" title="">Gallary</a></li>
 				    </ul>
 				</li>
 

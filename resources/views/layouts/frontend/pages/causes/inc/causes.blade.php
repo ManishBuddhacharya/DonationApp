@@ -12,7 +12,7 @@
 
 				<img src="assets/images/resource/sermon1.jpg" alt="">
 
-				<a href="sermon-single.html" title=""><i class="fa fa-link"></i></a>
+				<a class="pointer load_page" data-url = "/frontend/cause/detail"  title=""><i class="fa fa-link"></i></a>
 
 			</div>
 
@@ -20,7 +20,7 @@
 
 		<div class="col-md-9">
 
-			<h3><a href="sermon-single.html" title="">Global Warning and the End of the Age</a></h3>
+			<h3><a class="pointer load_page" data-url = "/frontend/cause/detail" title="">Global Warning and the End of the Age</a></h3>
 
 			<span><i class="fa fa-calendar-o"></i> November 01, 2014</span>
 
@@ -64,7 +64,7 @@
 
 				<img src="assets/images/resource/sermon2.jpg" alt="">
 
-				<a href="sermon-single.html" title=""><i class="fa fa-link"></i></a>
+				<a class="pointer load_page" data-url = "/frontend/cause/detail"  title=""><i class="fa fa-link"></i></a>
 
 			</div>
 
@@ -72,7 +72,7 @@
 
 		<div class="col-md-9">
 
-			<h3><a href="sermon-single.html" title="">The School of Discipleship</a></h3>
+			<h3><a class="pointer load_page" data-url = "/frontend/cause/detail"  title="">The School of Discipleship</a></h3>
 
 			<span><i class="fa fa-calendar-o"></i> November 01, 2014</span>
 
@@ -116,7 +116,7 @@
 
 				<img src="assets/images/resource/sermon3.jpg" alt="">
 
-				<a href="sermon-single.html" title=""><i class="fa fa-link"></i></a>
+				<a class="pointer load_page" data-url = "/frontend/cause/detail"  title=""><i class="fa fa-link"></i></a>
 
 			</div>
 
@@ -124,7 +124,7 @@
 
 		<div class="col-md-9">
 
-			<h3><a href="sermon-single.html" title="">Creation: Life in the Garden</a></h3>
+			<h3><a class="pointer load_page" data-url = "/frontend/cause/detail"  title="">Creation: Life in the Garden</a></h3>
 
 			<span><i class="fa fa-calendar-o"></i> November 01, 2014</span>
 
@@ -168,7 +168,7 @@
 
 				<img src="assets/images/resource/sermon4.jpg" alt="">
 
-				<a href="sermon-single.html" title=""><i class="fa fa-link"></i></a>
+				<a class="pointer load_page" data-url = "/frontend/cause/detail"  title=""><i class="fa fa-link"></i></a>
 
 			</div>
 
@@ -176,7 +176,7 @@
 
 		<div class="col-md-9">
 
-			<h3><a href="sermon-single.html" title="">Creation: A Tale of Two Trees</a></h3>
+			<h3><a class="pointer load_page" data-url = "/frontend/cause/detail"  title="">Creation: A Tale of Two Trees</a></h3>
 
 			<span><i class="fa fa-calendar-o"></i> November 01, 2014</span>
 
@@ -220,7 +220,7 @@
 
 				<img src="assets/images/resource/sermon5.jpg" alt="">
 
-				<a href="sermon-single.html" title=""><i class="fa fa-link"></i></a>
+				<a class="pointer load_page" data-url = "/frontend/cause/detail"  title=""><i class="fa fa-link"></i></a>
 
 			</div>
 
@@ -228,7 +228,7 @@
 
 		<div class="col-md-9">
 
-			<h3><a href="sermon-single.html" title="">Family Matters</a></h3>
+			<h3><a class="pointer load_page" data-url = "/frontend/cause/detail"  title="">Family Matters</a></h3>
 
 			<span><i class="fa fa-calendar-o"></i> November 01, 2014</span>
 
@@ -272,7 +272,7 @@
 
 				<img src="assets/images/resource/sermon1.jpg" alt="">
 
-				<a href="sermon-single.html" title=""><i class="fa fa-link"></i></a>
+				<a class="pointer load_page" data-url = "/frontend/cause/detail"  title=""><i class="fa fa-link"></i></a>
 
 			</div>
 
@@ -280,7 +280,7 @@
 
 		<div class="col-md-9">
 
-			<h3><a href="sermon-single.html" title="">Global Warning and the End of the Age</a></h3>
+			<h3><a class="pointer load_page" data-url = "/frontend/cause/detail"  title="">Global Warning and the End of the Age</a></h3>
 
 			<span><i class="fa fa-calendar-o"></i> November 01, 2014</span>
 
@@ -324,7 +324,7 @@
 
 				<img src="assets/images/resource/sermon2.jpg" alt="">
 
-				<a href="sermon-single.html" title=""><i class="fa fa-link"></i></a>
+				<a class="pointer load_page" data-url = "/frontend/cause/detail"  title=""><i class="fa fa-link"></i></a>
 
 			</div>
 
@@ -332,7 +332,7 @@
 
 		<div class="col-md-9">
 
-			<h3><a href="sermon-single.html" title="">The School of Discipleship</a></h3>
+			<h3><a class="pointer load_page" data-url = "/frontend/cause/detail"  title="">The School of Discipleship</a></h3>
 
 			<span><i class="fa fa-calendar-o"></i> November 01, 2014</span>
 
@@ -376,7 +376,7 @@
 
 				<img src="assets/images/resource/sermon3.jpg" alt="">
 
-				<a href="sermon-single.html" title=""><i class="fa fa-link"></i></a>
+				<a class="pointer load_page" data-url = "/frontend/cause/detail"  title=""><i class="fa fa-link"></i></a>
 
 			</div>
 
@@ -384,7 +384,7 @@
 
 		<div class="col-md-9">
 
-			<h3><a href="sermon-single.html" title="">Creation: Life in the Garden</a></h3>
+			<h3><a class="pointer load_page" data-url = "/frontend/cause/detail"  title="">Creation: Life in the Garden</a></h3>
 
 			<span><i class="fa fa-calendar-o"></i> November 01, 2014</span>
 
@@ -428,7 +428,7 @@
 
 				<img src="assets/images/resource/sermon4.jpg" alt="">
 
-				<a href="sermon-single.html" title=""><i class="fa fa-link"></i></a>
+				<a class="pointer load_page" data-url = "/frontend/cause/detail"  title=""><i class="fa fa-link"></i></a>
 
 			</div>
 
@@ -436,7 +436,7 @@
 
 		<div class="col-md-9">
 
-			<h3><a href="sermon-single.html" title="">Creation: A Tale of Two Trees</a></h3>
+			<h3><a class="pointer load_page" data-url = "/frontend/cause/detail"  title="">Creation: A Tale of Two Trees</a></h3>
 
 			<span><i class="fa fa-calendar-o"></i> November 01, 2014</span>
 
@@ -480,7 +480,7 @@
 
 				<img src="assets/images/resource/sermon5.jpg" alt="">
 
-				<a href="sermon-single.html" title=""><i class="fa fa-link"></i></a>
+				<a class="pointer load_page" data-url = "/frontend/cause/detail"  title=""><i class="fa fa-link"></i></a>
 
 			</div>
 
@@ -488,7 +488,7 @@
 
 		<div class="col-md-9">
 
-			<h3><a href="sermon-single.html" title="">Family Matters</a></h3>
+			<h3><a class="pointer load_page" data-url = "/frontend/cause/detail"  title="">Family Matters</a></h3>
 
 			<span><i class="fa fa-calendar-o"></i> November 01, 2014</span>
 
@@ -546,4 +546,20 @@
 
 </div><!-- PAGINATION -->	
 </div>
-				
+<script>
+	$('.load_page').off('click').on('click', function(e){
+		let url = $(this).attr('data-url');
+		$.ajax({
+		    method:'get',
+		    url:url,
+		    success:function(data)
+		    {
+		      	$('#section-wrapper').html(data);
+		    },
+		    error:function(e)
+		    {
+		      	alert('dsadad');
+		    }
+	   });
+	});
+</script>				
