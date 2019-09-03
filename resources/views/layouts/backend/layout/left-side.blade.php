@@ -7,19 +7,19 @@
               <li class="divider">Menu</li>
               <li class="parent"><a href="#"><i class="icon mdi mdi-home"></i><span>Home</span></a>
                 <ul class="sub-menu">
-                  <li><a href="pages-blank.html">Blank Page</a>
+                  <li class="active"><a href="pages-blank.html">Dashboard</a>
                   </li>
-                  <li class="active"><a href="index.html">Blank Page Header</a>
+                  <li ><a class="pointer load_page" data-url="/backend/cause">Cause</a>
                   </li>
-                  <li><a href="pages-blank-aside.html">Page Aside</a>
+                  <li><a class="pointer load_page" data-url="/backend/event" >Event</a>
                   </li>
-                  <li><a href="pages-login.html">Login</a>
+                  <li><a class="pointer load_page" data-url="/backend/story">Story</a>
                   </li>
-                  <li><a href="pages-404.html">404 Page</a>
+                  <li><a class="pointer load_page" data-url="/backend/gallary">Gallary</a>
                   </li>
-                  <li><a href="pages-sign-up.html">Sign Up</a>
+                  <li><a class="pointer load_page" data-url="/backend/organization">Organization Structure</a>
                   </li>
-                  <li><a href="pages-forgot-password.html">Forgot Password</a>
+                  <li><a class="pointer load_page" data-url="/backend/setting" >Setting</a>
                   </li>
                 </ul>
               </li>
@@ -27,11 +27,23 @@
           </div>
         </div>
       </div>
-      <div class="progress-widget">
-        <div class="progress-data"><span class="progress-value">60%</span><span class="name">Current Project</span></div>
-        <div class="progress">
-          <div style="width: 60%;" class="progress-bar progress-bar-primary"></div>
-        </div>
-      </div>
     </div>
  </div>
+
+ <script>
+   $('.load_page').off('click').on('click', function(e){
+    let url = $(this).attr('data-url');
+    $.ajax({
+        method:'get',
+        url:url,
+        success:function(data)
+        {
+            $('#section-wrapper').html(data);
+        },
+        error:function(e)
+        {
+            alert('dsadad');
+        }
+     });
+  });
+ </script>

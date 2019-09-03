@@ -7,6 +7,7 @@
 
 			<div class="checkout-content mb-15" style="display: block;">
 
+
 				<form method="POST" action="{{ route('register') }}">
 
 					<div class="row">
@@ -19,18 +20,22 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
+
 						</div>
 
 						<div class="col-md-6 field">
 							<label>Address</label>
+
 							<input type="text" class="form-control" name="address">
 							@error('address')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
+
 						</div>
 						<div class="col-md-6 field">
+
 							<label>Phone No</label>
 							<input type="text" class="form-control" name="phone">
 							@error('phone')
@@ -39,6 +44,7 @@
                                 </span>
                             @enderror
 						</div>
+
 
 
 						<div class="col-md-12 field">
@@ -52,6 +58,7 @@
 						</div>
 
 						<div class="col-md-6 field">
+
 							<label>{{ __('Password') }}</label>
 							<input type="Password" class="form-control" name="password">
 							@error('password')
@@ -59,16 +66,21 @@
 	                                <strong>{{ $message }}</strong>
 	                            </span>
 	                        @enderror
+
 						</div>
 
 						<div class="col-md-6 field">
 							<label>Confirm Password</label>
+
 							<input type="Password" class="form-control" name="password_confirmation">
+
 
 						</div>
 						<div class="widget col-md-12">
 							<div class="quick-message">
+
 								<button class="btn btn-md submit" type="submit" id="submit" style="background: #2d695c; color: #fff">Register</button>
+
 							</div>
 						</div>
 					</div>
@@ -93,4 +105,5 @@
 			$(this).parent().find('label').addClass('fieldTransformBack');
 		}
 	});
+
 </script>
