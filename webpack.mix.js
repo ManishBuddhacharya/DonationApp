@@ -77,6 +77,7 @@ mix.styles([
     'resources/assets/lib/perfect-scrollbar/css/perfect-scrollbar.min.css',
     'resources/assets/lib/material-design-icons/css/material-design-iconic-font.min.css',
     'resources/assets/css/style.css',
+    'resources/css/donation.css',
     ],'public/css/backend.css'); 
  
 mix.scripts([
