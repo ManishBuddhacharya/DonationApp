@@ -33,6 +33,7 @@ mix.styles([
     'resources/css/donation.css',
     'node_modules/magnific-popup/dist/magnific-popup.css',
     'node_modules/dropzone/dist/dropzone.css',
+    'node_modules/toastr/build/toastr.min.css',
 ], 'public/css/all.css');
 
 mix.scripts([
@@ -63,6 +64,8 @@ mix.scripts([
     'node_modules/dropzone/dist/dropzone.js',
     'resources/js/OrgChart.js',
     'resources/js/custom.js',
+    'resources/js/request.js',
+    'node_modules/toastr/build/toastr.min.js',
 ], 'public/js/all.js');
 
 
