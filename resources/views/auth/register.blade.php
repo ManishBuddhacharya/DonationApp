@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -143,4 +143,15 @@
         </div>
     </div>
 </div>
-@endsection
+ --}}
+@include('layouts.frontend.layout.header')
+@include('layouts.frontend.layout.nav')
+<div id="section-wrapper">
+@include('layouts.frontend.pages.signup.inc.header')
+
+<div class="container">
+    @include('layouts.frontend.pages.signup.inc.signup')
+</div>
+@include('layouts.frontend.layout.footer')
+
+{{-- @endsection --}}
