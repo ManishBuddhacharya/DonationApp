@@ -3,7 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Files;
+use App\User;
+use App\Comment;
 
 class Cause extends Model
 {
@@ -17,8 +18,14 @@ class Cause extends Model
     protected $table = 'causes';
     public $timestamps = false;
 
-    public function file(){
-        return Files::where('table', 'Cause')->where('table_id', $this->id);
+    public function user(){
+        return $user = User::where('id', $this->userc_id)->first();
+        
+    }
+
+    public function causeComments(){
+        $comments = Comment::where('table', 'Cause')->where('table_id', $this->id)->get();
+        return $comments;
     }
 
 }

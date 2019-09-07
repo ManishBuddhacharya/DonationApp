@@ -17,9 +17,9 @@ class CreateFilesTable extends Migration
             $table->bigIncrements('id');
             $table->string('type')->nullable();
             $table->string('table')->nullable();
-
             $table->integer('table_id')->unsignedBigInteger();
-            $table->text('file_name');
+            $table->string('file_name');
+            $table->integer('userc_id')->unsignedBigInteger();
             $table->integer('useru_id')->unsignedBigInteger()->nullable();
             $table->integer('userd_id')->nullable();
             $table->timestamp('deleted_at')->nullable();

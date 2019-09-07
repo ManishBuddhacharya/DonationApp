@@ -17880,6 +17880,20 @@ h4.new-title a:hover,
     padding: 15px 20px 15px 60px;
     position: relative;
 }
+
+.timeline-content:before {
+    content: none !important;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 37.5px;
+    left: -5px;
+}
 /* Magnific Popup CSS */
 .mfp-bg {
   top: 0;

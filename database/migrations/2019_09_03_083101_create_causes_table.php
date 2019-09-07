@@ -16,8 +16,10 @@ class CreateCausesTable extends Migration
         Schema::create('causes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
-            $table->integer('category_id')->unsignedBigInteger();
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->text('content');
+            $table->integer('userc_id')->unsignedBigInteger();
             $table->boolean('is_deleted')->default(false);
             $table->integer('goal');
             $table->timestamps();

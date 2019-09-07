@@ -45,8 +45,9 @@
       </div>
       <div class="col-md-4">
         <div class="form-group">
-          <label>category</label>
+          <label>Category</label>
           <select name="category_id" class="select2">
+            <option value="{{$cause->id}}">{{$cause->name}}</option>
           </select>
         </div>
       </div>
@@ -131,12 +132,12 @@
 
   $(document).ready(function() {
     $('.select2').select2({
-      placeholder: 'Select Position',
+      placeholder: 'Select Category',
       width: '100%',
       height:"20px",
       ajax: {
           method: 'POST',
-          url: 'http://localhost:3000/position/all',
+          url: '/backend/categories',
           processResults: function(data) {
               let res = [];
               $.each(data, function(i, obj) {

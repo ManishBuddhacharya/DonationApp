@@ -16,11 +16,11 @@
         <div class="panel panel-border">
           <div class="panel-heading panel-heading-divider">{{$cause->title}}
             <div class="tools dropdown">
-              <span class="icon mdi mdi-edit mr-5 cause_edit" data-url="/backend/cause/edit/{{$cause->id}}" style="color: #4285f4;"></span>
-              <span class="icon mdi mdi-delete mr-5 cause_delete" data-url="/backend/cause/delete/{{$cause->id}}" style="color: #e72919;"></span>
-            </div><span class="panel-subtitle">Created by</span>
+              <span class="icon mdi mdi-edit mr-5 cause_edit pointer" data-url="/backend/cause/edit/{{$cause->id}}" style="color: #4285f4;"></span>
+              <span class="icon mdi mdi-delete mr-5 cause_delete pointer" data-url="/backend/cause/delete/{{$cause->id}}" style="color: #e72919;"></span>
+            </div><span class="panel-subtitle">Created by {{$cause->user()->fname}}</span>
           </div>
-          <div class="panel-body">
+          <div class="panel-body detail_view" data-url="/backend/cause/detail/{{$cause->id}}">
             <div class="col-md-4" >
               <img src="{{"/images/".$cause->file_name?:'/img/gallery/img11.jpg'}}" class="img img-thumbnail width-100" style="height: 210px;">
             </div>
@@ -45,6 +45,23 @@
         success:function(data)
         {
             $('#add_cause').hide();
+            $('#changable').html(data);
+        },
+        error:function(e)
+        {
+            alert('dsadad');
+        }
+     });
+  });
+
+  $('.detail_view').off('click').on('click', function(e){
+    e.preventDefault();
+    let url = $(this).attr('data-url');
+    $.ajax({
+        method:'get',
+        url:url,
+        success:function(data)
+        {
             $('#changable').html(data);
         },
         error:function(e)
@@ -122,4 +139,5 @@
         }
      });
   }
+
 </script>

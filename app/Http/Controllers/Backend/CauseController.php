@@ -34,6 +34,11 @@ class CauseController extends Controller
         return view($this->layout.'addCause');
     }
 
+    public function causeDonation()
+    {
+        return view($this->layout.'donation');
+    }
+
     public function insertCause(Request $request)
     {
         $cause = new Cause;
@@ -41,7 +46,8 @@ class CauseController extends Controller
         $cause->title = $request->title;
         $cause->goal = $request->goal;
         $cause->content = $request->content;
-        $cause->category_id = 1;
+        $cause->category_id = $request->category_id;
+        $cause->userc_id = auth()->user()->id;
 
         $cause->save();
 
@@ -53,6 +59,7 @@ class CauseController extends Controller
     	$file->table = "Cause";
     	$file->type = "image";
     	$file->table_id = $cause->id;
+    	$file->userc_id = auth()->user()->id;
     	$file->save();
 
     	return $cause;
@@ -104,7 +111,7 @@ class CauseController extends Controller
         $cause->title = $request->title?:$cause->title;
         $cause->goal = $request->goal?:$cause->goal;
         $cause->content = $request->content?:$cause->content;
-        $cause->category_id = 1;
+        $cause->category_id = $request->category_id?:$cause->category_id;
 
         $cause->update();
 
@@ -135,9 +142,36 @@ class CauseController extends Controller
 	    }
 	}
 
-    public function causeDetail()
+	/*Categories*/
+	public function fetchCategories(Request $req)
     {
-        return view($this->layout.'detail');
+        $data = DB::table('categories')
+                ->where('name', 'like', $req->term.'%')
+                ->get();
+
+        if (!is_null($req->terms)){
+            $data[] = ['id' => $req->terms, 'text' => $req->terms ];
+        }
+
+        return response()->json($data);
+    }
+    
+
+    /*Donation*/
+    public function donation(Request $request)
+    {
+        \Stripe\Stripe::setApiKey ( 'sk_test_jSydx2o1jNo3Je8dPelgZOPM00EM7cSJBQ' );
+        try {
+            $data = \Stripe\Charge::create ( array (
+                    "amount" => $request->amount * 100,
+                    "currency" => "usd",
+                    "source" => $request->stripeToken, // obtained with Stripe.js
+                    "description" => "Donation payment." 
+            ) );
+            return response()->json(['message'=>'Donation Successful'],200);
+        } catch ( \Exception $e ) {
+            return response()->json(['message'=>'Something went wrong'],500);
+        }
     }
 
 }
