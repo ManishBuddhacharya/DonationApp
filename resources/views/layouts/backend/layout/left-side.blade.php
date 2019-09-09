@@ -7,7 +7,7 @@
               <li class="divider">Menu</li>
               <li class="parent"><a href="#"><i class="icon mdi mdi-home"></i><span>Home</span></a>
                 <ul class="sub-menu">
-                  <li class="active"><a href="pages-blank.html">Dashboard</a>
+                  <li class="active"><a class="pointer load_page" data-url="/backend/dashboard">Dashboard</a>
                   </li>
                   <li ><a class="pointer load_page" data-url="/backend/cause">Cause</a>
                   </li>
@@ -32,6 +32,12 @@
 
  <script>
    $('.load_page').off('click').on('click', function(e){
+    var nthis= $(this);
+    $('.load_page').parent().parent().find('li').each(function(){
+        $('.load_page').parent().removeClass("active");
+    });
+    nthis.parent().addClass('active');
+
     let url = $(this).attr('data-url');
     $.ajax({
         method:'get',
@@ -46,4 +52,5 @@
         }
      });
   });
- </script>
+
+</script>

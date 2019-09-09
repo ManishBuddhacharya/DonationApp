@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href="{{asset('css/backend.css')}}" type="text/css"/>
       <script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
+      <script type="text/javascript" src="{{asset('js/backend.js')}}"></script>
   </head>
   <body>
       @yield('body')
