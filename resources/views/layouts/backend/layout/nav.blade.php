@@ -4,11 +4,11 @@
     </div>
     <div class="be-right-navbar">
       <ul class="nav navbar-nav navbar-right be-user-nav">
-        <li class="dropdown"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle"><img src="{{asset('img/avatar.png')}}" alt="Avatar"><span class="user-name">Túpac Amaru</span></a>
+        <li class="dropdown"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle"><img src="{{asset('img/avatar.png')}}" alt="Avatar"><span class="user-name">{{auth()->user()->fname}}</span></a>
           <ul role="menu" class="dropdown-menu">
             <li>
               <div class="user-info">
-                <div class="user-name">Túpac Amaru</div>
+                <div class="user-name">{{auth()->user()->fname}}</div>
                 <div class="user-position online">Available</div>
               </div>
             </li>
@@ -24,7 +24,6 @@
           </ul>
         </li>
       </ul>
-      <div class="page-title"><span>Blank Page</span></div>
       <ul class="nav navbar-nav navbar-right be-icons-nav">
         <li class="dropdown"><a href="#" role="button" aria-expanded="false" class="be-toggle-right-sidebar"><span class="icon mdi mdi-settings"></span></a></li>
         <li class="dropdown"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle"><span class="icon mdi mdi-notifications"></span><span class="indicator"></span></a>

@@ -72,12 +72,25 @@ mix.scripts([
 /*--------------
     Backend
  ---------------*/
+mix.scripts([
+    'resources/js/jquery.1.10.2.js',
+    'resources/js/custom.js',
+    'resources/js/request.js',
+    'node_modules/toastr/build/toastr.min.js',
+    'node_modules/select2/dist/js/select2.min.js',
+    'node_modules/summernote/dist/summernote.min.js',
+    'node_modules/sweetalert2/dist/sweetalert2.min.js',
+], 'public/js/backend.js');
 
 mix.styles([
+    'resources/css/font-awesome.css',
     'resources/assets/lib/perfect-scrollbar/css/perfect-scrollbar.min.css',
     'resources/assets/lib/material-design-icons/css/material-design-iconic-font.min.css',
     'resources/assets/css/style.css',
     'resources/css/donation.css',
+    'node_modules/select2/dist/css/select2.min.css',
+    'node_modules/summernote/dist/summernote.css',
+    'node_modules/sweetalert2/dist/sweetalert2.min.css',
     ],'public/css/backend.css'); 
  
 mix.scripts([
