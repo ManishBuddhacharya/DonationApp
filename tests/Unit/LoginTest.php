@@ -20,16 +20,20 @@ class LoginTest extends TestCase
 
     public function testRegisterTest()
     {
-    	// $hashed = Hash::make('test', [
-					//     'rounds' => 12
-					// ]);
-    	// $register = User::create([
-    	// 				'fname' => 'Aslan',
-    	// 				'lname' => 'Test',
-    	// 				'email'=> 'test@gmail.com',
-    	// 				'password' => $hashed,
-					// ]);
-    	// $this->assertEquals('aslan', $register->name);
+    	$hashed = Hash::make('test', [
+					    'rounds' => 12
+					]);
+    	$register = User::create([
+    					'fname' => 'Aslan',
+    					'mname' => 'test',
+    					'lname' => 'Test',
+    					'address' => 'Kapan',
+    					'phone' => '9861258963',
+    					'username' => 'test',
+    					'email'=> 'test@test.com',
+    					'password' => $hashed,
+					]);
+    	$this->assertEquals('aslan', $register->fname);
     }
 
 
