@@ -18,7 +18,7 @@
             <div class="tools dropdown">
               <span class="icon mdi mdi-edit mr-5 cause_edit pointer" data-url="/backend/cause/edit/{{$cause->id}}" style="color: #4285f4;"></span>
               <span class="icon mdi mdi-delete mr-5 cause_delete pointer" data-url="/backend/cause/delete/{{$cause->id}}" style="color: #e72919;"></span>
-            </div><span class="panel-subtitle">Created by {{$cause->user()->fname}}</span>
+            </div><span class="panel-subtitle">Created by {{$cause->user()->name}}</span>
           </div>
           <div class="panel-body detail_view" data-url="/backend/cause/detail/{{$cause->id}}">
             <div class="col-md-4" >

@@ -14,7 +14,7 @@ class CommentController extends Controller
     {
         $comment = new Comment;
 
-        $comment->table = 'Cause';
+        $comment->table = $request->table;
         $comment->table_id = $id;
         $comment->comment = $request->comment;
         $comment->user_id = auth()->user()->id;

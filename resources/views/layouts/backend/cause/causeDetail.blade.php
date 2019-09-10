@@ -13,7 +13,7 @@
               <span class="icon mdi mdi-delete mr-5 cause_delete pull-right pointer" data-url="/backend/cause/delete/{{$cause->id}}" style="color: #e72919;"></span>
               <span class="icon mdi mdi-edit mr-5 cause_edit pull-right pointer" data-url="/backend/cause/edit/{{$cause->id}}" style="color: #4285f4;"></span>
             </div>
-            <div class="nick"><span class="mdi mdi-account"></span> {{$cause->user()->fname}} </div>
+            <div class="nick"><span class="mdi mdi-account"></span> {{$cause->user()->name}} </div>
           </div>
           <div class="row user-display-details">
             <div class="col-xs-4" style="border-right: 3px solid #ccc;">
@@ -60,7 +60,7 @@
 
                 <span class="icon mdi mdi-delete mr-5 comment_delete pointer" data-url="/comment/delete/{{$comment->id}}" style="color: #e72919; font-weight: bold; font-size: 18px;"></span>
               </span>
-              <span class="timeline-autor">{{$comment->user()->fname}} </span>
+              <span class="timeline-autor">{{$comment->user()->name}} </span>
               <p class="timeline-activity">{{$comment->created_at}}</p>
               <div class="timeline-summary">
                 <p>{{$comment->comment}}</p>
@@ -84,7 +84,7 @@
 
                   <span class="icon mdi mdi-delete mr-5 reply_delete pointer" data-url="/reply/delete/{{$reply->id}}" style="color: #e72919; font-weight: bold; font-size: 18px;"></span>
                 </span>
-                <span class="timeline-autor">{{$reply->user()->fname}} </span>
+                <span class="timeline-autor">{{$reply->user()->name}} </span>
                 <p class="timeline-activity">{{$reply->created_at}}</p>
                 <div class="timeline-summary">
                   <p>{{$reply->reply}}</p>
@@ -101,6 +101,7 @@
               <form id="form_comment">
                 <div class="timeline-header pt-0">
                   <textarea id="comment" class="width-100" rows="4" name="comment"></textarea>
+                  <input type="hidden" name="table" value="Cause">
                 </div>
                 <div id="comment_submit_btns">
                   <button class="btn btn-sm btn-primary pull-right mt-5 btn-rounded btn-space" id="btn_cmt">Comment</button>

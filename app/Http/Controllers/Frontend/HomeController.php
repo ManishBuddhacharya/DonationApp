@@ -5,6 +5,11 @@ namespace App\Http\Controllers\Frontend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use Illuminate\Support\Facades\DB;
+
+use App\Cause;
+use App\Files;
+
 class HomeController extends Controller
 {
     protected $layout;
@@ -55,12 +60,27 @@ class HomeController extends Controller
 
     public function cause()
     {
-        return view($this->layout.'causes.causes');
+        $causes = Cause::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Cause"'));
+                            $join->on('files.table_id','causes.id');
+                        })
+                        ->join('categories','categories.id','causes.category_id')
+                        ->select('files.*','categories.*','causes.*' )
+                        ->get();
+        return view($this->layout.'causes.causes', compact('causes'));
     }
 
-    public function causeDetail()
+    public function causeDetail($id)
     {
-        return view($this->layout.'causes.detail');
+        $cause = Cause::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Cause"'));
+                            $join->on('files.table_id','causes.id');
+                        })
+                        ->join('categories','categories.id','causes.category_id')
+                        ->select('files.*','categories.*','causes.*' )
+                        ->where('causes.id', $id)
+                        ->first();
+        return view($this->layout.'causes.detail', compact('cause'));
     }
 
     public function organization()

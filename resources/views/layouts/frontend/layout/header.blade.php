@@ -9,7 +9,15 @@
     <link rel="shortcut icon" href="{{ asset('assets/images/logo.png')}}">
     <title>{{ config('app.name') }}</title>
     <link rel="stylesheet" id="projectCSS" type="text/css" href="{{ asset('css/all.css')}}"/>
-<script src="{{ asset('js/all.js')}}" type="text/javascript"></script>
+    <script src="{{ asset('js/all.js')}}" type="text/javascript"></script>
+    <style type="text/css">
+        p{
+            font-family: open sans, sans-serif;
+        }
+        ul li, ul li a, ol li, ol li a {
+            font-family: open sans, sans-serif;
+        }
+    </style>
   </head>
-<body>
+<body style="font-family: open sans, sans-serif;">
 <div class="theme-layout">
