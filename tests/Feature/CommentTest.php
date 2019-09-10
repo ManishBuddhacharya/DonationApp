@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 
 use App\Model\Story;
+use App\Model\Comment;
 use App\User;
 
 use Tests\TestCase;
@@ -13,7 +14,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 class BackendCommentTest extends TestCase
 {
     /** @test */
-    public function cause_can_be_added_by_user(){
+    public function comment_can_be_added_by_user(){
         $this->withoutExceptionHandling();
         
         $this->actingAs(factory(User::class)->create());
@@ -67,7 +68,7 @@ class BackendCommentTest extends TestCase
     }
 
    /** @test **/
-    public function cause_can_be_delete_by_admin(){
+    public function user_can_be_delete_own_comment(){
         $this->withoutExceptionHandling();
         $this->actingAs(factory(User::class)->create());
 
