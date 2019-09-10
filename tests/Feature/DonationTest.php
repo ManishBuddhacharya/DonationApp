@@ -26,4 +26,18 @@ class DonationTest extends TestCase
         $response->assertOk();
         $this->assertCount(1,Donation::where('is_deleted',0));   
     }
+
+    /** @test */
+    public function user_can_view_donate_history(){
+        $this->withoutExceptionHandling();
+        
+        $this->actingAs(factory(User::class)->create());
+        $cause = factory(Cause::class)->create();
+
+        
+        $response = $this->get('cause/donate/'.$cause->id);
+
+        $response->assertOk();
+        );   
+    }
 }
