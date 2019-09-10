@@ -34,6 +34,8 @@ mix.styles([
     'node_modules/magnific-popup/dist/magnific-popup.css',
     'node_modules/dropzone/dist/dropzone.css',
     'node_modules/toastr/build/toastr.min.css',
+    'resources/assets/lib/material-design-icons/css/material-design-iconic-font.min.css',
+    'node_modules/sweetalert2/dist/sweetalert2.min.css',
 ], 'public/css/all.css');
 
 mix.scripts([
@@ -66,6 +68,7 @@ mix.scripts([
     'resources/js/custom.js',
     'resources/js/request.js',
     'node_modules/toastr/build/toastr.min.js',
+    'node_modules/sweetalert2/dist/sweetalert2.min.js',
 ], 'public/js/all.js');
 
 

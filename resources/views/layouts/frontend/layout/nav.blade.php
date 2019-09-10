@@ -84,19 +84,19 @@
 </header>
 
 <script>
-	// $('.load_page').off('click').on('click', function(e){
-	// 	let url = $(this).attr('data-url');
-	// 	$.ajax({
-	// 	    method:'get',
-	// 	    url:url,
-	// 	    success:function(data)
-	// 	    {
-	// 	      	$('#section-wrapper').html(data);
-	// 	    },
-	// 	    error:function(e)
-	// 	    {
-	// 	      	alert('dsadad');
-	// 	    }
-	//    });
-	// });
+	$('.load_page').off('click').on('click', function(e){
+		let url = $(this).attr('data-url');
+		$.ajax({
+		    method:'get',
+		    url:url,
+		    success:function(data)
+		    {
+		      	$('#section-wrapper').html(data);
+		    },
+		    error:function(e)
+		    {
+		      	alert('dsadad');
+		    }
+	   });
+	});
 </script>

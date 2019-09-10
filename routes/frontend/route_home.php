@@ -12,7 +12,7 @@ Route::get('/frontend/story/detail','HomeController@storyDetail');
 
 //cause
 Route::get('/frontend/cause','HomeController@cause');
-Route::get('/frontend/cause/detail','HomeController@causeDetail');
+Route::get('/frontend/cause/detail/{id}','HomeController@causeDetail');
 
 //event
 Route::get('/frontend/event','HomeController@event');
