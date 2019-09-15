@@ -18,9 +18,11 @@ class CreateStoryTable extends Migration
             
             $table->string('title');
             $table->text('content');
-
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->boolean('is_active')->default(0);
             $table->boolean('is_deleted')->default(0);
+            $table->integer('userc_id')->unsignedBigInteger();
             $table->integer('useru_id')->nullable();
             $table->integer('userd_id')->nullable();
             $table->timestamp('deleted_at')->nullable();

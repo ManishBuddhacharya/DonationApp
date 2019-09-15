@@ -1,42 +1,50 @@
 <style>
-  .select2-container--default .select2-selection--single .select2-selection__arrow b:after {
-      content: "";
-      font-family: 'Material Icons';
-      font-size: 25px;
-      font-weight: normal;
-      line-height: 46px;
-      color: #404040;
-  }
-  .select2-container--default .select2-selection--single .select2-selection__placeholder {
-      color: #999;
-      line-height: 30px;
-  }
-  .select2-container--default .select2-selection--single .select2-selection__rendered {
-      color: #444;
-      line-height: 28px !important;
-      height: 26px;
-  }
-  .select2-container--default .select2-selection--single .select2-selection__arrow {
-      height: 5px !important;
-      position: absolute;
-      top: 1px;
-      right: 1px;
-      width: 20px;
-  }
-</style>
+.select2-container--default .select2-selection--single .select2-selection__arrow b:after {
+    content: "";
+    font-family: 'Material Icons';
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 46px;
+    color: #404040;
+}
 
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+    color: #999;
+    line-height: 30px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #444;
+    line-height: 28px !important;
+    height: 26px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 5px !important;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    width: 20px;
+}
+</style>
 <div class="panel panel-default panel-border-color panel-border-color-primary">
   <div class="panel-heading panel-heading-divider">Edit Story</div>
   <div class="panel-body">
     <form id="form_story">
-
       <div class="col-md-12">
         <div class="form-group xs-pt-10">
           <label>Title</label>
           <input type="text" name="title" placeholder="Title" value="{{$story->title}}" class="input-xs form-control">
         </div>
       </div>
-
+      <div class="col-md-4">
+        <div class="form-group">
+          <label>Category</label>
+          <select name="category_id" class="select2">
+            <option value="{{$story->id}}">{{$story->name}}</option>
+          </select>
+        </div>
+      </div>
       <div class="col-md-4">
         <div class="form-group">
           <label class="d-block">File</label>
@@ -60,7 +68,6 @@
           </p>
         </div>
       </div>
-
     </form>
   </div>
 </div>
@@ -82,13 +89,16 @@
         'text/plain'
     ];
     return typeC.indexOf(type) > -1;
+
 }
+
   $('.inputfile').on('change', function (e) {
         var $input   = $( this ),
                 $label   = $input.next( 'label' ),
                 labelVal = $label.html();
         var fileName = '';
         fileName = e.target.value.split('\\').pop();
+
         if (fileName){
             $label.find('span').html(fileName);
             $(this).html(fileName);
@@ -104,14 +114,41 @@
             if(!valid)
             {
                 $('#invalidType').show();
-                $('#AddEcommerceCustomer').prop('disabled',true)
             }
             else {
                 $('#invalidType').hide();
-                $('#AddEcommerceCustomer').prop('disabled',false)
             }
+
         }
     });
+
+  $(document).ready(function() {
+    $('.select2').select2({
+      placeholder: 'Select Category',
+      width: '100%',
+      height:"20px",
+      ajax: {
+          method: 'POST',
+          url: '/backend/categories',
+          processResults: function(data) {
+              let res = [];
+              $.each(data, function(i, obj) {
+                  res.push({
+                      id: obj.id,
+                      text: obj.name
+                  });
+              });
+              return {
+                  results: res
+              };
+          }
+      }
+    });
+
+    $('#summernote').summernote({
+      height: 200,
+    });
+  });
 
   $('#cancel_story').off('click').on('click', function(e){
     e.preventDefault();
@@ -132,10 +169,11 @@
         console.log(data); 
         if (data.id) {
           story();
-          toastr.success("Story Updated Successfully.");
+          toastr.success("Cause Updated Successfully.");
         }    
     });
   });
+
   function story(){
     let url = '/backend/story';
     $.ajax({
@@ -147,8 +185,9 @@
         },
         error:function(e)
         {
-            console.log(e);
+            alert('dsadad');
         }
      });
   }
+
 </script>
