@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
 use App\Cause;
+use App\Story;
 use App\Files;
 
 class HomeController extends Controller
@@ -30,12 +31,27 @@ class HomeController extends Controller
 
     public function story()
     {
-        return view($this->layout.'stories.stories');
+        $stories = Story::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Story"'));
+                            $join->on('files.table_id','story.id');
+                        })
+                        ->join('categories','categories.id','story.category_id')
+                        ->select('files.*','categories.*','story.*' )
+                        ->get();
+        return view($this->layout.'stories.stories', compact('stories'));
     }
 
-    public function storyDetail()
+    public function storyDetail($id)
     {
-        return view($this->layout.'stories.detail');
+        $story = Story::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Story"'));
+                            $join->on('files.table_id','story.id');
+                        })
+                        ->join('categories','categories.id','story.category_id')
+                        ->select('files.*','categories.*','story.*' )
+                        ->where('story.id', $id)
+                        ->first();
+        return view($this->layout.'stories.detail', compact('story'));
     }
 
     public function news()

@@ -1,319 +1,32 @@
 <div class="col-md-8 column">
 
 	<div class="remove-ext">
-
+		@foreach($stories as $story)
 		<div class="col-md-6">
 
 			<div class="story">
 
 				<div class="image">
 
-					<img src="assets/images/resource/story1.jpg" alt="">
+					<img src="{{"/images/".$story->file_name?:'/img/gallery/img11.jpg'}}" alt="">
 
-					<a class="pointer load_page" data-url = "/frontend/story/detail"  title=""><i class="fa fa-link"></i></a>
-
-				</div>
-
-				<div class="story-detail">
-
-					<span class="date"><i class="fa fa-calendar-o"></i> NOV, 01, 2013</span>
-
-					<h3><a class="pointer load_page" data-url = "/frontend/story/detail"  title="">Stop Waiting For Heaven</a></h3>
-
-					<span><i class="fa fa-user"></i> Joy Rother</span>
-
-				</div>
-
-			</div>
-
-		</div>
-
-		<div class="col-md-6">
-
-			<div class="story">
-
-				<div class="image">
-
-					<img src="assets/images/resource/story2.jpg" alt="">
-
-					<a class="pointer load_page" data-url = "/frontend/story/detail"  title=""><i class="fa fa-link"></i></a>
+					<a class="pointer load_page" data-url = "/frontend/story/detail/{{$story->id}}"  title=""><i class="fa fa-link"></i></a>
 
 				</div>
 
 				<div class="story-detail">
 
-					<span class="date"><i class="fa fa-calendar-o"></i> NOV, 01, 2013</span>
+					<span class="date"><i class="fa fa-calendar-o"></i> {{ \Carbon\Carbon::parse($story->created_at)->format('F')}}, {{ \Carbon\Carbon::parse($story->created_at)->format('d')}}, {{ \Carbon\Carbon::parse($story->created_at)->format('Y')}}</span>
 
-					<h3><a class="pointer load_page" data-url = "/frontend/story/detail"  title="">How To Get More From Your Group</a></h3>
+					<h3><a class="pointer load_page" data-url = "/frontend/story/detail/{{$story->id}}"  title="">{{ucfirst($story->title)}}</a></h3>
 
-					<span><i class="fa fa-user"></i> Joy Rother</span>
-
-				</div>
-
-			</div>
-
-		</div>
-
-		<div class="col-md-6">
-
-			<div class="story">
-
-				<div class="image">
-
-					<img src="assets/images/resource/story3.jpg" alt="">
-
-					<a class="pointer load_page" data-url = "/frontend/story/detail"  title=""><i class="fa fa-link"></i></a>
-
-				</div>
-
-				<div class="story-detail">
-
-					<span class="date"><i class="fa fa-calendar-o"></i> NOV, 01, 2013</span>
-
-					<h3><a class="pointer load_page" data-url = "/frontend/story/detail"  title="">Answered Prayers Are All Around Us</a></h3>
-
-					<span><i class="fa fa-user"></i> Joy Rother</span>
+					<span><i class="fa fa-user"></i> {{ucwords($story->user()->name)}}</span>
 
 				</div>
 
 			</div>
-
 		</div>
-
-		<div class="col-md-6">
-
-			<div class="story">
-
-				<div class="image">
-
-					<img src="assets/images/resource/story4.jpg" alt="">
-
-					<a class="pointer load_page" data-url = "/frontend/story/detail"  title=""><i class="fa fa-link"></i></a>
-
-				</div>
-
-				<div class="story-detail">
-
-					<span class="date"><i class="fa fa-calendar-o"></i> NOV, 01, 2013</span>
-
-					<h3><a class="pointer load_page" data-url = "/frontend/story/detail"  title="">TLT Trains Leaders in Nigeria</a></h3>
-
-					<span><i class="fa fa-user"></i> Joy Rother</span>
-
-				</div>
-
-			</div>
-
-		</div>
-
-		<div class="col-md-6">
-
-			<div class="story">
-
-				<div class="image">
-
-					<img src="assets/images/resource/story5.jpg" alt="">
-
-					<a class="pointer load_page" data-url = "/frontend/story/detail"  title=""><i class="fa fa-link"></i></a>
-
-				</div>
-
-				<div class="story-detail">
-
-					<span class="date"><i class="fa fa-calendar-o"></i> NOV, 01, 2013</span>
-
-					<h3><a class="pointer load_page" data-url = "/frontend/story/detail"  title="">Accusantium Erroret Cupiditate Necess</a></h3>
-
-					<span><i class="fa fa-user"></i> Joy Rother</span>
-
-				</div>
-
-			</div>
-
-		</div>
-
-		<div class="col-md-6">
-
-			<div class="story">
-
-				<div class="image">
-
-					<img src="assets/images/resource/story6.jpg" alt="">
-
-					<a class="pointer load_page" data-url = "/frontend/story/detail"  title=""><i class="fa fa-link"></i></a>
-
-				</div>
-
-				<div class="story-detail">
-
-					<span class="date"><i class="fa fa-calendar-o"></i> NOV, 01, 2013</span>
-
-					<h3><a class="pointer load_page" data-url = "/frontend/story/detail"  title="">Eve Checks On Adam</a></h3>
-
-					<span><i class="fa fa-user"></i> Joy Rother</span>
-
-				</div>
-
-			</div>
-
-		</div>
-
-		<div class="col-md-6">
-
-			<div class="story">
-
-				<div class="image">
-
-					<img src="assets/images/resource/story1.jpg" alt="">
-
-					<a class="pointer load_page" data-url = "/frontend/story/detail"  title=""><i class="fa fa-link"></i></a>
-
-				</div>
-
-				<div class="story-detail">
-
-					<span class="date"><i class="fa fa-calendar-o"></i> NOV, 01, 2013</span>
-
-					<h3><a class="pointer load_page" data-url = "/frontend/story/detail"  title="">Stop Waiting For Heaven</a></h3>
-
-					<span><i class="fa fa-user"></i> Joy Rother</span>
-
-				</div>
-
-			</div>
-
-		</div>
-
-		<div class="col-md-6">
-
-			<div class="story">
-
-				<div class="image">
-
-					<img src="assets/images/resource/story2.jpg" alt="">
-
-					<a class="pointer load_page" data-url = "/frontend/story/detail"  title=""><i class="fa fa-link"></i></a>
-
-				</div>
-
-				<div class="story-detail">
-
-					<span class="date"><i class="fa fa-calendar-o"></i> NOV, 01, 2013</span>
-
-					<h3><a class="pointer load_page" data-url = "/frontend/story/detail"  title="">How To Get More From Your Group</a></h3>
-
-					<span><i class="fa fa-user"></i> Joy Rother</span>
-
-				</div>
-
-			</div>
-
-		</div>
-
-		<div class="col-md-6">
-
-			<div class="story">
-
-				<div class="image">
-
-					<img src="assets/images/resource/story3.jpg" alt="">
-
-					<a class="pointer load_page" data-url = "/frontend/story/detail"  title=""><i class="fa fa-link"></i></a>
-
-				</div>
-
-				<div class="story-detail">
-
-					<span class="date"><i class="fa fa-calendar-o"></i> NOV, 01, 2013</span>
-
-					<h3><a class="pointer load_page" data-url = "/frontend/story/detail"  title="">Answered Prayers Are All Around Us</a></h3>
-
-					<span><i class="fa fa-user"></i> Joy Rother</span>
-
-				</div>
-
-			</div>
-
-		</div>
-
-		<div class="col-md-6">
-
-			<div class="story">
-
-				<div class="image">
-
-					<img src="assets/images/resource/story4.jpg" alt="">
-
-					<a class="pointer load_page" data-url = "/frontend/story/detail"  title=""><i class="fa fa-link"></i></a>
-
-				</div>
-
-				<div class="story-detail">
-
-					<span class="date"><i class="fa fa-calendar-o"></i> NOV, 01, 2013</span>
-
-					<h3><a class="pointer load_page" data-url = "/frontend/story/detail"  title="">TLT Trains Leaders in Nigeria</a></h3>
-
-					<span><i class="fa fa-user"></i> Joy Rother</span>
-
-				</div>
-
-			</div>
-
-		</div>
-
-		<div class="col-md-6">
-
-			<div class="story">
-
-				<div class="image">
-
-					<img src="assets/images/resource/story5.jpg" alt="">
-
-					<a class="pointer load_page" data-url = "/frontend/story/detail"  title=""><i class="fa fa-link"></i></a>
-
-				</div>
-
-				<div class="story-detail">
-
-					<span class="date"><i class="fa fa-calendar-o"></i> NOV, 01, 2013</span>
-
-					<h3><a class="pointer load_page" data-url = "/frontend/story/detail"  title="">Accusantium Erroret Cupiditate Necess</a></h3>
-
-					<span><i class="fa fa-user"></i> Joy Rother</span>
-
-				</div>
-
-			</div>
-
-		</div>
-
-		<div class="col-md-6">
-
-			<div class="story">
-
-				<div class="image">
-
-					<img src="assets/images/resource/story6.jpg" alt="">
-
-					<a class="pointer load_page" data-url = "/frontend/story/detail"  title=""><i class="fa fa-link"></i></a>
-
-				</div>
-
-				<div class="story-detail">
-
-					<span class="date"><i class="fa fa-calendar-o"></i> NOV, 01, 2013</span>
-
-					<h3><a class="pointer load_page" data-url = "/frontend/story/detail"  title="">Eve Checks On Adam</a></h3>
-
-					<span><i class="fa fa-user"></i> Joy Rother</span>
-
-				</div>
-
-			</div>
-
-		</div>
-
+		@endforeach
 	</div>
 
 

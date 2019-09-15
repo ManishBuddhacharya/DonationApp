@@ -14,6 +14,10 @@
         p{
             font-family: open sans, sans-serif;
         }
+
+        span{
+            font-family: open sans, sans-serif !important;
+        }
         ul li, ul li a, ol li, ol li a {
             font-family: open sans, sans-serif;
         }
