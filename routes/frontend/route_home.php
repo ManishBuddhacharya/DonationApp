@@ -8,7 +8,7 @@
 
 //story
 Route::get('/frontend/story','HomeController@story');
-Route::get('/frontend/story/detail','HomeController@storyDetail');
+Route::get('/frontend/story/detail/{id}','HomeController@storyDetail');
 
 //cause
 Route::get('/frontend/cause','HomeController@cause');
