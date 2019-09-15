@@ -53,8 +53,8 @@
 			<span>
 
 				<a class="blog-date" href="#" title="" style="font-size: 20px; margin-right: 5%;"><i class="fa fa-bank"></i> Goal : <span style="color: #000">$ {{$cause->goal}}</span></a>
-				<a class="blog-date" href="#" title="" style="font-size: 20px; margin-right: 5%;"><i class="fa fa-money"></i>Raised : $<span style="color: #000">{{$cause->raised?:0}}</span></a>
-				<a class="blog-date" href="#" title="" style="font-size: 20px; margin-right: 5%;"><i class="fa fa-money"></i>Status : <span style="color: #000">{{$cause->raised / $cause->goal * 100}}%</span></a>
+				<a class="blog-date" href="#" title="" style="font-size: 20px; margin-right: 5%;"><i class="fa fa-money"></i>Raised : $<span style="color: #000">{{$cause->transactions->sum('amount')?:0}}</span></a>
+				<a class="blog-date" href="#" title="" style="font-size: 20px; margin-right: 5%;"><i class="fa fa-money"></i>Status : <span style="color: #000">{{ceil($cause->transactions->sum('amount') / $cause->goal * 100)}}%</span></a>
 
 				<button class="btn btn-sm pull-right" id="donate_button">Donate</button>
 
@@ -91,5 +91,8 @@
 </div>
 
 <script>
-	
+	$('#donate_button').off('click').on('click', function(e){
+		let url = '/cause/donate/{{$cause->id}}';
+		window.open(url);
+	})
 </script>
