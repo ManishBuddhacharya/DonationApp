@@ -1,31 +1,34 @@
 <style>
-  .select2-container--default .select2-selection--single .select2-selection__arrow b:after {
-      content: "";
-      font-family: 'Material Icons';
-      font-size: 25px;
-      font-weight: normal;
-      line-height: 46px;
-      color: #404040;
-  }
-  .select2-container--default .select2-selection--single .select2-selection__placeholder {
-      color: #999;
-      line-height: 30px;
-  }
-  .select2-container--default .select2-selection--single .select2-selection__rendered {
-      color: #444;
-      line-height: 28px !important;
-      height: 26px;
-  }
-  .select2-container--default .select2-selection--single .select2-selection__arrow {
-      height: 5px !important;
-      position: absolute;
-      top: 1px;
-      right: 1px;
-      width: 20px;
-  }
+.select2-container--default .select2-selection--single .select2-selection__arrow b:after {
+    content: "";
+    font-family: 'Material Icons';
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 46px;
+    color: #404040;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+    color: #999;
+    line-height: 30px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #444;
+    line-height: 28px !important;
+    height: 26px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 5px !important;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    width: 20px;
+}
 </style>
 <div class="panel panel-default panel-border-color panel-border-color-primary">
-  <div class="panel-heading panel-heading-divider">Add Stories</div>
+  <div class="panel-heading panel-heading-divider">Add Story</div>
   <div class="panel-body">
     <form id="form_story">
       <div class="col-md-12">
@@ -34,7 +37,13 @@
           <input type="text" name="title" placeholder="Title" class="input-xs form-control">
         </div>
       </div>
-
+      <div class="col-md-4">
+        <div class="form-group">
+          <label>Category</label>
+          <select name="category_id" class="select2">
+          </select>
+        </div>
+      </div>
       <div class="col-md-4">
         <div class="form-group">
           <label class="d-block">File</label>
@@ -64,22 +73,23 @@
 
 <script>
   function fileValidation(type)
-  {
-      var typeC=['image/jpeg',
-          'image/jpg',
-          'image/png',
-          'image/gif',
-          'application/pdf',
-          'image/bmp',
-          'image/webp',
-          'application/msword',
-          'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-          'application/vnd.ms-excel',
-          'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-          'text/plain'
-      ];
-      return typeC.indexOf(type) > -1;
-  }
+{
+    var typeC=['image/jpeg',
+        'image/jpg',
+        'image/png',
+        'image/gif',
+        'application/pdf',
+        'image/bmp',
+        'image/webp',
+        'application/msword',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        'application/vnd.ms-excel',
+        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        'text/plain'
+    ];
+    return typeC.indexOf(type) > -1;
+
+}
 
   $('.inputfile').on('change', function (e) {
         var $input   = $( this ),
@@ -87,6 +97,7 @@
                 labelVal = $label.html();
         var fileName = '';
         fileName = e.target.value.split('\\').pop();
+
         if (fileName){
             $label.find('span').html(fileName);
             $(this).html(fileName);
@@ -102,16 +113,37 @@
             if(!valid)
             {
                 $('#invalidType').show();
-                $('#AddEcommerceCustomer').prop('disabled',true)
             }
             else {
                 $('#invalidType').hide();
-                $('#AddEcommerceCustomer').prop('disabled',false)
             }
+
         }
-  });
+    });
 
   $(document).ready(function() {
+    $('.select2').select2({
+      placeholder: 'Select Category',
+      width: '100%',
+      height:"20px",
+      ajax: {
+          method: 'POST',
+          url: '/backend/categories',
+          processResults: function(data) {
+              let res = [];
+              $.each(data, function(i, obj) {
+                  res.push({
+                      id: obj.id,
+                      text: obj.name
+                  });
+              });
+              return {
+                  results: res
+              };
+          }
+      }
+    });
+
     $('#summernote').summernote({
       height: 200,
     });
@@ -152,9 +184,9 @@
         },
         error:function(e)
         {
-            console.log(e);
+            alert('dsadad');
         }
      });
   }
-  
+
 </script>
