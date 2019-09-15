@@ -58,7 +58,7 @@
 	<nav class="style1">
 		<div class="container">
 			<div class="logo">
-				<a class="pointer" href="/" data-url="" title=""><img src="assets/images/logo.png" alt=""></a>
+				<a class="pointer" href="/" data-url="" title=""><img src="/assets/images/logo.png" alt=""></a>
 			</div><!--- LOGO -->
 
 			<ul>

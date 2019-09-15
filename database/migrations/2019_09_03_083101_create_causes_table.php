@@ -20,7 +20,6 @@ class CreateCausesTable extends Migration
             $table->foreign('category_id')->references('id')->on('categories');
             $table->text('content');
             $table->integer('goal');
-            $table->integer('raised')->nullable();
             $table->integer('userc_id')->unsignedBigInteger();
             $table->boolean('is_deleted')->default(false);
             $table->timestamps();

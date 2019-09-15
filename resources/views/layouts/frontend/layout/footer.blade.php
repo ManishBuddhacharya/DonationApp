@@ -2,7 +2,7 @@
 
 	<div class="block blackish">
 
-	<div class="parallax" style="background:url(assets/images/parallax5.jpg);"></div>
+	<div class="parallax" style="background:url(/assets/images/parallax5.jpg);"></div>
 
 		<div class="container">
 
@@ -14,7 +14,7 @@
 
 						<div class="about">
 
-							<img src="assets/images/logo.png" alt="">
+							<img src="/assets/images/logo.png" alt="">
 
 							<span>We Give Best Services</span>
 
@@ -92,7 +92,7 @@
 
 							<div class="widget-blog">
 
-								<div class="widget-blog-img"><img src="assets/images/resource/widget-blog.jpg" alt=""></div>
+								<div class="widget-blog-img"><img src="/assets/images/resource/widget-blog.jpg" alt=""></div>
 
 								<h6><a href="blog-single.html" title=""> Consectetur Adipisicing.</a></h6>
 
@@ -104,7 +104,7 @@
 
 							<div class="widget-blog">
 
-								<div class="widget-blog-img"><img src="assets/images/resource/widget-blog2.jpg" alt=""></div>
+								<div class="widget-blog-img"><img src="/assets/images/resource/widget-blog2.jpg" alt=""></div>
 
 								<h6><a href="blog-single.html" title=""> Consectetur Adipisicing.</a></h6>
 

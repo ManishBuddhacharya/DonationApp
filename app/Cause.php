@@ -28,4 +28,8 @@ class Cause extends Model
         return $comments;
     }
 
+    public function transactions(){
+        return $this->hasMany('App\Donation', 'cause_id', 'id');
+    }
+
 }

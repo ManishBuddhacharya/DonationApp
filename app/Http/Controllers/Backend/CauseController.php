@@ -34,11 +34,6 @@ class CauseController extends Controller
         return view($this->layout.'addCause');
     }
 
-    public function causeDonation()
-    {
-        return view($this->layout.'donation');
-    }
-
     public function insertCause(Request $request)
     {
         $cause = new Cause;
@@ -157,21 +152,6 @@ class CauseController extends Controller
     }
     
 
-    /*Donation*/
-    public function donation(Request $request)
-    {
-        \Stripe\Stripe::setApiKey ( 'sk_test_jSydx2o1jNo3Je8dPelgZOPM00EM7cSJBQ' );
-        try {
-            $data = \Stripe\Charge::create ( array (
-                    "amount" => $request->amount * 100,
-                    "currency" => "usd",
-                    "source" => $request->stripeToken, // obtained with Stripe.js
-                    "description" => "Donation payment." 
-            ) );
-            return response()->json(['message'=>'Donation Successful'],200);
-        } catch ( \Exception $e ) {
-            return response()->json(['message'=>'Something went wrong'],500);
-        }
-    }
+    
 
 }
