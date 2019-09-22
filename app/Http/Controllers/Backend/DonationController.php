@@ -38,7 +38,7 @@ class DonationController extends Controller
         \Stripe\Stripe::setApiKey ('sk_test_jSydx2o1jNo3Je8dPelgZOPM00EM7cSJBQ');
         try {
         	$customer = \Stripe\Customer::create([
-			      "description" => "Customer for jenny.rosen@example.com",
+			      "description" => "Customer for Donation app",
 			      'source'  => "tok_amex"
 			  ]);
 

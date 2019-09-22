@@ -121,10 +121,6 @@ class StoryController extends Controller
     }
 
     public function fileUpload(Request $request) {
-	    $this->validate($request, [
-	        'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-	    ]);
-
 	    if ($request->hasFile('file')) {
 	        $image = $request->file('file');
 	        $name = time().'.'.$image->getClientOriginalExtension();
