@@ -71,11 +71,11 @@ class HomeController extends Controller
     {
         $blog = Blog::join('files',function($join){
                             $join->on('files.table',DB::raw('"Blog"'));
-                            $join->on('files.table_id','blog.id');
+                            $join->on('files.table_id','blogs.id');
                         })
-                        ->join('categories','categories.id','blog.category_id')
-                        ->select('files.*','categories.*','blog.*' )
-                        ->where('blog.id', $id)
+                        ->join('categories','categories.id','blogs.category_id')
+                        ->select('files.*','categories.*','blogs.*' )
+                        ->where('blogs.id', $id)
                         ->first();
         return view($this->layout.'blogs.detail', compact('blog'));
     }

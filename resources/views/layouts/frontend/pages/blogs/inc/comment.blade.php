@@ -5,7 +5,7 @@
 
 	<ul>
 
-		@foreach($blog->storyComments() as $comment)
+		@foreach($blog->blogComments() as $comment)
 		<li class="mt-5 mb-5">
 			<div class="comment p-20">
 
