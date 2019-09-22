@@ -37,9 +37,18 @@
 				</a>
 			</p><!--- Signup -->
 			@else
+			<p  class="mr-10 pointer load_page">
+				<a href="backend/dashboard">
+					<i class="fa fa-user pl-15" style="border-left: 2px solid #ccc; "></i>
+					<span class="pr-10">
+						{{ ucwords(auth::user()->name) }}
+					</span>
+				</a>
+			</p>
+
 			<p  class="mr-10 pointer load_page" >
 				
-				<i class="fa fa-user pl-15" style="border-left: 2px solid #ccc; "></i>
+				<i class="fa fa-sign-out pl-15" style="border-left: 2px solid #ccc; "></i>
 				
 			<a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -71,6 +80,7 @@
 				<li class="menu-item-has-children"><a href="#" title="">Media</a>
 					<ul>
 						<li><a class="pointer load_page" data-url="/frontend/news" title="">News</a></li>
+						<li><a class="pointer load_page" data-url="/frontend/blog" title="">Blogs</a></li>
 						<li><a class="pointer load_page" data-url="/frontend/gallery" title="">Gallary</a></li>
 				    </ul>
 				</li>

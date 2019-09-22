@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 use App\Cause;
 use App\Story;
+use App\Blog;
 use App\Files;
 
 class HomeController extends Controller
@@ -52,6 +53,31 @@ class HomeController extends Controller
                         ->where('story.id', $id)
                         ->first();
         return view($this->layout.'stories.detail', compact('story'));
+    }
+
+    public function blog()
+    {
+        $blogs = Blog::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Blog"'));
+                            $join->on('files.table_id','blogs.id');
+                        })
+                        ->join('categories','categories.id','blogs.category_id')
+                        ->select('files.*','categories.*','blogs.*' )
+                        ->get();
+        return view($this->layout.'blogs.blogs', compact('blogs'));
+    }
+
+    public function blogDetail($id)
+    {
+        $blog = Blog::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Blog"'));
+                            $join->on('files.table_id','blog.id');
+                        })
+                        ->join('categories','categories.id','blog.category_id')
+                        ->select('files.*','categories.*','blog.*' )
+                        ->where('blog.id', $id)
+                        ->first();
+        return view($this->layout.'blogs.detail', compact('blog'));
     }
 
     public function news()
