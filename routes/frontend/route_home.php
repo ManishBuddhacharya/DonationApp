@@ -37,7 +37,7 @@ Route::get('/frontend/signup','HomeController@signup');
 
 //news
 Route::get('/frontend/news','HomeController@news');
-Route::get('/frontend/news/detail','HomeController@newsDetail');
+Route::get('/frontend/news/detail/{id}','HomeController@newsDetail');
 
 //gallary
 Route::get('/frontend/gallery','HomeController@gallery');

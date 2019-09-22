@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use App\Cause;
 use App\Story;
 use App\Blog;
+use App\News;
 use App\Files;
 
 class HomeController extends Controller
@@ -82,12 +83,27 @@ class HomeController extends Controller
 
     public function news()
     {
-        return view($this->layout.'news.news');
+        $news = News::join('files',function($join){
+                            $join->on('files.table',DB::raw('"News"'));
+                            $join->on('files.table_id','news.id');
+                        })
+                        ->join('categories','categories.id','news.category_id')
+                        ->select('files.*','categories.*','news.*' )
+                        ->get();
+        return view($this->layout.'news.news', compact('news'));
     }
 
-    public function newsDetail()
+    public function newsDetail($id)
     {
-        return view($this->layout.'news.news');
+        $news = News::join('files',function($join){
+                            $join->on('files.table',DB::raw('"News"'));
+                            $join->on('files.table_id','news.id');
+                        })
+                        ->join('categories','categories.id','news.category_id')
+                        ->select('files.*','categories.*','news.*' )
+                        ->where('news.id', $id)
+                        ->first();
+        return view($this->layout.'news.detail', compact('news'));
     }
 
     public function event()

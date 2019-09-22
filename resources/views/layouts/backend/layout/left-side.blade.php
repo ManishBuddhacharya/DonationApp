@@ -9,20 +9,24 @@
                 <ul class="sub-menu">
                   <li class="active"><a class="pointer load_page" data-url="/backend/dashboard">Dashboard</a>
                   </li>
+                  @if(auth::user()->isAdmin === 1)
                   <li ><a class="pointer load_page" data-url="/backend/cause">Cause</a>
                   </li>
                   <li><a class="pointer load_page" data-url="/backend/event" >Event</a>
                   </li>
                   <li><a class="pointer load_page" data-url="/backend/story">Story</a>
                   </li>
-                  <li><a class="pointer load_page" data-url="/backend/blog">Blog</a>
-                  </li>
                   <li><a class="pointer load_page" data-url="/backend/news">News</a>
+                  </li>
+                  @endif
+                  <li><a class="pointer load_page" data-url="/backend/blog">Blog</a>
                   </li>
                   <li><a class="pointer load_page" data-url="/backend/gallary">Gallary</a>
                   </li>
+                  @if(auth::user()->isAdmin === 1)
                   <li><a class="pointer load_page" data-url="/backend/organization">Organization Structure</a>
                   </li>
+                  @endif
                   <li><a class="pointer load_page" data-url="/backend/setting" >Setting</a>
                   </li>
                 </ul>
