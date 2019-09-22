@@ -16,6 +16,7 @@ mix.js('resources/js/app.js', 'public/js')
 
 mix.styles([
     'resources/css/font-awesome.css',
+    'resources/assets/lib/material-design-icons/css/material-design-iconic-font.min.css',
     'resources/css/bootstrap.min.css',
     'resources/css/owl-carousel.css',
     'resources/css/mediaelementplayer.min.css',
