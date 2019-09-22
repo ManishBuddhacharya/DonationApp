@@ -113,7 +113,7 @@ class BlogController extends Controller
 
 		if ($request->hasFile('file')){
 	    	$name = $this->fileUpload($request);
-	    	$file = Files::where('table','Story')->where('table_id',$blog->id)->first();
+	    	$file = Files::where('table','Blog')->where('table_id',$blog->id)->first();
 	    	$file->file_name = $name;
 	    	$file->update();
 		}
