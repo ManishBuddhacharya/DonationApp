@@ -11,9 +11,9 @@ class Cause extends Model
     protected $fillable = [
      	'title',
         'content',
-        'file',
         'goal',
-        'category_id'
+        'category_id',
+        'userc_id'
     ];
     protected $table = 'causes';
     public $timestamps = false;
