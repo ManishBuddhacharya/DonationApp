@@ -10,6 +10,10 @@
 Route::get('/frontend/story','HomeController@story');
 Route::get('/frontend/story/detail/{id}','HomeController@storyDetail');
 
+//blog
+Route::get('/frontend/blog','HomeController@blog');
+Route::get('/frontend/blog/detail/{id}','HomeController@blogDetail');
+
 //cause
 Route::get('/frontend/cause','HomeController@cause');
 Route::get('/frontend/cause/detail/{id}','HomeController@causeDetail');
