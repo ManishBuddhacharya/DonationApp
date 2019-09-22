@@ -17,6 +17,8 @@
                   </li>
                   <li><a class="pointer load_page" data-url="/backend/blog">Blog</a>
                   </li>
+                  <li><a class="pointer load_page" data-url="/backend/news">News</a>
+                  </li>
                   <li><a class="pointer load_page" data-url="/backend/gallary">Gallary</a>
                   </li>
                   <li><a class="pointer load_page" data-url="/backend/organization">Organization Structure</a>
