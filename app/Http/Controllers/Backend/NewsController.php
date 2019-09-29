@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 use App\News;
 use App\Files;
@@ -121,16 +122,17 @@ class NewsController extends Controller
     }
 
     public function fileUpload(Request $request) {
-	    if ($request->hasFile('file')) {
-	        $image = $request->file('file');
-	        $name = time().'.'.$image->getClientOriginalExtension();
-	        $destinationPath = public_path('/images');
-	        $image->move($destinationPath, $name);
-	        // $this->save();
+        if ($request->hasFile('file')) {
+            $image = $request->file('file');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/images');
+            // $image->move($destinationPath, $name);
+            Storage::disk('images')->put($name, file_get_contents($image));
+            // $this->save();
 
-	        return $name;
-	    }
-	}
+            return $name;
+        }
+    }
 
 	/*Categories*/
 	public function fetchCategories(Request $req)
