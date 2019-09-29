@@ -85,6 +85,8 @@ mix.scripts([
     'node_modules/summernote/dist/summernote.min.js',
     'node_modules/sweetalert2/dist/sweetalert2.min.js',
     'resources/js/bootstrap-datetimepicker.min.js',
+    'node_modules/dropzone/dist/dropzone.js',
+    'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
 ], 'public/js/backend.js');
 
 mix.styles([
@@ -97,6 +99,8 @@ mix.styles([
     'node_modules/summernote/dist/summernote.css',
     'node_modules/sweetalert2/dist/sweetalert2.min.css',
     'resources/css/bootstrap-datetimepicker.min.css',
+    'node_modules/dropzone/dist/dropzone.css',
+    'node_modules/magnific-popup/dist/magnific-popup.css',
     ],'public/css/backend.css'); 
  
 mix.scripts([
