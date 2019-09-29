@@ -4,6 +4,8 @@ namespace Tests\Feature;
 use App\User;
 use App\News;
 use App\Category;
+use App\FileNews;
+
 use Tests\TestCase;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
@@ -65,6 +67,7 @@ class BackendNewsTest extends TestCase
         $category = factory(Category::class)->create();
         
         $item = factory(News::class)->create();
+        $item = factory(FileNews::class)->create();
 
         $response = $this->get('/backend/news/detail/'.$item->id);
 

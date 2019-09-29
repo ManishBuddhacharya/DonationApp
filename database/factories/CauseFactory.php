@@ -10,6 +10,7 @@ $factory->define(Cause::class, function (Faker $faker) {
         'title' => $faker->word,
         'content'=>$faker->paragraph,
         'goal'=> $faker->randomDigit,
-        'category_id'=> $faker->randomDigit,
+        'category_id'=> 1,
+        'userc_id'=> 1
     ];
 });
