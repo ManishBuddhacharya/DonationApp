@@ -10,5 +10,6 @@ $factory->define(News::class, function (Faker $faker) {
         'title' => $faker->name,
         'content' => $faker->paragraph,
         'userc_id' => 1,
+        'category_id'=> 1
     ];	
 });
