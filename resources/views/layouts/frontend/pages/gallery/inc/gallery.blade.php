@@ -1,6 +1,24 @@
 <style>
-	.image-link{
-		cursor: zoom-in;
+
+	.image-link:hover {
+	  -webkit-filter: grayscale(100%) blur(2px);
+	  filter: grayscale(100%) blur(2px);
+	  transition: .4s ease-in-out;
+	  cursor: pointer;
+	}
+
+	.img-link{
+		display: none;
+	}
+
+	.img-link:hover{
+		display: block;
+	}
+
+	
+
+	.image-link:hover + .hel {
+	    display: block;
 	}
 </style>
 
@@ -17,188 +35,16 @@
 					<div class="remove-ext">
 
 						<div class="row">
-
-							<div class="mas-gallery isotope" style="position: relative; overflow: hidden; height: 1420px;">
-
-								<div class="col-md-4 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
-
-									<div class="gallery lightbox">
-
-										<img class="image-link" src="assets/images/resource/gallery-small-1.jpg" href="assets/images/resource/gallery-small-1.jpg" alt=""> 
-
-
-
-
-									</div><!-- GALLERY ITEM -->
-
-								</div>
-
-
-
-								<div class="col-md-4 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(400px, 0px, 0px);">
-
-									<div class="gallery lightbox">
-
-										<img class="image-link" src="assets/images/resource/gallery-large-1.jpg" href="assets/images/resource/gallery-large-1.jpg" alt=""> 
-
-
-
-
-									</div><!-- GALLERY ITEM -->
-
-								</div>
-
-
-
-								<div class="col-md-4 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(800px, 0px, 0px);">
-
-									<div class="gallery lightbox">
-
-										<img class="image-link" src="assets/images/resource/gallery-small-2.jpg" href="assets/images/resource/gallery-small-2.jpg" alt=""> 
-
-
-
-
-									</div><!-- GALLERY ITEM -->
-
-								</div>
-
-
-
-								<div class="col-md-4 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 283px, 0px);">
-
-									<div class="gallery lightbox">
-
-										<img class="image-link" src="assets/images/resource/gallery-large-2.jpg" href="assets/images/resource/gallery-large-2.jpg" alt=""> 
-
-
-
-
-									</div><!-- GALLERY ITEM -->
-
-								</div>
-
-
-
-								<div class="col-md-4 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(800px, 283px, 0px);">
-
-									<div class="gallery lightbox">
-
-										<img class="image-link" src="assets/images/resource/gallery-large-3.jpg" href="assets/images/resource/gallery-large-3.jpg" alt=""> 
-
-
-
-
-									</div><!-- GALLERY ITEM -->
-
-								</div>
-
-
-
-								<div class="col-md-4 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(400px, 427px, 0px);">
-
-									<div class="gallery lightbox">
-
-										<img class="image-link" src="assets/images/resource/gallery-large-4.jpg" href="assets/images/resource/gallery-large-4.jpg" alt=""> 
-
-
-
-
-									</div><!-- GALLERY ITEM -->
-
-								</div>
-
-
-
-
-
-								<div class="col-md-4 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 710px, 0px);">
-
-									<div class="gallery lightbox">
-
-										<img class="image-link" src="assets/images/resource/gallery-small-3.jpg" href="assets/images/resource/gallery-small-3.jpg" alt=""> 
-
-
-
-
-									</div><!-- GALLERY ITEM -->
-
-								</div>
-
-
-
-								<div class="col-md-4 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(800px, 710px, 0px);">
-
-									<div class="gallery lightbox">
-
-										<img class="image-link" src="assets/images/resource/gallery-small-4.jpg" href="assets/images/resource/gallery-small-4.jpg" alt=""> 
-
-
-
-
-									</div><!-- GALLERY ITEM -->
-
-								</div>
-
-
-
-								<div class="col-md-4 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(400px, 854px, 0px);">
-
-									<div class="gallery lightbox">
-
-										<img class="image-link" src="assets/images/resource/gallery-small-5.jpg" href="assets/images/resource/gallery-small-5.jpg" alt=""> 
-
-									</div><!-- GALLERY ITEM -->
-
-								</div>
-
-
-
-								<div class="col-md-4 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 993px, 0px);">
-
-									<div class="gallery lightbox">
-
-										<img class="image-link" src="assets/images/resource/gallery-large-5.jpg" href="assets/images/resource/gallery-large-5.jpg" alt=""> 
-
-
-
-
-									</div><!-- GALLERY ITEM -->
-
-								</div>
-
-
-
-								<div class="col-md-4 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(800px, 993px, 0px);">
-
-									<div class="gallery lightbox">
-
-										<img class="image-link" src="assets/images/resource/gallery-large-6.jpg" href="assets/images/resource/gallery-large-6.jpg" alt=""> 
-
-
-
-
-									</div><!-- GALLERY ITEM -->
-
-								</div>
-
-
-
-								<div class="col-md-4 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(400px, 1137px, 0px);">
-
-									<div class="gallery lightbox">
-
-										<img class="image-link" src="assets/images/resource/gallery-small-6.jpg" href="assets/images/resource/gallery-small-6.jpg" alt=""> 
-
-
-
-
-									</div><!-- GALLERY ITEM -->
-
-								</div>
+							@foreach($images as $image)
+							<div class="col-md-4" >
+								<div class="gallery" style="position: relative;">
+									<img class="image-link" src="{{"/images/".$image->file_name?:'/img/gallery/img11.jpg'}}"  alt=""> 
+									 <a style="position: absolute; right: 45%; top: 40%; font-size: 50px;" class="img-link image-popup" href="{{"/images/".$image->file_name?:'/img/gallery/img11.jpg'}}"><i class="icon mdi mdi-eye"></i></a>
+
+								</div><!-- GALLERY ITEM -->
 
 							</div>
-
+							@endforeach
 						</div>						
 
 					</div>
@@ -240,3 +86,11 @@
 	</div>
 
 </section>
+
+<script>
+	$('.image-popup').magnificPopup({
+	    type: 'image'
+	    // other options
+	});
+
+</script>

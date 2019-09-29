@@ -195,7 +195,8 @@ class HomeController extends Controller
 
     public function gallery()
     {
-        return view($this->layout.'gallery.gallery');
+        $images = Files::where('table','Gallery')->get();
+        return view($this->layout.'gallery.gallery', compact('images'));
     }
     
 }
