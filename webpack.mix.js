@@ -84,6 +84,7 @@ mix.scripts([
     'node_modules/select2/dist/js/select2.min.js',
     'node_modules/summernote/dist/summernote.min.js',
     'node_modules/sweetalert2/dist/sweetalert2.min.js',
+    'resources/js/bootstrap-datetimepicker.min.js',
 ], 'public/js/backend.js');
 
 mix.styles([
@@ -95,6 +96,7 @@ mix.styles([
     'node_modules/select2/dist/css/select2.min.css',
     'node_modules/summernote/dist/summernote.css',
     'node_modules/sweetalert2/dist/sweetalert2.min.css',
+    'resources/css/bootstrap-datetimepicker.min.css',
     ],'public/css/backend.css'); 
  
 mix.scripts([
