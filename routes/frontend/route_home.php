@@ -20,7 +20,8 @@ Route::get('/frontend/cause/detail/{id}','HomeController@causeDetail');
 
 //event
 Route::get('/frontend/event','HomeController@event');
-Route::get('/frontend/event/detail','HomeController@eventDetail');
+Route::get('/frontend/event/detail/{id}','HomeController@eventDetail');
+Route::get('/frontend/event/attend/{event}/{user}','HomeController@sendEventMail');
 
 //organization Structure
 Route::get('/frontend/organization','HomeController@organization');
