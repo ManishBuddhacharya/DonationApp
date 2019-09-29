@@ -21,7 +21,7 @@
                   @endif
                   <li><a class="pointer load_page" data-url="/backend/blog">Blog</a>
                   </li>
-                  <li><a class="pointer load_page" data-url="/backend/gallary">Gallary</a>
+                  <li><a class="pointer load_page" data-url="/backend/gallery">Gallary</a>
                   </li>
                   @if(auth::user()->isAdmin === 1)
                   <li><a class="pointer load_page" data-url="/backend/organization">Organization Structure</a>
