@@ -5,7 +5,7 @@
 
 	<ul>
 
-		@foreach($news->newsComments() as $comment)
+		@foreach($event->eventComments() as $comment)
 		<li class="mt-5 mb-5">
 			<div class="comment p-20">
 
@@ -16,6 +16,7 @@
 
 				<h5>
 					{{$comment->user()->name}}
+
 					@if($comment->userc_id?:0 === auth()->user()->id)
                   	<span class="icon mdi mdi-delete mr-5 comment_delete pointer pull-right" data-url="/comment/delete/{{$comment->id}}" style="color: #e72919; font-weight: bold; font-size: 18px;"></span>
 
@@ -64,7 +65,7 @@
 	<form id="form_comment">
 
 		<textarea placeholder="Comment" name="comment" id="comment"></textarea>
-		<input type="hidden" name="table" value="News">
+		<input type="hidden" name="table" value="Event">
 
 		<div id="comment_submit_btns">
 			<input type="submit" value="Comment" id="btn_cmt">
@@ -97,8 +98,8 @@
 	    };
 	})(jQuery);
 
-	function newsDeatail(){
-	    let url = '/frontend/news/detail/{{$news->id}}';
+	function eventDeatail(){
+	    let url = '/frontend/event/detail/{{$event->id}}';
 	    $.ajax({
 		    method:'get',
 		    url:url,
@@ -118,39 +119,21 @@
 	    var formData = new FormData($('#form_comment')[0]);        
 	    
 	    saveUpdateAction({
-	        url : '/comment/add/{{$news->id}}',
+	        url : '/comment/add/{{$event->id}}',
 	        data: formData,
 	        contentType : false,
 	        processData: false,
 	        hasCb: true,            
 	    }, function (data) {
 	        console.log(data); 
-	        newsDeatail();
+	        eventDeatail();
 	    });
 	});
 
 	$('#cmt_cancel').off('click').on('click', function(e){
 	    e.preventDefault();
-	    newsDeatail();
+	    eventDeatail();
 	});
-
-	$(document).off('click', '.cause_donation').on('click','.cause_donation', function(e){
-	    e.preventDefault();
-	    let url = $(this).attr('data-url');
-
-	    $.ajax({
-	        method:'get',
-	        url:url,
-	        success:function(data)
-	        {
-	            $('#changable').html(data);
-	        },
-	        error:function(e)
-	        {
-	            alert('dsadad');
-	        }
-	     });
-	  });
 
 	$(document).off('click', '.comment_reply').on('click','.comment_reply', function(e){
 	    e.preventDefault();
@@ -176,13 +159,13 @@
 	        hasCb: true,            
 	    }, function (data) {
 	        console.log(data); 
-	        newsDeatail();
+	        eventDeatail();
 	    });
 	});
 
 	$(document).off('click', '#reply_cancel').on('click','#reply_cancel', function(e){
 		e.preventDefault();
-	    newsDeatail();
+	    eventDeatail();
 	});
 
 	 
@@ -204,7 +187,7 @@
 	                url:url,
 	                success:function(data)
 	                {
-	                    newsDeatail();
+	                    eventDeatail();
 	                },
 	                error:function(e)
 	                {
@@ -240,7 +223,7 @@
 	                url:url,
 	                success:function(data)
 	                {
-	                    newsDeatail();
+	                    eventDeatail();
 	                },
 	                error:function(e)
 	                {
@@ -316,7 +299,7 @@
 	      hasCb: true,            
 	  }, function (data) {
 	      console.log(data); 
-	      newsDeatail();
+	      eventDeatail();
 	  });
 	});
 
@@ -332,7 +315,7 @@
 	        hasCb: true,            
 	    }, function (data) {
 	        console.log(data); 
-	        newsDeatail();
+	        eventDeatail();
 	    });
 	  });
 </script>

@@ -6,11 +6,14 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Support\Facades\DB;
+use App\Mail\sendTicket;
 
+use App\User;
 use App\Cause;
 use App\Story;
 use App\Blog;
 use App\News;
+use App\Event;
 use App\Files;
 
 class HomeController extends Controller
@@ -108,12 +111,36 @@ class HomeController extends Controller
 
     public function event()
     {
-        return view($this->layout.'events.events');
+        $events = Event::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Event"'));
+                            $join->on('files.table_id','events.id');
+                        })
+                        ->join('categories','categories.id','events.category_id')
+                        ->select('files.*','categories.*','events.*' )
+                        ->get();
+        return view($this->layout.'events.events', compact('events'));
     }
 
-    public function eventDetail()
+    public function eventDetail($id)
     {
-        return view($this->layout.'events.detail');
+        $event = Event::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Event"'));
+                            $join->on('files.table_id','events.id');
+                        })
+                        ->join('categories','categories.id','events.category_id')
+                        ->select('files.*','categories.*','events.*' )
+                        ->where('events.id', $id)
+                        ->first();
+        return view($this->layout.'events.detail', compact("event"));
+    }
+
+    public function sendEventMail(Event $event, User $user)
+    {
+        \Mail::to($user->email)->send(
+            new sendTicket($event, $user)
+        );
+
+        return "Mail has been sent";
     }
 
     public function cause()
