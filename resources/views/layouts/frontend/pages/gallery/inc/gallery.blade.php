@@ -1,24 +1,11 @@
 <style>
 
 	.image-link:hover {
-	  -webkit-filter: grayscale(100%) blur(2px);
-	  filter: grayscale(100%) blur(2px);
-	  transition: .4s ease-in-out;
-	  cursor: pointer;
-	}
-
-	.img-link{
-		display: none;
-	}
-
-	.img-link:hover{
-		display: block;
-	}
-
-	
-
-	.image-link:hover + .hel {
-	    display: block;
+		cursor: zoom-in;
+	  	-webkit-filter: grayscale(100%) blur(2px);
+	  	filter: grayscale(100%) blur(2px);
+	  	transition: .4s ease-in-out;
+	  	cursor: pointer;
 	}
 </style>
 
@@ -39,7 +26,7 @@
 							<div class="col-md-4" >
 								<div class="gallery" style="position: relative;">
 									<img class="image-link" src="{{"/images/".$image->file_name?:'/img/gallery/img11.jpg'}}"  alt=""> 
-									 <a style="position: absolute; right: 45%; top: 40%; font-size: 50px;" class="img-link image-popup" href="{{"/images/".$image->file_name?:'/img/gallery/img11.jpg'}}"><i class="icon mdi mdi-eye"></i></a>
+									 <a style="position: absolute; right: 45%; top: 40%; font-size: 50px;" class="image-popup" href="{{"/images/".$image->file_name?:'/img/gallery/img11.jpg'}}"><i class="icon mdi mdi-eye"></i></a>
 
 								</div><!-- GALLERY ITEM -->
 
