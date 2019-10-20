@@ -2,55 +2,51 @@
 
 	<div class="widget">
 
-		<div class="widget-title"><h4>OUR GALLERY</h4></div>
+		<form class="search-form">
 
-		<div class="gallery-widget lightbox">
+			<input type="text" placeholder="START SEARCHING">
 
-			<div class="col-md-3"><a href="" style="outline: 0px;"><img src="assets/images/resource/flickr1.jpg" alt="" title=""></a></div>
+			<input type="submit" value="">
 
-			<div class="col-md-3"><a href="" style="outline: 0px;"><img src="assets/images/resource/flickr2.jpg" alt="" title=""></a></div>
+		</form>
 
-			<div class="col-md-3"><a href="" style="outline: 0px;"><img src="assets/images/resource/flickr3.jpg" alt="" title=""></a></div>
+	</div><!-- SEARCH FORM -->
 
-			<div class="col-md-3"><a href="" style="outline: 0px;"><img src="assets/images/resource/flickr4.jpg" alt="" title=""></a></div>
 
-			<div class="col-md-3"><a href="" style="outline: 0px;"><img src="assets/images/resource/flickr5.jpg" alt="" title=""></a></div>
 
-			<div class="col-md-3"><a href="" style="outline: 0px;"><img src="assets/images/resource/flickr6.jpg" alt="" title=""></a></div>
+	<div class="widget">
 
-			<div class="col-md-3"><a href="" style="outline: 0px;"><img src="assets/images/resource/flickr1.jpg" alt="" title=""></a></div>
+		<div class="widget-title"><h4>TAG CLOUD</h4></div>
 
-			<div class="col-md-3"><a href="" style="outline: 0px;"><img src="assets/images/resource/flickr2.jpg" alt="" title=""></a></div>
+		<div class="tagclouds">
+
+			<a href="blog.html" title="">Aenen</a>
+
+			<a href="blog.html" title="">Suspendise</a>
+
+			<a href="blog.html" title="">Citrous</a>
+
+			<a href="blog.html" title="">Valitsantego</a>
+
+			<a href="blog.html" title="">Pellntesious</a>
+
+			<a href="blog.html" title="">Vestibu</a>
+
+			<a href="blog.html" title="">Aenen</a>
+
+			<a href="blog.html" title="">Suspendise</a>
+
+			<a href="blog.html" title="">Citrous</a>
 
 		</div>
 
-	</div><!-- GALLERY -->
-
-
-
-
-
-	<div class="widget">
-
-		<div class="widget-title"><h4>CATEGORIES</h4></div>
-
-		<ul>
-
-			<li><a href="blog.html" title=""><i class="fa fa-hand-o-right"></i>Events</a></li>
-
-			<li><a href="blog.html" title=""><i class="fa fa-hand-o-right"></i>News</a></li>
-
-			<li><a href="blog.html" title=""><i class="fa fa-hand-o-right"></i>Blog</a></li>
-
-		</ul>
-
-	</div><!-- CATEGORIES -->
+	</div><!-- TAG CLOUD -->
 
 
 
 	<div class="widget">
 
-		<div class="widget-title"><h4>POPULAR POSTS</h4></div>
+		<div class="widget-title"><h4>RECENT BLOG</h4></div>
 
 		<div class="remove-ext">
 
@@ -76,150 +72,82 @@
 
 			</div><!-- WIDGET BLOG -->
 
-
-
-			<div class="widget-blog">
-
-				<div class="widget-blog-img"><img src="assets/images/resource/widget-blog3.jpg" alt=""></div>
-
-				<p><a href="blog-single.html" title="">Suspendisse velit anteg, aliquet vel adiping.</a></p>
-
-				<span><i class="fa fa-calendar-o"></i> November 01, 2013</span>
-
-			</div><!-- WIDGET BLOG -->
-
 		</div>						
 
-	</div><!-- POPULAR POSTS -->
+	</div><!-- RECENT BLOG -->
 
 
 
 	<div class="widget">
 
-		<div class="widget-title"><h4>COMMENTS</h4></div>
+		<div class="widget-title"><h4>VIDEO</h4></div>
 
-		<div class="remove-ext">
+		<div class="video">
 
-			<div class="comment-widget">
+			<div class="video-img lightbox">
 
-				<h5><a href="blog-single.html" title="">Design can feel like something you have always been waiting for without knowing.</a></h5>
+				<img src="assets/images/resource/video.jpg" alt="">
 
-				<span><i class="fa fa-calendar-o"></i> NOVEMBER 01, 2013</span>
-
-				<span><i class="fa fa-user"></i> NORMAN RONOGH</span>
-
-			</div>
-
-			<div class="comment-widget">
-
-				<h5><a href="blog-single.html" title="">Design can feel like something you have always been waiting for without knowing.</a></h5>
-
-				<span><i class="fa fa-calendar-o"></i> NOVEMBER 01, 2013</span>
-
-				<span><i class="fa fa-user"></i> NORMAN RONOGH</span>
+				<a href="" data-poptrox="vimeo" title="" style="outline: 0px;"><i class="fa fa-play"></i></a>
 
 			</div>
 
 		</div>
 
-	</div><!-- COMMENTS -->
+	</div><!-- VIDEO -->
+
+
 
 
 
 	<div class="widget">
 
-		<div class="widget-title"><h4>UPCOMING EVENT</h4></div>					
+		<div class="widget-title"><h4>META</h4></div>
 
-		<div class="event-count">
+		<ul>
 
-			<div class="event-img">
+			<li><a href="blog.html" title=""><i class="fa fa-hand-o-right"></i>Log in</a></li>
 
-				<img src="assets/images/resource/event1.jpg" alt="">
+			<li><a href="blog.html" title=""><i class="fa fa-hand-o-right"></i>Entries RSS</a></li>
 
-				<div class="downcount">
+			<li><a href="blog.html" title=""><i class="fa fa-hand-o-right"></i>Comments RSS</a></li>
 
-					<i class="fa fa-clock-o"></i>
+			<li><a href="blog.html" title=""><i class="fa fa-hand-o-right"></i>Wordpress.org</a></li>
 
-					<ul class="countdown">
+		</ul>
 
-						<li> <span class="days">00</span>
+	</div><!-- META -->
 
-						<p class="days_ref">DAYS</p>
 
-						</li>
-
-						<li> <span class="hours">00</span>
-
-						<p class="hours_ref">HOURS</p>
-
-						</li>
-
-						<li> <span class="minutes">00</span>
-
-						<p class="minutes_ref">MINTS</p>
-
-						</li>
-
-						<li> <span class="seconds">00</span>
-
-						<p class="seconds_ref">SECS</p>
-
-						</li>
-
-					</ul>
-
-				</div>
-
-			</div>
-
-			<h4><a href="event-single.html" title="">Offer and General Visuals</a></h4>
-
-		</div>
-
-	</div><!-- UPCOMING EVENT -->					
 
 
 
 	<div class="widget">
 
-		<div class="widget-title"><h4>RECENT SERMON</h4></div>
+		<div class="widget-title"><h4>LATEST EVENT</h4></div>
 
-		<div class="sermon-widget">
+		<div class="animal-event simple">
 
-			<div class="sermon-img">
+			<div class="animal-detail">
 
-				<img src="assets/images/resource/recent-sermon-widget.jpg" alt="">
+				<h4><a href="#" title="">Offers And General Visual</a></h4>
 
-				<span><i class="fa fa-calendar-o"></i> November 01, 2014</span>
+				<div class="animal-img"><img src="assets/images/resource/animal-event1.jpg" alt=""><span><strong>12</strong>Dec 2014</span></div>
 
-				<h3><a href="#" title="">Cras Imperdiet Viverra Magna</a></h3>
+				<ul>
 
-			</div>
+					<li><a href="#" title=""><i class="fa fa-map-marker"></i></a> <span>Torque Inc.1614 Chestnut Ave. Boston, MA 02166</span></li>
 
-			<div class="sermon-detail">
+					<li><a href="#" title=""><i class="fa fa-comments"></i></a><span>32 Comments</span></li>
 
-				<p>Lorem ipsum dolor sit amet, consectetur adipis cing elit. Sed laoreet massa at dui aliquet...</p>
+					<li><a href="#" title=""><i class="fa fa-clock-o"></i></a><span>30-08-2014 10:48 am</span></li>
 
-				<ul class="sermon-media">
-
-					<li><a href="http://vimeo.com/44867610" data-rel="prettyPhoto" title=""><i class="fa fa-film"></i></a></li>
-
-					<li><a title=""><i class="audio-btn fa fa-headphones"></i>
-
-						<div class="audioplayer"><audio src="sermon.mp3"></audio><span class="cross">X</span></div>
-
-					</a></li>
-
-					<li><a target="_blank" href="http://themes.webinane.com/deeds/test.doc" title=""><i class="fa fa-download"></i></a></li>
-
-					<li><a target="_blank" href="http://themes.webinane.com/deeds/test.pdf" title=""><i class="fa fa-book"></i></a></li>
-
-				</ul>									
+				</ul>
 
 			</div>
 
 		</div>
 
-	</div><!-- RECENT SERMON -->					
+	</div><!-- LATEST EVENT -->
 
-</aside><!-- SIDEBAR -->
+</aside>

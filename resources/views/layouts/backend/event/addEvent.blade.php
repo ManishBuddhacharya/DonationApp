@@ -35,13 +35,13 @@
         <div class="col-md-9">
           <div class="form-group xs-pt-10">
             <label>Title</label>
-            <input type="text" name="title" placeholder="Title" class="input-xs form-control">
+            <input type="text" name="title" placeholder="Title" class="input-xs form-control validate">
           </div>
         </div>
         <div class="col-md-3">
           <div class="form-group xs-pt-10">
             <label>Category</label>
-            <select name="category_id" class="select2">
+            <select name="category_id" class="select2 validate">
             </select>
           </div>
         </div>
@@ -50,13 +50,13 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>Address</label>
-            <input type="text" name="address" placeholder="Address" class="form-control input-xs">
+            <input type="text" name="address" placeholder="Address" class="form-control input-xs validate">
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label>Date and Time</label>
-            <input type="text" id="dateTime" name="dateTime" placeholder="Date and Time" class="form-control input-xs">
+            <input type="text" id="dateTime" name="dateTime" placeholder="Date and Time" class="form-control input-xs validate">
           </div>
         </div>
       </div>
@@ -64,7 +64,7 @@
       <div class="col-md-3">
         <div class="form-group">
           <label class="d-block">File</label>
-          <input type="file" name="file" id="file" data-multiple-caption="{count} files selected" multiple="" class="inputfile">
+          <input type="file" name="file" id="file" data-multiple-caption="{count} files selected" multiple="" class="inputfile validate">
           <label for="file" class="btn-default width-100"> <i class="mdi mdi-upload"></i><span>Browse files...          </span></label>
         </div>
       </div>
@@ -72,7 +72,7 @@
       <div class="col-md-12">
         <div class="form-group xs-pt-10">
           <label>Content</label>
-          <textarea name="content" id="summernote" class="form-control"></textarea>
+          <textarea name="content" id="summernote" class="form-control validate"></textarea>
         </div>
       </div>
       
@@ -184,21 +184,22 @@
 
   $(document).off('click', '#add_events').on('click','#add_events', function(e){
     e.preventDefault();
-    var formData = new FormData($('#form_event')[0]);        
-    
-    saveUpdateAction({
-        url : '/backend/event/add',
-        data: formData,
-        contentType : false,
-        processData: false,
-        hasCb: true,            
-    }, function (data) {
-        console.log(data); 
-        if (data.id) {
-          toastr.success("Event Added Successfully.");
-          event();
-        }    
-    });
+    if (validate() === 0){
+      var formData = new FormData($('#form_event')[0]);        
+      saveUpdateAction({
+          url : '/backend/event/add',
+          data: formData,
+          contentType : false,
+          processData: false,
+          hasCb: true,            
+      }, function (data) {
+          console.log(data); 
+          if (data.id) {
+            toastr.success("Event Added Successfully.");
+            event();
+          }    
+      });
+    }
   });
 
   function event(){

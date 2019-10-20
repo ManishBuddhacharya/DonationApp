@@ -10,14 +10,15 @@
 			<div class="comment p-20">
 
 				<div class="avatar" style="height: 70px; width: 70px;">
-					<img style="height: 70px;" src="assets/images/resource/comment1.jpg" alt="">
+					<img style="height: 70px;" src="{{"/images/".$comment->user()->profile_img?:'/img/gallery/img11.jpg'}}" alt="">
 					<a class="pointer comment_reply" data-id="{{$comment->id}}" title="" style="line-height: 10px;">REPLY</a>
 				</div>
 
 				<h5>
 					{{$comment->user()->name}}
+					
 
-					@if($comment->userc_id?:0 === auth()->user()->id)
+					@if($comment->userc_id === auth()->user()?auth()->user()->id:0)
                   	<span class="icon mdi mdi-delete mr-5 comment_delete pointer pull-right" data-url="/comment/delete/{{$comment->id}}" style="color: #e72919; font-weight: bold; font-size: 18px;"></span>
 
 					<span class="icon mdi mdi-edit mr-10 comment_edit pointer pull-right" data-url="/comment/edit/{{$comment->id}}" style="color: #4285f4; font-weight: bold; font-size: 18px;"></span>
@@ -37,7 +38,7 @@
 				@foreach($comment->replies as $reply)
 				<li class="mt-5 mb-5">
 					<div class="comment p-20">
-						<div class="avatar" style="height: 70px; width: 70px;"><img style="height: 70px;" src="assets/images/resource/comment2.jpg" alt=""><a class="pointer comment_reply" data-id="{{$comment->id}}" title="" style="line-height: 10px;">REPLY</a></div>
+						<div class="avatar" style="height: 70px; width: 70px;"><img style="height: 70px;" src="{{"/images/".$comment->user()->profile_img?:'/img/gallery/img11.jpg'}}" alt=""><a class="pointer comment_reply" data-id="{{$comment->id}}" title="" style="line-height: 10px;">REPLY</a></div>
 						<h5>
 							{{$reply->user()->name}}
 							@if($reply->userc_id?:0 === auth()->user()->id)

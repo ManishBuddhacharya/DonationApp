@@ -34,14 +34,14 @@
       <div class="col-md-4">
         <div class="form-group xs-pt-10">
           <label>Member</label>
-          <select name="user_id" id="member" class="select2">
+          <select name="user_id" id="member" class="select2 validate">
           </select>
         </div>
       </div>
       <div class="col-md-4">
         <div class="form-group xs-pt-10">
           <label>Posiiton</label>
-          <select name="position_id" id="position" class="select2">
+          <select name="position_id" id="position" class="select2 validate">
           </select>
         </div>
       </div>
@@ -113,21 +113,22 @@
 
   $(document).off('click', '#add_blog').on('click','#add_blog', function(e){
     e.preventDefault();
-    var formData = new FormData($('#form_blog')[0]);        
-    
-    saveUpdateAction({
-        url : '/backend/organization/add',
-        data: formData,
-        contentType : false,
-        processData: false,
-        hasCb: true,            
-    }, function (data) {
-        console.log(data); 
-        if (data.id) {
-          toastr.success("Member Position Added Successfully.");
-          organization();
-        }    
-    });
+    if (validate() === 0){
+      var formData = new FormData($('#form_blog')[0]);        
+      saveUpdateAction({
+          url : '/backend/organization/add',
+          data: formData,
+          contentType : false,
+          processData: false,
+          hasCb: true,            
+      }, function (data) {
+          console.log(data); 
+          if (data.id) {
+            toastr.success("Member Position Added Successfully.");
+            organization();
+          }    
+      });
+    }
   });
 
   function organization(){

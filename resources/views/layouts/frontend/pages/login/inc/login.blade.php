@@ -16,13 +16,13 @@
 
 						<div class="col-md-12 field">
 							<label>Email</label>
-							<input type="text" class="form-control" name="email">
+							<input type="text" class="form-control validate" name="email">
 
 						</div>
 
 						<div class="col-md-12 field">
 							<label>Password</label>
-							<input type="password" class="form-control" name="password">
+							<input type="password" class="form-control validate" name="password">
 
 						</div>
 
@@ -53,7 +53,6 @@
 	$(document).find('.field input').on('click', function(e){
 		$(this).parent().find('label').addClass('fieldTransform');
 		$(this).parent().find('label').removeClass('fieldTransformBack');
-
 	});
 
 	$(document).find('.field input').on('blur', function(e){
@@ -61,6 +60,12 @@
 		if (x.length == 0) {
 			$(this).parent().find('label').removeClass('fieldTransform');
 			$(this).parent().find('label').addClass('fieldTransformBack');
+		}
+	});
+
+	$(document).on('submit', function(e){
+		if (validate() > 0){
+			e.preventDefault();
 		}
 	});
 </script>

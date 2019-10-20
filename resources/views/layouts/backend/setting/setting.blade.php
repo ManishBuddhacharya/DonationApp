@@ -39,28 +39,28 @@
                   <div class="col-md-6">
                     <div class="form-group xs-pt-10">
                       <label>Name</label>
-                      <input type="text" name="name" readonly value="{{$user->name}}" placeholder="Name" class="input-xs form-control">
+                      <input type="text" name="name" readonly value="{{$user->name}}" placeholder="Name" class="input-xs form-control validate">
                     </div>
                   </div>
 
                   <div class="col-md-6">
                     <div class="form-group xs-pt-10">
                       <label>Address</label>
-                      <input type="text" name="address" readonly value="{{$user->address}}" placeholder="Address" class="input-xs form-control">
+                      <input type="text" name="address" readonly value="{{$user->address}}" placeholder="Address" class="input-xs form-control validate">
                     </div>
                   </div>
 
                   <div class="col-md-6">
                     <div class="form-group xs-pt-10">
                       <label>Phone</label>
-                      <input type="text" name="phone" readonly value="{{$user->phone}}" placeholder="Phone" class="input-xs form-control">
+                      <input type="text" name="phone" readonly value="{{$user->phone}}" placeholder="Phone" class="input-xs form-control validate">
                     </div>
                   </div>
 
                   <div class="col-md-6">
                     <div class="form-group xs-pt-10">
                       <label>Email</label>
-                      <input type="text" name="email" readonly value="{{$user->email}}" placeholder="Email" class="input-xs form-control">
+                      <input type="text" name="email" readonly value="{{$user->email}}" placeholder="Email" class="input-xs form-control validate">
                     </div>
                   </div>
                  
@@ -84,14 +84,14 @@
                   <div class="col-md-6 ">
                     <div class="form-group xs-pt-10">
                       <label>New Password</label>
-                      <input type="password" name="password"  placeholder="New Password" class="input-xs form-control">
+                      <input type="password" name="password" id="password" placeholder="New Password" class="input-xs form-control validate_pass">
                     </div>
                   </div>
 
                   <div class="col-md-6 ">
                     <div class="form-group xs-pt-10">
                       <label>Confirm Password</label>
-                      <input type="password" name="Confirm_password" placeholder="Confirm Password" class="input-xs form-control">
+                      <input type="password" name="Confirm_password" id="Confirm_password" placeholder="Confirm Password" class="input-xs form-control validate_pass">
                     </div>
                   </div>
                  
@@ -153,40 +153,48 @@ $('#editPassword').off('click').on('click', function(e){
 
   $(document).off('click', '#updateProfile').on('click','#updateProfile', function(e){
     e.preventDefault();
-    var formData = new FormData($('#form_profile')[0]);        
-    
-    saveUpdateAction({
-        url : '/backend/setting/profile/update/{{$user->id}}',
-        data: formData,
-        contentType : false,
-        processData: false,
-        hasCb: true,            
-    }, function (data) {
-        console.log(data); 
-        if (data.id) {
-          toastr.success("Profile Updated Successfully.");
-          setting();
-        }    
-    });
+    if (validate() === 0){
+      var formData = new FormData($('#form_profile')[0]);        
+      saveUpdateAction({
+          url : '/backend/setting/profile/update/{{$user->id}}',
+          data: formData,
+          contentType : false,
+          processData: false,
+          hasCb: true,            
+      }, function (data) {
+          console.log(data); 
+          if (data.id) {
+            toastr.success("Profile Updated Successfully.");
+            setting();
+          }    
+      });
+    }
   });
 
   $(document).off('click', '#updatePassword').on('click','#updatePassword', function(e){
     e.preventDefault();
-    var formData = new FormData($('#form_password')[0]);        
-    
-    saveUpdateAction({
-        url : '/backend/setting/password/update/{{$user->id}}',
-        data: formData,
-        contentType : false,
-        processData: false,
-        hasCb: true,            
-    }, function (data) {
-        console.log(data); 
-        if (data.id) {
-          toastr.success("Password Updated Successfully.");
-          setting();
-        }    
-    });
+    if (validate_pass() === 0){
+      if ($('#password').val() === $('#Confirm_password').val()) {
+
+      var formData = new FormData($('#form_password')[0]);        
+      saveUpdateAction({
+          url : '/backend/setting/password/update/{{$user->id}}',
+          data: formData,
+          contentType : false,
+          processData: false,
+          hasCb: true,            
+      }, function (data) {
+          console.log(data); 
+          if (data.id) {
+            toastr.success("Password Updated Successfully.");
+            setting();
+          }    
+      });
+      }
+      else{
+        toastr.error("New Password and Confirm Password did not match.");
+      }
+    }
   });
 
   $('.cause_edit').off('click').on('click', function(e){
@@ -256,6 +264,18 @@ $('#editPassword').off('click').on('click', function(e){
             alert('dsadad');
         }
      });
+  }
+
+  function validate_pass(){
+    let check = 0;
+    $.each($('.validate_pass'),function(){
+      if(this.value == ""){
+        check++;
+        console.log($(this).parent().find('label').first().text());
+        toastr.error( $(this).parent().find('label').first().text()+" cannot be empty.");
+      }
+    });
+    return check;
   }
 
 </script>

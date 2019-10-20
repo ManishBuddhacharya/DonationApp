@@ -34,13 +34,13 @@
       <div class="col-md-12">
         <div class="form-group xs-pt-10">
           <label>Title</label>
-          <input type="text" name="title" placeholder="Title" value="{{$blog->title}}" class="input-xs form-control">
+          <input type="text" name="title" placeholder="Title" value="{{$blog->title}}" class="input-xs form-control validate">
         </div>
       </div>
       <div class="col-md-4">
         <div class="form-group">
           <label>Category</label>
-          <select name="category_id" class="select2">
+          <select name="category_id" class="select2 validate">
             <option value="{{$blog->id}}">{{$blog->name}}</option>
           </select>
         </div>
@@ -48,7 +48,7 @@
       <div class="col-md-4">
         <div class="form-group">
           <label class="d-block">File</label>
-          <input type="file" name="file" id="file" data-multiple-caption="{count} files selected" multiple="" class="inputfile">
+          <input type="file" name="file" id="file" data-multiple-caption="{count} files selected" multiple="" class="inputfile ">
           <label for="file" class="btn-default width-100"> <i class="mdi mdi-upload"></i><span>Browse files...          </span></label>
         </div>
       </div>
@@ -56,7 +56,7 @@
       <div class="col-md-12">
         <div class="form-group xs-pt-10">
           <label>Content</label>
-          <textarea name="content" id="summernote" class="form-control">{{$blog->content}}</textarea>
+          <textarea name="content" id="summernote" class="form-control validate">{{$blog->content}}</textarea>
         </div>
       </div>
       
@@ -157,21 +157,22 @@
 
   $(document).off('click', '#update_blog').on('click','#update_blog', function(e){
     e.preventDefault();
-    var formData = new FormData($('#form_blog')[0]);        
-    
-    saveUpdateAction({
-        url : '/backend/blog/update/{{$blog->id}}',
-        data: formData,
-        contentType : false,
-        processData: false,
-        hasCb: true,            
-    }, function (data) {
-        console.log(data); 
-        if (data.id) {
-          blog();
-          toastr.success("Blog Updated Successfully.");
-        }    
-    });
+    if (validate() === 0){
+      var formData = new FormData($('#form_blog')[0]);        
+      saveUpdateAction({
+          url : '/backend/blog/update/{{$blog->id}}',
+          data: formData,
+          contentType : false,
+          processData: false,
+          hasCb: true,            
+      }, function (data) {
+          console.log(data); 
+          if (data.id) {
+            blog();
+            toastr.success("Blog Updated Successfully.");
+          }    
+      });
+    }
   });
 
   function blog(){

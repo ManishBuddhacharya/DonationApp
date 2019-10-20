@@ -34,13 +34,13 @@
       <div class="col-md-12">
         <div class="form-group xs-pt-10">
           <label>Title</label>
-          <input type="text" name="title" placeholder="Title" value="{{$story->title}}" class="input-xs form-control">
+          <input type="text" name="title" placeholder="Title" value="{{$story->title}}" class="input-xs form-control validate">
         </div>
       </div>
       <div class="col-md-4">
         <div class="form-group">
           <label>Category</label>
-          <select name="category_id" class="select2">
+          <select name="category_id" class="select2 validate">
             <option value="{{$story->id}}">{{$story->name}}</option>
           </select>
         </div>
@@ -56,7 +56,7 @@
       <div class="col-md-12">
         <div class="form-group xs-pt-10">
           <label>Content</label>
-          <textarea name="content" id="summernote" class="form-control">{{$story->content}}</textarea>
+          <textarea name="content" id="summernote" class="form-control validate">{{$story->content}}</textarea>
         </div>
       </div>
       
@@ -157,21 +157,22 @@
 
   $(document).off('click', '#update_story').on('click','#update_story', function(e){
     e.preventDefault();
-    var formData = new FormData($('#form_story')[0]);        
-    
-    saveUpdateAction({
-        url : '/backend/story/update/{{$story->id}}',
-        data: formData,
-        contentType : false,
-        processData: false,
-        hasCb: true,            
-    }, function (data) {
-        console.log(data); 
-        if (data.id) {
-          story();
-          toastr.success("Cause Updated Successfully.");
-        }    
-    });
+    if (validate() === 0){
+      var formData = new FormData($('#form_story')[0]);        
+      saveUpdateAction({
+          url : '/backend/story/update/{{$story->id}}',
+          data: formData,
+          contentType : false,
+          processData: false,
+          hasCb: true,            
+      }, function (data) {
+          console.log(data); 
+          if (data.id) {
+            story();
+            toastr.success("Cause Updated Successfully.");
+          }    
+      });
+    }
   });
 
   function story(){

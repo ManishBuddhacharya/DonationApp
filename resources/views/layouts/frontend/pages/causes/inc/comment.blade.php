@@ -10,7 +10,7 @@
 			<div class="comment p-20">
 
 				<div class="avatar" style="height: 70px; width: 70px;">
-					<img style="height: 70px;" src="assets/images/resource/comment1.jpg" alt="">
+					<img style="height: 70px;" src="{{"/images/".$comment->user()->profile_img?:'/img/gallery/img11.jpg'}}" alt="">
 					<a class="pointer comment_reply" data-id="{{$comment->id}}" title="" style="line-height: 10px;">REPLY</a>
 				</div>
 
@@ -36,7 +36,7 @@
 				@foreach($comment->replies as $reply)
 				<li class="mt-5 mb-5">
 					<div class="comment p-20">
-						<div class="avatar" style="height: 70px; width: 70px;"><img style="height: 70px;" src="assets/images/resource/comment2.jpg" alt=""><a class="pointer comment_reply" data-id="{{$comment->id}}" title="" style="line-height: 10px;">REPLY</a></div>
+						<div class="avatar" style="height: 70px; width: 70px;"><img style="height: 70px;" src="{{"/images/".$comment->user()->profile_img?:'/img/gallery/img11.jpg'}}" alt=""><a class="pointer comment_reply" data-id="{{$comment->id}}" title="" style="line-height: 10px;">REPLY</a></div>
 						<h5>
 							{{$reply->user()->name}}
 							@if($reply->userc_id?:0 === auth()->user()->id)
