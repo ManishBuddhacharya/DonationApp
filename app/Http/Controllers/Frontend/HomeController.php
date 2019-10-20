@@ -170,12 +170,13 @@ class HomeController extends Controller
 
     public function organization()
     {
-        return view($this->layout.'organization.organization');
-    }
-
-    public function organizationDetail()
-    {
-        return view($this->layout.'organization.organization');
+        $members = DB::table('user_positions')
+        ->join('users','users.id', '=', 'user_positions.user_id')
+        ->join('positions','positions.id', '=', 'user_positions.position_id')
+        ->select( 'user_positions.*', 'positions.*', 'users.*')
+        ->orderBy('positions.rank')
+        ->get();
+        return view($this->layout.'organization.organization', compact('members'));
     }
 
     public function contact()

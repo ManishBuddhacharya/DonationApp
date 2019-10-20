@@ -28,34 +28,21 @@
 }
 </style>
 <div class="panel panel-default panel-border-color panel-border-color-primary">
-  <div class="panel-heading panel-heading-divider">Add Blog</div>
+  <div class="panel-heading panel-heading-divider">Add Member Position</div>
   <div class="panel-body">
     <form id="form_blog">
-      <div class="col-md-12">
-        <div class="form-group xs-pt-10">
-          <label>Title</label>
-          <input type="text" name="title" placeholder="Title" class="input-xs form-control">
-        </div>
-      </div>
       <div class="col-md-4">
-        <div class="form-group">
-          <label>Category</label>
-          <select name="category_id" class="select2">
+        <div class="form-group xs-pt-10">
+          <label>Member</label>
+          <select name="user_id" id="member" class="select2">
           </select>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="form-group">
-          <label class="d-block">File</label>
-          <input type="file" name="file" id="file" data-multiple-caption="{count} files selected" multiple="" class="inputfile">
-          <label for="file" class="btn-default width-100"> <i class="mdi mdi-upload"></i><span>Browse files...          </span></label>
-        </div>
-      </div>
-
-      <div class="col-md-12">
         <div class="form-group xs-pt-10">
-          <label>Content</label>
-          <textarea name="content" id="summernote" class="form-control"></textarea>
+          <label>Posiiton</label>
+          <select name="position_id" id="position" class="select2">
+          </select>
         </div>
       </div>
       
@@ -72,63 +59,14 @@
 </div>
 
 <script>
-  function fileValidation(type)
-{
-    var typeC=['image/jpeg',
-        'image/jpg',
-        'image/png',
-        'image/gif',
-        'application/pdf',
-        'image/bmp',
-        'image/webp',
-        'application/msword',
-        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-        'application/vnd.ms-excel',
-        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-        'text/plain'
-    ];
-    return typeC.indexOf(type) > -1;
-
-}
-
-  $('.inputfile').on('change', function (e) {
-        var $input   = $( this ),
-                $label   = $input.next( 'label' ),
-                labelVal = $label.html();
-        var fileName = '';
-        fileName = e.target.value.split('\\').pop();
-
-        if (fileName){
-            $label.find('span').html(fileName);
-            $(this).html(fileName);
-        }
-        else{
-            $label.html(labelVal);
-            $(this).html(labelVal);
-        }
-        for(var i=0;i<this.files.length;i++)
-        {
-            var type=this.files[i].type;
-            var valid=fileValidation(type);
-            if(!valid)
-            {
-                $('#invalidType').show();
-            }
-            else {
-                $('#invalidType').hide();
-            }
-
-        }
-    });
-
   $(document).ready(function() {
-    $('.select2').select2({
-      placeholder: 'Select Category',
+    $('#member').select2({
+      placeholder: 'Select Members',
       width: '100%',
       height:"20px",
       ajax: {
           method: 'POST',
-          url: '/backend/categories',
+          url: '/backend/users',
           processResults: function(data) {
               let res = [];
               $.each(data, function(i, obj) {
@@ -144,14 +82,33 @@
       }
     });
 
-    $('#summernote').summernote({
-      height: 200,
+    $('#position').select2({
+      placeholder: 'Select Position',
+      width: '100%',
+      height:"20px",
+      ajax: {
+          method: 'POST',
+          url: '/backend/positions',
+          processResults: function(data) {
+              let res = [];
+              $.each(data, function(i, obj) {
+                  res.push({
+                      id: obj.id,
+                      text: obj.position_name
+                  });
+              });
+              return {
+                  results: res
+              };
+          }
+      }
     });
+
   });
 
   $('#cancel_blog').off('click').on('click', function(e){
     e.preventDefault();
-    story();
+    organization();
   });
 
   $(document).off('click', '#add_blog').on('click','#add_blog', function(e){
@@ -159,7 +116,7 @@
     var formData = new FormData($('#form_blog')[0]);        
     
     saveUpdateAction({
-        url : '/backend/blog/add',
+        url : '/backend/organization/add',
         data: formData,
         contentType : false,
         processData: false,
@@ -167,14 +124,14 @@
     }, function (data) {
         console.log(data); 
         if (data.id) {
-          toastr.success("Blog Added Successfully.");
-          story();
+          toastr.success("Member Position Added Successfully.");
+          organization();
         }    
     });
   });
 
-  function story(){
-    let url = '/backend/blog';
+  function organization(){
+    let url = '/backend/organization';
     $.ajax({
         method:'get',
         url:url,
