@@ -14,8 +14,6 @@
 
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elt. Aioielit lorem, in lacinia libero lacina ac. Pellente sque vulputat eusmod, nulla dolor placerat eiest, et adipiscing urn aom. Aioielit lorem, in lacinia libero lacina ac. Pellente sque lacinia libero lacina ac. Pellente sque vulputa teuismod, nulla dolor placerat eiest, et adipiscing urna metuis. Moli viourem sit amet, Lorem ipsum dolor sit amet, elt. <a href="#" title="">Aioielit lorem</a>, in lacinia libero lacina ac. Pellente sque vulput ate uismod.</p>
 
-						<a class="button" href="#" title="">DONATE NOW</a>
-
 					</div>
 
 				</div>

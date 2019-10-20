@@ -12,11 +12,11 @@
 
 					<div class="welcome">
 
-						<h1><i class="fa fa-recycle"></i>WELCOME TO <span>DEEDS</span></h1>
+						<h1><i class="fa fa-recycle"></i>{{ucfirst($cause->title)}}</h1>
 
-						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean we commodo ligula eget dolor. Aenean massa. Cum sociis natoq culus montes, nascetur ridiculus mus. Donec quam felis, ultricies consecte tuer elit. ....</p>
+						<p class="line-clamp">{{strip_tags($cause->content)}}</p>
 
-						<a title="" href="about.html">READ MORE</a>
+						<a title="" class="pointer load_page" data-url = "/frontend/cause/detail/{{$cause->id}}" >READ MORE</a>
 
 					</div>
 
@@ -26,15 +26,15 @@
 
 					<div class="survey">
 
-						<h3>DONATION SURVEY</h3>
+						<h3>DONATION</h3>
 
 						<div class="needed">
 
 							<span><i class="fa fa-bank"></i></span>
 
-							<h5>$ 700,000</h5>
+							<h5>$ {{$cause->goal}}</h5>
 
-							<h6>NEEDED EVERY YEAR</h6>
+							<h6>NEEDED</h6>
 
 						</div>
 
@@ -42,9 +42,9 @@
 
 							<span><i class="fa fa-ambulance"></i></span>
 
-							<h5>490K</h5>
+							<h5>$ {{$cause->goal}}</h5>
 
-							<h6>SPENT</h6>
+							<h6>Total</h6>
 
 						</div>
 
@@ -52,9 +52,9 @@
 
 							<span><i class="fa fa-delicious"></i></span>
 
-							<h5>230K</h5>
+							<h5>$ {{$cause->transactions->sum('amount')?:0}}</h5>
 
-							<h6>PROJECTS</h6>
+							<h6>Raised</h6>
 
 						</div>
 
@@ -69,3 +69,21 @@
 	</div>
 
 </section>
+
+<script>
+	$('.load_page').off('click').on('click', function(e){
+		let url = $(this).attr('data-url');
+		$.ajax({
+		    method:'get',
+		    url:url,
+		    success:function(data)
+		    {
+		      	$('#section-wrapper').html(data);
+		    },
+		    error:function(e)
+		    {
+		      	alert('dsadad');
+		    }
+	   });
+	});
+</script>
