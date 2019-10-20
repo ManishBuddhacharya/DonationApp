@@ -1,26 +1,31 @@
-<style>
-	#tree {
-        width: 100%;
-        height: 100%;
-        position: relative;
-    }
-</style>
-<div id="tree">
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <div class="remove-ext">
+
+                <div class="team-page mt-15" style="min-height: 600px;">
+                    <div class="row">
+                        @foreach($members as $member)
+                        <div class="col-md-3 mb-15">
+                            <div class="member">
+                                <div class="team">
+                                    <div class="team-img" >
+                                        <img style="height: 200px;" src="{{"/images/".$member->profile_img?:'/img/gallery/avatar.png'}}" alt="">
+                                    </div>
+                                    <div class="member-detail width-100 pt-10 pb-10 pl-25 pr-25">
+                                        <h3><a class="pointer" title="">{{ucwords($member->name)}}</a></h3>
+                                        <span>{{ucwords($member->position_name)}}</span>
+                                    </div>
+                                </div>
+                            </div><!-- MEMBER -->
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
- <script>
- 	var chart = new OrgChart(document.getElementById("tree"), {
-        template: "ula",
-        enableSearch: false,
-        mouseScrool: OrgChart.action.none,
-        nodeBinding: {
-            field_0: "name",
-            field_1: "title",
-            img_0: "img"
-        },
-        nodes: [
-            { id: 1, name: "Amber McKenzie", title: "CEO", img: "//balkangraph.com/js/img/empty-img-white.svg" },
-            { id: 2, pid: 1, name: "Ava Field", title: "IT Manager", img: "//balkangraph.com/js/img/empty-img-white.svg"},
-            { id: 3, pid: 1, name: "Rhys Harper", img: "//balkangraph.com/js/img/empty-img-white.svg" }
-        ]
-    });    
- </script>

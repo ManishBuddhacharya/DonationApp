@@ -87,6 +87,7 @@ mix.scripts([
     'resources/js/bootstrap-datetimepicker.min.js',
     'node_modules/dropzone/dist/dropzone.js',
     'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
+    'node_modules/bootstrap-table/dist/bootstrap-table.min.js',
 ], 'public/js/backend.js');
 
 mix.styles([
@@ -101,6 +102,7 @@ mix.styles([
     'resources/css/bootstrap-datetimepicker.min.css',
     'node_modules/dropzone/dist/dropzone.css',
     'node_modules/magnific-popup/dist/magnific-popup.css',
+    'node_modules/bootstrap-table/dist/bootstrap-table.min.css',
     ],'public/css/backend.css'); 
  
 mix.scripts([
