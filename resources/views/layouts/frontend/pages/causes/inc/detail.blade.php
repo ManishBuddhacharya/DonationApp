@@ -45,7 +45,7 @@
 
 			</ul>
 
-			<img src="assets/images/resource/author.jpg" alt="">
+			<img src="{{"/images/".$cause->user()->profile_img?:'/img/gallery/img11.jpg'}}" alt="">
 
 		</div><!-- POST META -->
 

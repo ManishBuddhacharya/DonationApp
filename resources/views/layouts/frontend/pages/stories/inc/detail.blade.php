@@ -18,7 +18,7 @@
 
 			</ul>
 
-			<img src="{{"/images/".$story->file_name?:'/img/gallery/img11.jpg'}}" alt="">
+			<img src="{{"/images/".$story->user()->profile_img?:'/img/gallery/img11.jpg'}}" alt="">
 
 		</div><!-- POST META -->
 

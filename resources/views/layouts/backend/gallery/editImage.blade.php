@@ -7,7 +7,7 @@
           <div class="col-md-12">
             <div class="form-group">
               <label class="d-block">File</label>
-              <input type="file" name="file" id="file" data-multiple-caption="{count} files selected" multiple="" class="inputfile">
+              <input type="file" name="file" id="file" data-multiple-caption="{count} files selected" multiple="" class="inputfile validate">
               <label for="file" class="btn-default width-100"> <i class="mdi mdi-upload"></i><span>Browse files...          </span></label>
             </div>
           </div>
@@ -70,22 +70,23 @@
 
   $(document).off('click', '#update_image').on('click','#update_image', function(e){
     e.preventDefault();
-    var formData = new FormData($('#form_image_edit')[0]);        
-    
-    saveUpdateAction({
-        url : '/backend/gallery/update/{{$image->id}}',
-        data: formData,
-        contentType : false,
-        processData: false,
-        hasCb: true,            
-    }, function (data) {
-        console.log(data); 
-        if (data.id) {
-          $('#modal_edit_image').modal('hide');
-          gallery();
-          toastr.success("Image Updated Successfully.");
-        }    
-    });
+    if (validate() === 0){
+      var formData = new FormData($('#form_image_edit')[0]);        
+      saveUpdateAction({
+          url : '/backend/gallery/update/{{$image->id}}',
+          data: formData,
+          contentType : false,
+          processData: false,
+          hasCb: true,            
+      }, function (data) {
+          console.log(data); 
+          if (data.id) {
+            $('#modal_edit_image').modal('hide');
+            gallery();
+            toastr.success("Image Updated Successfully.");
+          }    
+      });
+    }
   });
 
   function gallery(){

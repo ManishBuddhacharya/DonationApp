@@ -14,7 +14,7 @@
 						@csrf
 						<div class="col-md-12 field">
 							<label>Name</label>
-							<input type="text" class="form-control" name="name">
+							<input type="text" class="form-control validate" name="name">
 							@error('name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -26,7 +26,7 @@
 						<div class="col-md-6 field">
 							<label>Address</label>
 
-							<input type="text" class="form-control" name="address">
+							<input type="text" class="form-control validate" name="address">
 							@error('address')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -37,7 +37,7 @@
 						<div class="col-md-6 field">
 
 							<label>Phone No</label>
-							<input type="text" class="form-control" name="phone">
+							<input type="text" class="form-control validate" name="phone">
 							@error('phone')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -49,7 +49,7 @@
 
 						<div class="col-md-12 field">
 							<label>Email</label>
-							<input type="email" class="form-control" name="email">
+							<input type="email" class="form-control validate" name="email">
 							@error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -60,7 +60,7 @@
 						<div class="col-md-6 field">
 
 							<label>{{ __('Password') }}</label>
-							<input type="Password" class="form-control" name="password">
+							<input type="Password" class="form-control validate" name="password">
 							@error('password')
 	                            <span class="invalid-feedback" role="alert">
 	                                <strong>{{ $message }}</strong>
@@ -72,7 +72,7 @@
 						<div class="col-md-6 field">
 							<label>Confirm Password</label>
 
-							<input type="Password" class="form-control" name="password_confirmation">
+							<input type="Password" class="form-control validate" name="password_confirmation">
 
 
 						</div>
@@ -105,5 +105,11 @@
 			$(this).parent().find('label').addClass('fieldTransformBack');
 		}
 	});
+
+	$(document).on('submit', function(e){
+		if (validate() > 0){
+			e.preventDefault();
+		}
+	})
 
 </script>

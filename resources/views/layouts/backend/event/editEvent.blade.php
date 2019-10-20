@@ -34,13 +34,13 @@
       <div class="col-md-9">
         <div class="form-group xs-pt-10">
           <label>Title</label>
-          <input type="text" name="title" placeholder="Title" value="{{$event->title}}" class="input-xs form-control">
+          <input type="text" name="title" placeholder="Title" value="{{$event->title}}" class="input-xs form-control validate">
         </div>
       </div>
       <div class="col-md-3 pt-10">
         <div class="form-group">
           <label>Category</label>
-          <select name="category_id" class="select2">
+          <select name="category_id" class="select2 validate">
             <option value="{{$event->id}}">{{$event->name}}</option>
           </select>
         </div>
@@ -49,13 +49,13 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>Address</label>
-            <input type="text" name="address" placeholder="Address" value="{{$event->address}}" class="form-control input-xs">
+            <input type="text" name="address" placeholder="Address" value="{{$event->address}}" class="form-control input-xs validate">
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label>Date & Time</label>
-            <input type="text" name="dateTime" id="dateTime" placeholder="Date & Time" value="{{$event->dateTime}}" class="form-control input-xs">
+            <input type="text" name="dateTime" id="dateTime" placeholder="Date & Time" value="{{$event->dateTime}}" class="form-control input-xs validate">
           </div>
         </div>
       </div>
@@ -71,7 +71,7 @@
       <div class="col-md-12">
         <div class="form-group xs-pt-10">
           <label>Content</label>
-          <textarea name="content" id="summernote" class="form-control">{{$event->content}}</textarea>
+          <textarea name="content" id="summernote" class="form-control validate">{{$event->content}}</textarea>
         </div>
       </div>
       
@@ -183,21 +183,22 @@
 
   $(document).off('click', '#update_event').on('click','#update_event', function(e){
     e.preventDefault();
-    var formData = new FormData($('#form_event')[0]);        
-    
-    saveUpdateAction({
-        url : '/backend/event/update/{{$event->id}}',
-        data: formData,
-        contentType : false,
-        processData: false,
-        hasCb: true,            
-    }, function (data) {
-        console.log(data); 
-        if (data.id) {
-          event();
-          toastr.success("Event Updated Successfully.");
-        }    
-    });
+    if (validate() === 0){
+      var formData = new FormData($('#form_event')[0]);        
+      saveUpdateAction({
+          url : '/backend/event/update/{{$event->id}}',
+          data: formData,
+          contentType : false,
+          processData: false,
+          hasCb: true,            
+      }, function (data) {
+          console.log(data); 
+          if (data.id) {
+            event();
+            toastr.success("Event Updated Successfully.");
+          }    
+      });
+    }
   });
 
   function event(){

@@ -34,19 +34,19 @@
       <div class="col-md-12">
         <div class="form-group xs-pt-10">
           <label>Title</label>
-          <input type="text" name="title" placeholder="Title" value="{{$cause->title}}" class="input-xs form-control">
+          <input type="text" name="title" placeholder="Title" value="{{$cause->title}}" class="input-xs form-control validate">
         </div>
       </div>
       <div class="col-md-4">
         <div class="form-group">
           <label>Goal</label>
-          <input type="number" name="goal" placeholder="Password" value="{{$cause->goal}}" class="form-control input-xs">
+          <input type="number" name="goal" placeholder="Goal" value="{{$cause->goal}}" class="form-control input-xs validate">
         </div>
       </div>
       <div class="col-md-4">
         <div class="form-group">
           <label>Category</label>
-          <select name="category_id" class="select2">
+          <select name="category_id" class="select2 validate">
             <option value="{{$cause->id}}">{{$cause->name}}</option>
           </select>
         </div>
@@ -62,7 +62,7 @@
       <div class="col-md-12">
         <div class="form-group xs-pt-10">
           <label>Content</label>
-          <textarea name="content" id="summernote" class="form-control">{{$cause->content}}</textarea>
+          <textarea name="content" id="summernote" class="form-control validate">{{$cause->content}}</textarea>
         </div>
       </div>
       
@@ -165,21 +165,22 @@
 
   $(document).off('click', '#update_cause').on('click','#update_cause', function(e){
     e.preventDefault();
-    var formData = new FormData($('#form_cause')[0]);        
-    
-    saveUpdateAction({
-        url : '/backend/cause/update/{{$cause->id}}',
-        data: formData,
-        contentType : false,
-        processData: false,
-        hasCb: true,            
-    }, function (data) {
-        console.log(data); 
-        if (data.id) {
-          cause();
-          toastr.success("Cause Updated Successfully.");
-        }    
-    });
+    if (validate() === 0){
+      var formData = new FormData($('#form_cause')[0]);        
+      saveUpdateAction({
+          url : '/backend/cause/update/{{$cause->id}}',
+          data: formData,
+          contentType : false,
+          processData: false,
+          hasCb: true,            
+      }, function (data) {
+          console.log(data); 
+          if (data.id) {
+            cause();
+            toastr.success("Cause Updated Successfully.");
+          }    
+      });
+    }
   });
 
   function cause(){

@@ -34,26 +34,26 @@
       <div class="col-md-12">
         <div class="form-group xs-pt-10">
           <label>Title</label>
-          <input type="text" name="title" placeholder="Title" class="input-xs form-control">
+          <input type="text" name="title" placeholder="Title" class="input-xs form-control validate">
         </div>
       </div>
       <div class="col-md-4">
         <div class="form-group">
           <label>Goal</label>
-          <input type="number" name="goal" placeholder="Password" class="form-control input-xs">
+          <input type="number" name="goal" placeholder="Goal" class="form-control validate input-xs">
         </div>
       </div>
       <div class="col-md-4">
         <div class="form-group">
           <label>Category</label>
-          <select name="category_id" class="select2">
+          <select name="category_id" class="select2 validate">
           </select>
         </div>
       </div>
       <div class="col-md-4">
         <div class="form-group">
           <label class="d-block">File</label>
-          <input type="file" name="file" id="file" data-multiple-caption="{count} files selected" multiple="" class="inputfile">
+          <input type="file" name="file" id="file" data-multiple-caption="{count} files selected" multiple="" class="inputfile validate">
           <label for="file" class="btn-default width-100"> <i class="mdi mdi-upload"></i><span>Browse files...          </span></label>
         </div>
       </div>
@@ -61,7 +61,7 @@
       <div class="col-md-12">
         <div class="form-group xs-pt-10">
           <label>Content</label>
-          <textarea name="content" id="summernote" class="form-control"></textarea>
+          <textarea name="content" id="summernote" class="form-control validate"></textarea>
         </div>
       </div>
       
@@ -79,23 +79,23 @@
 
 <script>
   function fileValidation(type)
-{
-    var typeC=['image/jpeg',
-        'image/jpg',
-        'image/png',
-        'image/gif',
-        'application/pdf',
-        'image/bmp',
-        'image/webp',
-        'application/msword',
-        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-        'application/vnd.ms-excel',
-        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-        'text/plain'
-    ];
-    return typeC.indexOf(type) > -1;
+  {
+      var typeC=['image/jpeg',
+          'image/jpg',
+          'image/png',
+          'image/gif',
+          'application/pdf',
+          'image/bmp',
+          'image/webp',
+          'application/msword',
+          'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+          'application/vnd.ms-excel',
+          'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+          'text/plain'
+      ];
+      return typeC.indexOf(type) > -1;
 
-}
+  }
 
   $('.inputfile').on('change', function (e) {
         var $input   = $( this ),
@@ -164,21 +164,22 @@
 
   $(document).off('click', '#add_cause').on('click','#add_cause', function(e){
     e.preventDefault();
-    var formData = new FormData($('#form_cause')[0]);        
-    
-    saveUpdateAction({
-        url : '/backend/cause/add',
-        data: formData,
-        contentType : false,
-        processData: false,
-        hasCb: true,            
-    }, function (data) {
-        console.log(data); 
-        if (data.id) {
-          toastr.success("Cause Added Successfully.");
-          cause();
-        }    
-    });
+    if (validate() === 0){
+      var formData = new FormData($('#form_cause')[0]);        
+      saveUpdateAction({
+          url : '/backend/cause/add',
+          data: formData,
+          contentType : false,
+          processData: false,
+          hasCb: true,            
+      }, function (data) {
+          console.log(data); 
+          if (data.id) {
+            toastr.success("Cause Added Successfully.");
+            cause();
+          }    
+      });
+    }
   });
 
   function cause(){

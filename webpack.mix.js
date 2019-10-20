@@ -16,7 +16,6 @@ mix.js('resources/js/app.js', 'public/js')
 
 mix.styles([
     'resources/css/font-awesome.css',
-    'resources/assets/lib/material-design-icons/css/material-design-iconic-font.min.css',
     'resources/css/bootstrap.min.css',
     'resources/css/owl-carousel.css',
     'resources/css/mediaelementplayer.min.css',
@@ -103,6 +102,7 @@ mix.styles([
     'node_modules/dropzone/dist/dropzone.css',
     'node_modules/magnific-popup/dist/magnific-popup.css',
     'node_modules/bootstrap-table/dist/bootstrap-table.min.css',
+    'node_modules/toastr/build/toastr.min.css',
     ],'public/css/backend.css'); 
  
 mix.scripts([

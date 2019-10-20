@@ -34,13 +34,13 @@
       <div class="col-md-12">
         <div class="form-group xs-pt-10">
           <label>Title</label>
-          <input type="text" name="title" placeholder="Title" value="{{$news->title}}" class="input-xs form-control">
+          <input type="text" name="title" placeholder="Title" value="{{$news->title}}" class="input-xs form-control validate">
         </div>
       </div>
       <div class="col-md-4">
         <div class="form-group">
           <label>Category</label>
-          <select name="category_id" class="select2">
+          <select name="category_id" class="select2 validate">
             <option value="{{$news->id}}">{{$news->name}}</option>
           </select>
         </div>
@@ -56,7 +56,7 @@
       <div class="col-md-12">
         <div class="form-group xs-pt-10">
           <label>Content</label>
-          <textarea name="content" id="summernote" class="form-control">{{$news->content}}</textarea>
+          <textarea name="content" id="summernote" class="form-control validate">{{$news->content}}</textarea>
         </div>
       </div>
       
@@ -157,21 +157,22 @@
 
   $(document).off('click', '#update_news').on('click','#update_news', function(e){
     e.preventDefault();
-    var formData = new FormData($('#form_news')[0]);        
-    
-    saveUpdateAction({
-        url : '/backend/news/update/{{$news->id}}',
-        data: formData,
-        contentType : false,
-        processData: false,
-        hasCb: true,            
-    }, function (data) {
-        console.log(data); 
-        if (data.id) {
-          news();
-          toastr.success("News Updated Successfully.");
-        }    
-    });
+    if (validate() === 0){ 
+      var formData = new FormData($('#form_news')[0]);        
+      saveUpdateAction({
+          url : '/backend/news/update/{{$news->id}}',
+          data: formData,
+          contentType : false,
+          processData: false,
+          hasCb: true,            
+      }, function (data) {
+          console.log(data); 
+          if (data.id) {
+            news();
+            toastr.success("News Updated Successfully.");
+          }    
+      });
+    }
   });
 
   function news(){

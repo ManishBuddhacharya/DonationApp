@@ -34,7 +34,7 @@
       <div class="col-md-4">
         <div class="form-group xs-pt-10">
           <label>Member</label>
-          <select name="user_id" id="member" class="select2">
+          <select name="user_id" id="member" class="select2 validate">
             <option value="{{$position->user_id}}">{{$position->name}}</option>
           </select>
         </div>
@@ -42,7 +42,7 @@
       <div class="col-md-4">
         <div class="form-group xs-pt-10">
           <label>Posiiton</label>
-          <select name="position_id" id="position" class="select2">
+          <select name="position_id" id="position" class="select2 validate">
             <option value="{{$position->position_id}}">{{$position->position_name}}</option>
           </select>
         </div>
@@ -115,21 +115,22 @@
 
   $(document).off('click', '#update_member_position').on('click','#update_member_position', function(e){
     e.preventDefault();
-    var formData = new FormData($('#form_blog')[0]);        
-    
-    saveUpdateAction({
-        url : '/backend/organization/update/{{$position->id}}',
-        data: formData,
-        contentType : false,
-        processData: false,
-        hasCb: true,            
-    }, function (data) {
-        console.log(data); 
-        if (data.id) {
-          organization();
-          toastr.success("Blog Updated Successfully.");
-        }    
-    });
+    if (validate() === 0){
+      var formData = new FormData($('#form_blog')[0]);        
+      saveUpdateAction({
+          url : '/backend/organization/update/{{$position->id}}',
+          data: formData,
+          contentType : false,
+          processData: false,
+          hasCb: true,            
+      }, function (data) {
+          console.log(data); 
+          if (data.id) {
+            organization();
+            toastr.success("Blog Updated Successfully.");
+          }    
+      });
+    }
   });
 
   function organization(){

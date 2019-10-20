@@ -34,7 +34,7 @@
 		<h2>
 			{{ucfirst($event->title)}}
 		</h2>
-		@if(auth()->user()->id)
+		@if(!is_null(auth()->user()))
 		<button class="btn btn-sm pull-right mt-10 mr-10" id="ticket_button">Attend Event</button>
 		@endif
 
@@ -52,7 +52,7 @@
 
 			</ul>
 
-			<assets/img src="images/resource/author.jpg" alt="">
+			<img src="{{"/images/".$event->user()->profile_img?:'/img/gallery/img11.jpg'}}" alt="">
 
 		</div><!-- POST META -->
 
@@ -89,7 +89,7 @@
 <script>
 	$('#ticket_button').off('click').on('click', function(e){
 	    e.preventDefault();
-	    let url = "/frontend/event/attend/{{$event->id}}/{{auth()->user()->id}}";
+	    let url = "/frontend/event/attend/{{$event->id}}/{{auth()->user()?auth()->user()->id:0}}";
 
 	    Swal.fire({
 	        title: 'Are you sure you want to attend this event?',

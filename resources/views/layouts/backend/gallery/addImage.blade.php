@@ -11,7 +11,7 @@
           <div class="col-md-12">
             <div class="form-group">
               <label class="d-block">File</label>
-              <input type="file" name="file" id="file" data-multiple-caption="{count} files selected" multiple="" class="inputfile">
+              <input type="file" name="file" id="file" data-multiple-caption="{count} files selected" multiple="" class="inputfile validate">
               <label for="file" class="btn-default width-100"> <i class="mdi mdi-upload"></i><span>Browse files...          </span></label>
             </div>
           </div>
@@ -78,22 +78,23 @@
 
   $(document).off('click', '#upload_image').on('click','#upload_image', function(e){
     e.preventDefault();
-    var formData = new FormData($('#form_image')[0]);        
-    
-    saveUpdateAction({
-        url : '/backend/gallery/add',
-        data: formData,
-        contentType : false,
-        processData: false,
-        hasCb: true,            
-    }, function (data) {
-        console.log(data); 
-        if (data.id) {
-          $('#modal_add_image').modal('hide');
-          toastr.success("Image uploaded Successfully.");
-          gallery();
-        }    
-    });
+    if (validate() === 0){
+      var formData = new FormData($('#form_image')[0]);        
+      saveUpdateAction({
+          url : '/backend/gallery/add',
+          data: formData,
+          contentType : false,
+          processData: false,
+          hasCb: true,            
+      }, function (data) {
+          console.log(data); 
+          if (data.id) {
+            $('#modal_add_image').modal('hide');
+            toastr.success("Image uploaded Successfully.");
+            gallery();
+          }    
+      });
+    }
   });
 
   function gallery(){
