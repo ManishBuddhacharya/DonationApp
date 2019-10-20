@@ -8,87 +8,29 @@
 			<div class="row">
 				<div class="title2" style="margin-top: 45px;">
 
-					<span>Pellent Esque Tellus</span>
-
 					<h2>OUR <span>RECENT NEWS</span></h2>
 
 				</div>
+				@foreach($news as $n)
+					<div class="col-md-4 column">
 
-				<div class="col-md-4 column">
+						<div class="service-block">
 
-					<div class="service-block">
+							<div class="service-image">
 
-						<div class="service-image">
+								<img src="{{"/images/".$n->file_name?:'/img/gallery/img11.jpg'}}" alt="">
 
-							<img src="assets/
-							images/resource/partnerships.jpg" alt="">
+								<i class="fa fa-codepen"></i>
 
-							<i class="fa fa-codepen"></i>
+							</div>
 
-						</div>
+							<h3>{{ucfirst($n->title)}}</h3>
 
-						<h3>Our Partnerships</h3>
-
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-
-						<a href="service-single.html" title="">READ MORE</a>
-
-					</div>
-
-				</div>
-
-
-
-				<div class="col-md-4 column">
-
-					<div class="service-block">
-
-						<div class="service-image">
-
-							<img src="assets/
-							images/resource/prayers.jpg" alt="">
-
-							<i class="fa fa-vine"></i>
+							<a class="pointer load_page" data-url = "/frontend/news/detail/{{$n->id}}" title="">READ MORE</a>
 
 						</div>
-
-						<h3>Our Prayers</h3>
-
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-
-						<a href="service-single.html" title="">READ MORE</a>
-
 					</div>
-
-				</div>
-
-
-
-				<div class="col-md-4 column">
-
-					<div class="service-block">
-
-						<div class="service-image">
-
-							<img src="assets/
-							images/resource/worship.jpg" alt="">
-
-							<i class="fa fa-stumbleupon"></i>
-
-						</div>
-
-						<h3>Our Worships</h3>
-
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-
-						<a href="service-single.html" title="">READ MORE</a>
-
-					</div>
-
-				</div>
-
-
-
+				@endforeach
 			</div>
 
 		</div>
@@ -96,3 +38,21 @@
 	</div>
 
 </section>
+
+<script>
+	$('.load_page').off('click').on('click', function(e){
+		let url = $(this).attr('data-url');
+		$.ajax({
+		    method:'get',
+		    url:url,
+		    success:function(data)
+		    {
+		      	$('#section-wrapper').html(data);
+		    },
+		    error:function(e)
+		    {
+		      	alert('dsadad');
+		    }
+	   });
+	});
+</script>

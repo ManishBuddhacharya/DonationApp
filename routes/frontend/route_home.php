@@ -5,6 +5,8 @@
 | Home Routes
 |--------------------------------------------------------------------------
 */
+/*Index page*/
+Route::get('/','HomeController@index');
 
 //story
 Route::get('/frontend/story','HomeController@story');

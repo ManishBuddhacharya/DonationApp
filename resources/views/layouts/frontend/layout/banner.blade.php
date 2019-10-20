@@ -31,9 +31,8 @@
                 		</div>
                     </div>
                     <div class="video-meta">
-                        <span>The Holly church</span>
-                        <h3>Welcome to the <span>Deeds</span></h3>
-                        <p>Nulla facilisi. Proin vestibulum porta ultrices. Cras euismod turpis sem, a iaculis neque accumsan placerat elit. Nunc sit amet arcu ac arcu placerat</p>
+                        <span>Donation Application</span>
+                        <h3>Welcome to the <span>Donation App</span></h3>
                     </div>
                 </div>
 			</div>

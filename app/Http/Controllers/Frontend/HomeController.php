@@ -23,15 +23,82 @@ class HomeController extends Controller
     {
         $this->layout = 'layouts.frontend.pages.';
     }
+    
+    public function index()
+    {
+        $cause = Cause::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Cause"'));
+                            $join->on('files.table_id','causes.id');
+                        })
+                        ->join('categories','categories.id','causes.category_id')
+                        ->select('files.*','categories.*','causes.*' )
+                        ->first();
+        $event = Event::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Event"'));
+                            $join->on('files.table_id','events.id');
+                        })
+                        ->join('categories','categories.id','events.category_id')
+                        ->select('files.*','categories.*','events.*' )
+                        ->first();
+
+        $blogs = Blog::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Blog"'));
+                            $join->on('files.table_id','blogs.id');
+                        })
+                        ->join('categories','categories.id','blogs.category_id')
+                        ->select('files.*','categories.*','blogs.*' )
+                        ->take(2)
+                        ->get();
+
+        $news = News::join('files',function($join){
+                            $join->on('files.table',DB::raw('"News"'));
+                            $join->on('files.table_id','news.id');
+                        })
+                        ->join('categories','categories.id','news.category_id')
+                        ->select('files.*','categories.*','news.*' )
+                        ->take(3)
+                        ->get();
+
+
+        $stories = Story::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Story"'));
+                            $join->on('files.table_id','story.id');
+                        })
+                        ->join('categories','categories.id','story.category_id')
+                        ->select('files.*','categories.*','story.*' )
+                        ->take(5)
+                        ->get();
+
+        return view('index', compact('event', 'cause', 'news', 'blogs','stories'));
+    }
 
     public function login()
     {
-        return view($this->layout.'login.login');
+        $blogs = Blog::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Blog"'));
+                            $join->on('files.table_id','blogs.id');
+                        })
+                        ->join('categories','categories.id','blogs.category_id')
+                        ->select('files.*','categories.*','blogs.*' )
+                        ->take(2)
+                        ->get();
+
+        return view($this->layout.'login.login', compact('blogs'));
     }
     
+
     public function signup()
     {
-        return view($this->layout.'signup.signup');
+        $blogs = Blog::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Blog"'));
+                            $join->on('files.table_id','blogs.id');
+                        })
+                        ->join('categories','categories.id','blogs.category_id')
+                        ->select('files.*','categories.*','blogs.*' )
+                        ->take(2)
+                        ->get();
+
+        return view($this->layout.'signup.signup', compact('blogs'));
     }
 
     public function story()
@@ -43,7 +110,25 @@ class HomeController extends Controller
                         ->join('categories','categories.id','story.category_id')
                         ->select('files.*','categories.*','story.*' )
                         ->get();
-        return view($this->layout.'stories.stories', compact('stories'));
+
+        $event = Event::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Event"'));
+                            $join->on('files.table_id','events.id');
+                        })
+                        ->join('categories','categories.id','events.category_id')
+                        ->select('files.*','categories.*','events.*' )
+                        ->first();
+
+        $blogs = Blog::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Blog"'));
+                            $join->on('files.table_id','blogs.id');
+                        })
+                        ->join('categories','categories.id','blogs.category_id')
+                        ->select('files.*','categories.*','blogs.*' )
+                        ->take(2)
+                        ->get();
+
+        return view($this->layout.'stories.stories', compact('stories', 'event', 'blogs'));
     }
 
     public function storyDetail($id)
@@ -56,7 +141,25 @@ class HomeController extends Controller
                         ->select('files.*','categories.*','story.*' )
                         ->where('story.id', $id)
                         ->first();
-        return view($this->layout.'stories.detail', compact('story'));
+
+        $event = Event::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Event"'));
+                            $join->on('files.table_id','events.id');
+                        })
+                        ->join('categories','categories.id','events.category_id')
+                        ->select('files.*','categories.*','events.*' )
+                        ->first();
+
+        $blogs = Blog::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Blog"'));
+                            $join->on('files.table_id','blogs.id');
+                        })
+                        ->join('categories','categories.id','blogs.category_id')
+                        ->select('files.*','categories.*','blogs.*' )
+                        ->take(2)
+                        ->get();
+
+        return view($this->layout.'stories.detail', compact('story', 'event', 'blogs'));
     }
 
     public function blog()
@@ -68,7 +171,25 @@ class HomeController extends Controller
                         ->join('categories','categories.id','blogs.category_id')
                         ->select('files.*','categories.*','blogs.*' )
                         ->get();
-        return view($this->layout.'blogs.blogs', compact('blogs'));
+
+        $event = Event::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Event"'));
+                            $join->on('files.table_id','events.id');
+                        })
+                        ->join('categories','categories.id','events.category_id')
+                        ->select('files.*','categories.*','events.*' )
+                        ->first();
+
+        $blogs = Blog::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Blog"'));
+                            $join->on('files.table_id','blogs.id');
+                        })
+                        ->join('categories','categories.id','blogs.category_id')
+                        ->select('files.*','categories.*','blogs.*' )
+                        ->take(2)
+                        ->get();
+
+        return view($this->layout.'blogs.blogs', compact('blogs', 'event', 'blogs'));
     }
 
     public function blogDetail($id)
@@ -81,7 +202,25 @@ class HomeController extends Controller
                         ->select('files.*','categories.*','blogs.*' )
                         ->where('blogs.id', $id)
                         ->first();
-        return view($this->layout.'blogs.detail', compact('blog'));
+
+        $event = Event::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Event"'));
+                            $join->on('files.table_id','events.id');
+                        })
+                        ->join('categories','categories.id','events.category_id')
+                        ->select('files.*','categories.*','events.*' )
+                        ->first();
+
+        $blogs = Blog::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Blog"'));
+                            $join->on('files.table_id','blogs.id');
+                        })
+                        ->join('categories','categories.id','blogs.category_id')
+                        ->select('files.*','categories.*','blogs.*' )
+                        ->take(2)
+                        ->get();
+
+        return view($this->layout.'blogs.detail', compact('blog', 'event', 'blogs'));
     }
 
     public function news()
@@ -93,7 +232,25 @@ class HomeController extends Controller
                         ->join('categories','categories.id','news.category_id')
                         ->select('files.*','categories.*','news.*' )
                         ->get();
-        return view($this->layout.'news.news', compact('news'));
+
+        $event = Event::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Event"'));
+                            $join->on('files.table_id','events.id');
+                        })
+                        ->join('categories','categories.id','events.category_id')
+                        ->select('files.*','categories.*','events.*' )
+                        ->first();
+
+        $blogs = Blog::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Blog"'));
+                            $join->on('files.table_id','blogs.id');
+                        })
+                        ->join('categories','categories.id','blogs.category_id')
+                        ->select('files.*','categories.*','blogs.*' )
+                        ->take(2)
+                        ->get();
+
+        return view($this->layout.'news.news', compact('news', 'event', 'blogs'));
     }
 
     public function newsDetail($id)
@@ -106,7 +263,25 @@ class HomeController extends Controller
                         ->select('files.*','categories.*','news.*' )
                         ->where('news.id', $id)
                         ->first();
-        return view($this->layout.'news.detail', compact('news'));
+
+        $event = Event::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Event"'));
+                            $join->on('files.table_id','events.id');
+                        })
+                        ->join('categories','categories.id','events.category_id')
+                        ->select('files.*','categories.*','events.*' )
+                        ->first();
+
+        $blogs = Blog::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Blog"'));
+                            $join->on('files.table_id','blogs.id');
+                        })
+                        ->join('categories','categories.id','blogs.category_id')
+                        ->select('files.*','categories.*','blogs.*' )
+                        ->take(2)
+                        ->get();
+
+        return view($this->layout.'news.detail', compact('news', 'event', 'blogs'));
     }
 
     public function event()
@@ -118,7 +293,25 @@ class HomeController extends Controller
                         ->join('categories','categories.id','events.category_id')
                         ->select('files.*','categories.*','events.*' )
                         ->get();
-        return view($this->layout.'events.events', compact('events'));
+
+        $event = Event::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Event"'));
+                            $join->on('files.table_id','events.id');
+                        })
+                        ->join('categories','categories.id','events.category_id')
+                        ->select('files.*','categories.*','events.*' )
+                        ->first();
+
+        $blogs = Blog::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Blog"'));
+                            $join->on('files.table_id','blogs.id');
+                        })
+                        ->join('categories','categories.id','blogs.category_id')
+                        ->select('files.*','categories.*','blogs.*' )
+                        ->take(2)
+                        ->get();
+
+        return view($this->layout.'events.events', compact('events', 'event', 'blogs'));
     }
 
     public function eventDetail($id)
@@ -131,7 +324,25 @@ class HomeController extends Controller
                         ->select('files.*','categories.*','events.*' )
                         ->where('events.id', $id)
                         ->first();
-        return view($this->layout.'events.detail', compact("event"));
+
+        $event = Event::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Event"'));
+                            $join->on('files.table_id','events.id');
+                        })
+                        ->join('categories','categories.id','events.category_id')
+                        ->select('files.*','categories.*','events.*' )
+                        ->first();
+
+        $blogs = Blog::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Blog"'));
+                            $join->on('files.table_id','blogs.id');
+                        })
+                        ->join('categories','categories.id','blogs.category_id')
+                        ->select('files.*','categories.*','blogs.*' )
+                        ->take(2)
+                        ->get();
+
+        return view($this->layout.'events.detail', compact("event", 'event', 'blogs'));
     }
 
     public function sendEventMail(Event $event, User $user)
@@ -152,7 +363,25 @@ class HomeController extends Controller
                         ->join('categories','categories.id','causes.category_id')
                         ->select('files.*','categories.*','causes.*' )
                         ->get();
-        return view($this->layout.'causes.causes', compact('causes'));
+
+        $event = Event::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Event"'));
+                            $join->on('files.table_id','events.id');
+                        })
+                        ->join('categories','categories.id','events.category_id')
+                        ->select('files.*','categories.*','events.*' )
+                        ->first();
+
+        $blogs = Blog::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Blog"'));
+                            $join->on('files.table_id','blogs.id');
+                        })
+                        ->join('categories','categories.id','blogs.category_id')
+                        ->select('files.*','categories.*','blogs.*' )
+                        ->take(2)
+                        ->get();
+
+        return view($this->layout.'causes.causes', compact('causes', 'event', 'blogs'));
     }
 
     public function causeDetail($id)
@@ -165,7 +394,25 @@ class HomeController extends Controller
                         ->select('files.*','categories.*','causes.*' )
                         ->where('causes.id', $id)
                         ->first();
-        return view($this->layout.'causes.detail', compact('cause'));
+
+        $event = Event::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Event"'));
+                            $join->on('files.table_id','events.id');
+                        })
+                        ->join('categories','categories.id','events.category_id')
+                        ->select('files.*','categories.*','events.*' )
+                        ->first();
+
+        $blogs = Blog::join('files',function($join){
+                            $join->on('files.table',DB::raw('"Blog"'));
+                            $join->on('files.table_id','blogs.id');
+                        })
+                        ->join('categories','categories.id','blogs.category_id')
+                        ->select('files.*','categories.*','blogs.*' )
+                        ->take(2)
+                        ->get();
+
+        return view($this->layout.'causes.detail', compact('cause', 'event', 'blogs'));
     }
 
     public function organization()

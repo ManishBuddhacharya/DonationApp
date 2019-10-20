@@ -7,14 +7,13 @@
 					<div class="upcoming-event">
 						<div class="row">
 							<div class="col-md-6 column">
-								<h3><i class="fa fa-bank"></i> Next Online Experince With Us</h3>
-								<span><i class="fa fa-calendar-o"></i> 06, 01, 2013</span>
-								<span><i class="fa fa-clock-o"></i> 5:00 pm</span>
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl</p>
-								<div class="remaining-time">
+								<h3><i class="fa fa-bank"></i> Next Event on</h3>
+								<span><i class="fa fa-calendar-o"></i> {{ \Carbon\Carbon::parse($event->created_at)->format('D/ m/ Y')}}</span>
+								<span><i class="fa fa-clock-o"></i> {{ \Carbon\Carbon::parse($event->created_at)->format('h:i:s A')}}</span>
+								<p>{{strip_tags($event->content)}}</p>
+								<div class="remaining-time" style="height: 77px;">
 									<div class="col-md-6 column">
-										<h5>This Church Prayers</h5>
-										<span>Prayers Time</span>
+										<h5>{{ucfirst($event->title)}}</h5>
 									</div>
 									<div class="col-md-6 timing column">
 										<ul class="countdown">
@@ -35,7 +34,7 @@
 								</div>
 							</div>
 							<div class="col-md-6 column">
-								<iframe src="https://player.vimeo.com/video/61350461?title=0&amp;byline=0&amp;portrait=0" height="280"></iframe>
+								<img style="width: 600px; height: 280px;" src="{{"/images/".$event->file_name?:'/img/gallery/img11.jpg'}}">
 							</div>
 						</div>
 					</div>

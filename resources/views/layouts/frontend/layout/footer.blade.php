@@ -1,3 +1,11 @@
+<style>
+	.line-clamp-blog{
+	    display: -webkit-box;
+	    -webkit-line-clamp: 2;
+	    -webkit-box-orient: vertical;  
+	    overflow: hidden;"
+	}
+</style>
 <footer>
 
 	<div class="block blackish">
@@ -89,31 +97,18 @@
 						<div class="widget-title"><h4>Recent Blog</h4></div>
 
 						<div class="remove-ext">
-
+							{{-- @foreach($blogs as $blog)
 							<div class="widget-blog">
 
-								<div class="widget-blog-img"><img src="/assets/images/resource/widget-blog.jpg" alt=""></div>
+								<div class="widget-blog-img"><img src="{{"/images/".$blog->file_name?:'/img/gallery/img11.jpg'}}" alt=""></div>
 
-								<h6><a href="blog-single.html" title=""> Consectetur Adipisicing.</a></h6>
+								<h6><a class="pointer load_page" data-url = "/frontend/blog/detail/{{$blog->id}}" title=""> {{ucfirst($blog->title)}}</a></h6>
 
-								<p>Homemade cream cheese mints These are amazing!Christmas!!- must try!</p>
+								<p class="line-clamp-blog">{{strip_tags($blog->content)}}!</p>
 
-								<span><i class="fa fa-calendar-o"></i> November 01, 2013</span>
-
+								<span><i class="fa fa-calendar-o"></i> {{ \Carbon\Carbon::parse($blog->created_at)->format('D/ F/ Y')}}</span>
 							</div><!-- WIDGET BLOG -->
-
-							<div class="widget-blog">
-
-								<div class="widget-blog-img"><img src="/assets/images/resource/widget-blog2.jpg" alt=""></div>
-
-								<h6><a href="blog-single.html" title=""> Consectetur Adipisicing.</a></h6>
-
-								<p>Homemade cream cheese mints These are amazing!Christmas!!- must try!</p>
-
-								<span><i class="fa fa-calendar-o"></i> November 01, 2013</span>
-
-							</div><!-- WIDGET BLOG -->
-
+							@endforeach --}}
 						</div>
 
 						
