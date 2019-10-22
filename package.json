@@ -27,6 +27,7 @@
         "bootstrap-datepicker": "^1.9.0",
         "bootstrap-table": "^1.15.5",
         "cartalyst/stripe-laravel": "7.0.*",
+        "chart.js": "^2.8.0",
         "dropzone": "^5.5.1",
         "jquery-datetimepicker": "^2.5.21",
         "magnific-popup": "^1.1.0",
