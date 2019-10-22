@@ -21,7 +21,7 @@ class DonationController extends Controller
 
 	public function causeDonation($id)
     {
-    	$cause = Cause::join('files',function($join){
+    	$cause = Cause::leftJoin('files',function($join){
 	                        $join->on('files.table',DB::raw('"Cause"'));
 	                        $join->on('files.table_id','causes.id');
 	                    })
@@ -30,6 +30,26 @@ class DonationController extends Controller
 	                    ->where('causes.id', $id)
 	                    ->first();
         return view($this->layout.'inc.donation', compact('cause'));
+    }
+
+    public function allDonation()
+    {
+    	$donation = Cause::join('donations','donations.cause_id','causes.id')
+	                    ->select('causes.title as label', DB::raw('SUM(donations.amount) as y'))
+	                    ->groupBy('causes.title')
+	                    ->get();
+
+        $encoded = json_encode($donation, JSON_NUMERIC_CHECK);
+        return $encoded;
+    }
+
+    public function allDonationTable()
+    {
+    	$donation = Cause::join('donations','donations.cause_id','causes.id')
+	                    ->select('causes.title', DB::raw('SUM(amount) as raised'))
+	                    ->groupBy('causes.title')
+	                    ->get();
+        return $donation;
     }
 
     /*Donation*/

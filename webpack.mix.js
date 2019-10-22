@@ -87,6 +87,8 @@ mix.scripts([
     'node_modules/dropzone/dist/dropzone.js',
     'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
     'node_modules/bootstrap-table/dist/bootstrap-table.min.js',
+    'node_modules/chart.js/dist/Chart.min.js',
+    'resources/js/canvas.min.js',
 ], 'public/js/backend.js');
 
 mix.styles([
@@ -103,6 +105,7 @@ mix.styles([
     'node_modules/magnific-popup/dist/magnific-popup.css',
     'node_modules/bootstrap-table/dist/bootstrap-table.min.css',
     'node_modules/toastr/build/toastr.min.css',
+    'node_modules/chart.js/dist/Chart.min.css',
     ],'public/css/backend.css'); 
  
 mix.scripts([
