@@ -37,6 +37,8 @@
                 <tr>
                     <th data-field="title" data-sortable="true">Event Name
                     </th>
+                    <th data-field="goal" data-sortable="true">Goal ($)
+                    </th>
                     <th data-field="raised" data-sortable="true">Raised ($)
                     </th>
                 </tr>
