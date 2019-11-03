@@ -21,7 +21,7 @@
 
 	</div><!-- RECENT BLOG -->
 
-
+@if($event)
 	<div class="widget">
 
 		<div class="widget-title"><h4>LATEST EVENT</h4></div>
@@ -47,5 +47,5 @@
 		</div>
 
 	</div><!-- LATEST EVENT -->
-
+@endif
 </aside>

@@ -4,7 +4,7 @@
 		<div class="widget-title"><h4>RECENT BLOG</h4></div>
 
 		<div class="remove-ext">
-			@foreach($blogss as $blo)
+			@foreach($blogs as $blo)
 			<div class="widget-blog">
 
 				<div class="widget-blog-img">
@@ -21,7 +21,7 @@
 
 	</div><!-- RECENT BLOG -->
 
-
+@if($event)
 	<div class="widget">
 
 		<div class="widget-title"><h4>LATEST EVENT</h4></div>
@@ -47,5 +47,5 @@
 		</div>
 
 	</div><!-- LATEST EVENT -->
-
+@endif
 </aside>

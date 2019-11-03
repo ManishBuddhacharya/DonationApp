@@ -1,3 +1,4 @@
+@if($cause)
 <section>
 
 	<div class="block whitish">
@@ -69,7 +70,7 @@
 	</div>
 
 </section>
-
+@endif
 <script>
 	$('.load_page').off('click').on('click', function(e){
 		let url = $(this).attr('data-url');

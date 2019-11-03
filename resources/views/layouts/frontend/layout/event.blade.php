@@ -1,3 +1,4 @@
+@if($event)
 <section>
 	<div class="block blackish">
 	<div class="parallax" style="background:url(assets/images/parallax2.jpg);"></div>
@@ -43,3 +44,4 @@
 		</div>
 	</div>
 </section>
+@endif
