@@ -1,6 +1,6 @@
 <nav class="navbar navbar-default navbar-fixed-top be-top-header">
   <div class="container-fluid">
-    <div class="navbar-header"><a href="/backend/dashboard" class="navbar-brand"></a>
+    <div class="navbar-header"><a href="/" class="navbar-brand" style="background-repeat: no-repeat; background-position: top;"></a>
     </div>
     <div class="be-right-navbar">
       <ul class="nav navbar-nav navbar-right be-user-nav">

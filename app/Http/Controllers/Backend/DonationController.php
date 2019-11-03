@@ -46,8 +46,8 @@ class DonationController extends Controller
     public function allDonationTable()
     {
     	$donation = Cause::join('donations','donations.cause_id','causes.id')
-	                    ->select('causes.title', DB::raw('SUM(amount) as raised'))
-	                    ->groupBy('causes.title')
+	                    ->select('causes.title', 'causes.goal', DB::raw('SUM(amount) as raised'))
+	                    ->groupBy('causes.title','causes.goal')
 	                    ->get();
         return $donation;
     }

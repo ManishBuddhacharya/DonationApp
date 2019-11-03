@@ -125,17 +125,6 @@
 
 </footer>
 
-<div class="bottom-footer">
-
-	<div class="container">
-
-		<p>©2014 <a href="#" title="">Deeds</a> Wordpress All rights reserved. Design by <a href="#" title="">Webinane</a></p>
-
-
-
-	</div>
-
-</div><!-- BOTTOM FOOTER STRIP -->
 
 </div>
 
