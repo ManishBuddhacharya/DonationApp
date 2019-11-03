@@ -4,7 +4,7 @@
 		<div class="widget-title"><h4>RECENT BLOG</h4></div>
 
 		<div class="remove-ext">
-			@foreach($blogs as $blog)
+			@foreach($blogss as $blog)
 			<div class="widget-blog">
 
 				<div class="widget-blog-img">

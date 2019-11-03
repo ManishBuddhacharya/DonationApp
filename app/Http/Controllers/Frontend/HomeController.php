@@ -179,8 +179,7 @@ class HomeController extends Controller
                         ->join('categories','categories.id','events.category_id')
                         ->select('files.*','categories.*','events.*' )
                         ->first();
-
-        $blogs = Blog::join('files',function($join){
+        $blogss = Blog::join('files',function($join){
                             $join->on('files.table',DB::raw('"Blog"'));
                             $join->on('files.table_id','blogs.id');
                         })
@@ -189,7 +188,7 @@ class HomeController extends Controller
                         ->take(2)
                         ->get();
 
-        return view($this->layout.'blogs.blogs', compact('blogs', 'event', 'blogs'));
+        return view($this->layout.'blogs.blogs', compact('blogs', 'event', 'blogss'));
     }
 
     public function blogDetail($id)

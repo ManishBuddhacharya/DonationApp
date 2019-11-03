@@ -4,16 +4,16 @@
 		<div class="widget-title"><h4>RECENT BLOG</h4></div>
 
 		<div class="remove-ext">
-			@foreach($blogs as $blog)
+			@foreach($blogss as $blo)
 			<div class="widget-blog">
 
 				<div class="widget-blog-img">
-					<img src="{{"/images/".$blog->file_name?:'/img/gallery/img11.jpg'}}" alt="">
+					<img src="{{"/images/".$blo->file_name?:'/img/gallery/img11.jpg'}}" alt="">
 				</div>
 
-				<p><a class="pointer load_page" data-url = "/frontend/blog/detail/{{$blog->id}}" title="">{{ucfirst($blog->title)}}</a></p>
+				<p><a class="pointer load_page" data-url = "/frontend/blog/detail/{{$blo->id}}" title="">{{ucfirst($blo->title)}}</a></p>
 
-				<span><i class="fa fa-calendar-o"></i> {{ \Carbon\Carbon::parse($blog->created_at)->format('D/ F/ Y')}}</span>
+				<span><i class="fa fa-calendar-o"></i> {{ \Carbon\Carbon::parse($blo->created_at)->format('D/ F/ Y')}}</span>
 
 			</div><!-- WIDGET BLOG -->
 			@endforeach

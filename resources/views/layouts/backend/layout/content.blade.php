@@ -35,7 +35,7 @@
             <input type="hidden" id="page_print_header" value="Attendance">
             <thead>
                 <tr>
-                    <th data-field="title" data-sortable="true">Event Name
+                    <th data-field="title" data-sortable="true">Cause Name
                     </th>
                     <th data-field="goal" data-sortable="true">Goal ($)
                     </th>
