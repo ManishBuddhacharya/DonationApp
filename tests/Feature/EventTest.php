@@ -5,13 +5,17 @@ namespace Tests\Feature;
 use App\User;
 use App\Category;
 use App\Event;
+use App\Files;
 use Tests\TestCase;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class EventTest extends TestCase
 {
-         use RefreshDatabase;
+    use RefreshDatabase;
+    use WithFaker;
 
     /** @test */
     public function event_can_be_added_by_admin(){
@@ -19,16 +23,20 @@ class EventTest extends TestCase
         
         $this->actingAs(factory(User::class)->create());
         $category = factory(Category::class)->create();
-        
-        $response = $this->post('/story',[
-            'title' => 'Working with community',
-            'file' => 'image.jpg',
-            'content' => 'lorem ipsum dolor sit amet',
-            'category' => $category->id 
+        Storage::fake('avatars');
+
+        $file = UploadedFile::fake()->create('avatar.jpg');
+
+        $response = $this->post('backend/event/add',[
+            'title' => $this->faker->name,
+            'file' => $file,
+            'content' => $this->faker->paragraph,
+            'category_id' => $category->id,
+            'address' =>  $this->faker->address,
+            'dateTime' => now()
         ]);
 
-        $response->assertOk();
-        $this->assertCount(1,Event::where('is_deleted',0));   
+        $response->assertStatus(201);
     }
 
     /** @test */
@@ -36,8 +44,13 @@ class EventTest extends TestCase
         $this->withoutExceptionHandling();
         
         $this->actingAs(factory(User::class)->create());
+        $category = factory(Category::class)->create();
+
+        $story = factory(Event::class)->create();
+
+        $item = factory(Files::class)->states('event')->create();
         
-        $response = $this->get('/event');
+        $response = $this->get('backend/event');
 
         $response->assertOk();
     }
@@ -46,11 +59,13 @@ class EventTest extends TestCase
     public function event_can_be_accessed_by_admin(){
         $this->withoutExceptionHandling();
         
-        // $this->actingAs(factory(User::class)->create());
+        $this->actingAs(factory(User::class)->create());
+        $category = factory(Category::class)->create();
 
         $item = factory(Event::class)->create();
+        $item = factory(Files::class)->states('event')->create();
         
-        $response = $this->get('/event/'.$item->id);
+        $response = $this->get('backend/event/detail/'.$item->id);
 
         $response->assertOk();
     }
@@ -60,24 +75,21 @@ class EventTest extends TestCase
         $this->withoutExceptionHandling();
         
         $this->actingAs(factory(User::class)->create());
+        $category = factory(Category::class)->create();
 
         $item = factory(Event::class)->create();
 
-        $this->assertDatabaseHas('event', $item->toArray());
+        $this->assertDatabaseHas('events', $item->toArray());
 
         $data = $item->toArray();
 
         // // Change your data here
-        $data['title'] = 'Community involvement';
+        $data['title'] = $this->faker->name;
         $data['updated_at'] = now()->addDay();
 
-        $response = $this->put('/event/update/'.$item->id, $data);
+        $response = $this->post('backend/event/update/'.$item->id, $data);
 
-        $this->assertEquals($data['title'], $item->fresh()->title);
-        $this->assertEquals($data['updated_at'], $item->fresh()->updated_at);
-
-        $response->assertRedirect('/event/'.$item->id);
-
+        $this->assertEquals($data['title'], $item->refresh()->title);
         $response->assertOk();
     }
 
@@ -86,15 +98,16 @@ class EventTest extends TestCase
         $this->withoutExceptionHandling();
         
         $this->actingAs(factory(User::class)->create());
+        $category = factory(Category::class)->create();
 
         $item = factory(Event::class)->create();
 
-        $this->assertDatabaseHas('event', $item->toArray() );
+        $this->assertDatabaseHas('events', $item->toArray() );
 
-        $response = $this->delete('/event/delete/'. $item->id);
+        $response = $this->get('backend/event/delete/'. $item->id);
 
-        $this->assertDatabaseMissing('event', $item->toArray());
+        $this->assertDatabaseMissing('events', $item->toArray());
 
-        $response->assertRedirect('/event/index');
+        $response->assertStatus(200);
     }
 }

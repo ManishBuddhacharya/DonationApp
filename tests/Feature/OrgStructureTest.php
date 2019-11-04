@@ -22,6 +22,7 @@ class BackendProfileTest extends TestCase
     /** @test */
     public function user_can_access_organization_list(){
         $this->withoutExceptionHandling();
+        $this->actingAs(factory(User::class)->create());
 
         $response = $this->get('/backend/organization/list');
         $response->assertStatus(200);
@@ -32,16 +33,14 @@ class BackendProfileTest extends TestCase
         $this->withoutExceptionHandling();
         
         $this->actingAs(factory(User::class)->create());
-        $postion = factory(Position::class)->create();
+        $position = factory(Position::class)->create();
                 
         $response = $this->post('/backend/organization/add',[
-            'user_id' => $user->id,
+            'user_id' => $position->id,
             'position_id' => $position->id,
         ]);
 
-        $response->assertOk();
-
-        $this->assertCount(1,UserPosition::where('is_deleted',0));   
+        $response->assertStatus(201);
     }
 
 

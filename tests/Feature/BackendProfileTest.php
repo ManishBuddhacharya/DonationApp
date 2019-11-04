@@ -11,6 +11,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 class BackendProfileTest extends TestCase
 {
     use RefreshDatabase;
+    use WithFaker;
 
     /**
      * A basic feature test example.
@@ -21,7 +22,8 @@ class BackendProfileTest extends TestCase
     /** @test */
     public function user_can_access_profile(){
         $this->withoutExceptionHandling();
-
+        $user = factory(User::class)->create();
+        $this->actingAs($user);
         $response = $this->get('/backend/setting');
         $response->assertStatus(200);
     }
@@ -33,12 +35,12 @@ class BackendProfileTest extends TestCase
         $user = factory(User::class)->create();
         $this->actingAs($user);
 
-        $user['name'] = $faker->name;
-        $user['email'] = $faker->unique()->safeEmail;
-        $user['address'] = $faker->city;
-        $user['phone'] = $faker-> randomDigit;
+        $user['name'] = $this->faker->name;
+        $user['email'] = $this->faker->unique()->safeEmail;
+        $user['address'] = $this->faker->city;
+        $user['phone'] = $this->faker-> randomDigit;
 
-        $response = $this->post('/backend/setting/profile/update/'+$user->id);
+        $response = $this->post('/backend/setting/profile/update/'.$user->id);
 
         $response->assertOk();
     }
@@ -71,7 +73,7 @@ class BackendProfileTest extends TestCase
 
         $user['password'] = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';
         
-        $response = $this->post('/backend/setting/password/update/'+$user->id);
+        $response = $this->post('/backend/setting/password/update/'.$user->id);
         $this->assertEquals($user['password'], $user->fresh()->password);
         $response->assertOk();
     }

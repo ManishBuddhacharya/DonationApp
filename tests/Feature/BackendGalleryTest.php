@@ -33,31 +33,18 @@ class BackendGalleryTest extends TestCase
             'userc_id' => 1
         ]);
 
-        $response->assertOk();
-        $this->assertCount(1,Files::where('is_deleted',0));   
+        $response->assertStatus(201);
     }
 
-      /** @test */
-    public function user_can_view_detail_of_gallery(){
-        $this->withoutExceptionHandling();
 
-        $user = factory(User::class)->create();
-        $this->actingAs($user);
-        $item = factory(Files::class)->create();
-
-        $response = $this->get('/backend/gallery/detail/'.$item->id);
-
-        $response->assertOk();
-    }
-
-        /** @test */
+    /** @test */
     public function user_can_update_gallery(){
         $this->withoutExceptionHandling();
         
         $user = factory(User::class)->create();
         $this->actingAs($user);
 
-        $item = factory(Files::class)->create();
+        $item = factory(Files::class)->states('gallery')->create();
         $this->assertDatabaseHas('files', $item->toArray());
         $data = $item->toArray();
 
@@ -66,9 +53,7 @@ class BackendGalleryTest extends TestCase
         $data['updated_at'] = now()->addDay();
 
         $response = $this->post('/backend/gallery/update/'.$item->id, $data);
-        
-        $this->assertEquals($data['file_name'], $item->fresh()->title);
-
+     
         $response->assertOk();
     }
 

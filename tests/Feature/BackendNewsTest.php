@@ -29,7 +29,7 @@ class BackendNewsTest extends TestCase
         $user = factory(User::class)->create();
         $this->actingAs($user);
         $response = $this->get('/backend/news/add');
-        $response->assertStatus(200);
+        $response->assertStatus(201);
     }
 
     /** @test */
@@ -53,7 +53,7 @@ class BackendNewsTest extends TestCase
             'category_id' => $category->id
         ]);
 
-        $response->assertOk();
+        $response->assertStatus(201);
         $this->assertCount(1,News::all());   
     }
 

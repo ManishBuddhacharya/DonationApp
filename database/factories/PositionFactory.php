@@ -7,7 +7,8 @@ use Faker\Generator as Faker;
 
 $factory->define(Position::class, function (Faker $faker) {
     return [
-        'name' => $faker->word,
+        'position_name' => $faker->word,
+        'rank' => $faker->word,
         'userc_id'=>1
     ];
 });
